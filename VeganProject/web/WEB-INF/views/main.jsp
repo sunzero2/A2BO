@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +10,11 @@
 <link rel="stylesheet" href="/vgan/resources/css/main.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/login.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/iframe.css"/>
+<style>
+	.topBanner {
+		margin-top: 0px;
+	}
+</style>
 </head>
 <body>
 	<%@ include file="top/top.jsp"%>
@@ -21,7 +27,8 @@
 
 		<div class="ingBox">
 			<div class="choice1line">
-				<div class="fxt">1<img src="../resources/image/money.jpg"></div>
+			<!--img 테스트 할 때는 http://placehold.it/가로x세로 넣어서 해주세요 -->
+				<div class="fxt">1<img src="http://placehold.it/100x100"></div>
 				<div class="pop">2<img src=""></div>
 				<div class="psc">3<img src=""></div>
 			</div>

@@ -16,8 +16,16 @@ public class MemberService {
 		super();
 	}
 	
-	public void login() {
+	public Member login(String email, String pw) {
+		Member member = null;
+		Connection conn = jdbc.getConnection();
+		try {
+			member = mDao.login(conn, email, pw);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
+		return member;
 	}
 	
 	public int join(Member member) {
@@ -28,7 +36,6 @@ public class MemberService {
 			jdbc.commit(conn);
 		} catch (SQLException e) {
 			jdbc.rollback(conn);
-			e.printStackTrace();
 		} finally {
 			jdbc.close(conn);
 		}

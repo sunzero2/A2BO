@@ -1,6 +1,14 @@
 package com.a2bo.member.model.vo;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2493957361653714231L;
+	
 	private String userId;
 	private String pw;
 	private String cell;
