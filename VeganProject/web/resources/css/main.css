@@ -1,0 +1,10 @@
+@charset "UTF-8";
+html, body, header, nav, section, article, aside, footer {
+	margin:0;
+	padding:0;
+}
+
+div, buttom, img {
+	margin:0;
+	padding:0;
+}

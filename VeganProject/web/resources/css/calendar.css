@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+/* 
+calSub.jsp의 CSS 부분
+*/
+.subCalTitle {
+	text-align: center;
+	font-size: 40px;
+	margin-top: 30px;
+}
+
+.subCalMenuImg {
+	position: absolute;
+	width: 300px;
+	height: 470px;
+	border: 1px solid;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+.subCalIconDiv {
+	position: absolute;
+	margin-left: 350px;
+	width: 400px;
+	margin-top: 30px;
+	height: 270px;
+}
+
+.subCalSelectDiv {
+	position: absolute;
+	width: 120px;
+	height: 80px;
+	border: 1px solid;
+	border-radius: 8px;
+}
+
+.subCalIconCheck {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	opacity: 0;
+}
+
+.row2 {
+	margin-top: 95px;
+}
+
+.row3 {
+	margin-top: 190px;
+}
+
+.col2 {
+	margin-left: 140px;
+}
+
+.col3 {
+	margin-left: 280px;
+}
+
+.subCalIcon {
+	position: absolute;
+}
+
+.subCalInputDiv {
+	position: absolute;
+	border: 1px solid;
+	margin-left: 350px;
+	width: 400px;
+	height: 35px;
+}
+
+.subCalPrice {
+	margin-top: 320px;
+}
+
+.subCalMenu {
+	margin-top: 380px;
+}
+
+.subCalInputTitle {
+	position: absolute;
+	height: 100%;
+	font-size: 24px;
+}
+
+.subCalInput {
+	position: absolute;
+	width: 250px;
+	height: 80%;
+	margin-left: 70px;
+}
+
+.subCalBtn {
+	position: absolute;
+	height: 50px;
+	width: 70px;
+	margin-top: 450px;
+}
+
+.save {
+	margin-left: 600px;
+}
+
+.remove {
+	margin-left: 680px;
+}
+
+.subCalMsg {
+	position: absolute;
+	font-size: 30px;
+	margin-top: 530px;
+	margin-left: 180px;
+}
+
+/* 
+calendar.jsp의 CSS 부분
+*/
+.mainCalDayHead {
+	background: lightgray;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	width: 1100px;
+	height: 40px;
+}
+
+.mainCalMonthRow {
+	width: 1100px;
+	height: 150px;
+}
+
+.mainCalDayDiv {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border-spacing: 0px;
+	border-bottom: 1px solid gray;
+}
+
+.mainCalTd {
+	height: inherit;
+	width: 220px;
+	padding: 0;
+}
+
+.mainCalTd span {
+	margin-top: 20%;	
+}
+
+.mainCalGrid {
+	border-left: 1px solid gray;	
+}
+
+.mainCalDayText {
+	position: relative;
+	width: inherit;
+	height: inherit;
+}
+
+.mainCalTotal {
+	float: right;
+	width: 300px;
+	height: 50px;
+	border: 1px solid;
+}
+
+.mainCalTotalTitle {
+	margin: 15px;
+	font-size: 15px;
+	float: right;
+}
+
+.mainCalTotalSum {
+	font-size: 20px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}

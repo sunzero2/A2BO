@@ -1,0 +1,102 @@
+@charset "UTF-8";
+html, body, header, nav, section, article, aside, footer {
+	margin:0;
+	padding:0;
+}
+
+div, buttom, img {
+	margin:0;
+	padding:0;
+}
+
+
+.loginWrapper {
+	position: absolute;
+	margin-left: 30px;
+	margin-top: 30px;
+	width: 350px;
+	height: 600px;
+	padding-right: 15px;
+	border-right: 1px solid gray;
+}
+
+.joinWrapper {
+	padding-left: 20px;
+	padding-right: 0px;
+	position: absolute;
+	margin-left: 400px;
+	margin-top: 30px;
+	width: 350px;
+	height: 600px;
+}
+
+.backPage {
+	font-size: 60px;
+	float: right;
+	margin-right: 13px;
+}
+
+.titleDiv {
+	font-size: 50px;
+	margin-top: 90px;
+}
+
+#loginTitle {
+	margin-left: 100px;
+}
+
+#joinTitle {
+	margin-left: 80px;
+}
+
+.loginInput {
+	margin-top: 25px;
+	margin-left: 50px;
+	width: 250px;
+	height: 50px;
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+.joinInput {
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 250px;
+	height: 35px;	
+}
+
+.input1 {
+	margin-top: 30px;
+}
+
+#loginBt {
+	margin-top: 60px;
+	width: 255px;
+	height: 70px;
+	font-size: 30px;
+	margin-left: 50px;
+}
+
+#joinBt {
+	margin-top: 20px;
+	width: 255px;
+	height: 70px;
+	font-size: 30px;
+	margin-left: 50px;
+}
+
+.searchMem {
+	margin-top: 10px;
+	margin-right: 44px;
+}
+
+.joinEmail {
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 200px;
+	height: 35px;
+}
+
+.emailCheck {
+	height: 40px;
+}
