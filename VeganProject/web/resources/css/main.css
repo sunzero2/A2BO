@@ -8,3 +8,41 @@ div, buttom, img {
 	margin:0;
 	padding:0;
 }
+
+.content {
+	margin-top:5%;
+	height:100%;
+	width:100%;	
+}
+
+.mainImage{
+	border: 1px solid black;
+	height:500px;
+	width:100%;
+	magin-top : 30%;
+}
+
+.ingChoice{
+	border: 1px solid black;
+	height:200px;
+	width:100%;	
+}
+
+.choice1line{
+	border: 1px solid black;
+	height:30%;;
+	width:100%;
+	
+}
+
+.choice2line{
+	border: 1px solid black;
+	height:30%;;
+	width:100%;
+}
+
+.choice3line{
+	border: 1px solid black;
+	height:30%;;
+	width:100%;
+}
