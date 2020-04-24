@@ -13,10 +13,36 @@
 <body>
 	<%@ include file="top/top.jsp"%>
 	
+<<<<<<< HEAD
 	
 	
 	
 	
+=======
+	<div class="content">
+
+		<div class="mainImage">
+			<img src="///">
+		</div>
+
+		<div class="ingChoice">
+			<div class="fxt">1<img src=""></div>
+			<div class="pop">2<img src=""></div>
+			<div class="psc">3<img src=""></div>
+			<div class="pol">4<img src=""></div>
+			<div class="lov">5<img src=""></div>
+			<div class="lto">6<img src=""></div>
+			<div class="ovo">7<img src=""></div>
+			<div class="vgn">8<img src=""></div>	
+			<div class="ftn">9<img src=""></div>
+		</div>
+		
+		<button class=""><i class="fas fa-search" style="color:black"></i>확인하기</button>
+
+
+
+	</div>
+>>>>>>> 7ee48012f9d1cb19a93fd5417970e544c9df18be
 	
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
