@@ -1,5 +1,5 @@
 package com.a2bo.review.model.service;
-
+/*
 import com.a2bo.review.model.dao.ReviewDao;
 
 import common.JDBCTemplate;
@@ -28,3 +28,4 @@ public class ReviewService {
 		
 	}
 }
+*/
