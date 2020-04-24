@@ -51,5 +51,6 @@
 	
 	<!-- 배너 스크립트입니다. -혜영 -->
 	<script src="/vgan/resources/js/top.js"></script>
+	<script src="/vgan/resources/js/iframe.js"></script>
 </body>
 </html>
