@@ -13,12 +13,6 @@
 <body>
 	<%@ include file="top/top.jsp"%>
 	
-<<<<<<< HEAD
-	
-	
-	
-	
-=======
 	<div class="content">
 
 		<div class="mainImage">
