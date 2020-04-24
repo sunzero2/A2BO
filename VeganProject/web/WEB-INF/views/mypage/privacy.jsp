@@ -20,46 +20,89 @@
 				<th class="privacyTh" scope="row">닉네임</th>
 				<td class="privacyTd">
 					<div>회원의 닉네임</div>
-					<button>수정</button>
-					<form action="" method="post">
-						<input type="text" placeholder="변경할 닉네임">
-						<button>수정</button>
-					</form>
+					<button class="privacyBtn" id="nickname">수정</button>
+					<div style=""class="changeNickname">
+						<form action="" method="post">
+							<input type="text" placeholder="변경할 닉네임">
+							<button>수정</button>
+						</form>
+					</div>
 				</td>
 			</tr>
 			<tr>
 				<th class="privacyTh" scope="row">이메일</th>
 				<td class="privacyTd">
-					<div>이메일머시기웅앵웅</div>
-					<span>이메일은 수정하실 수 없습니다.</span>
+					<div>
+						<span>이메일머시기웅앵웅</span>
+					</div>
 				</td>
 			</tr>
 			<tr>
 				<th class="privacyTh" scope="row">비밀번호</th>
 				<td class="privacyTd">
 					<div>현재 비밀번호를 입력하세요.</div>
-					<input type="password">
-					<button>수정</button>
-					<form action="" method="post">
-						<input type="password" placeholder="새 비밀번호"><br>
-						<input type="password" placeholder="새 비밀번호 확인">
-						<button>수정</button>
-					</form>
+					<input type="password"><br>
+					<button class="privacyBtn" id="password">수정</button>
+					<div class="changePw">
+						<form action="" method="post">
+							<input type="password" placeholder="새 비밀번호"><br>
+							<input type="password" placeholder="새 비밀번호 확인">
+							<button>수정</button>
+						</form>
+					</div>
 				</td>
 			</tr>
 			<tr>
 				<th class="privacyTh" scope="row">핸드폰번호</th>
 				<td class="privacyTd">
 					<div>0100000000</div>
-					<button>수정</button>
-					<form action="" method="post">
-						<input type="text" placeholder="변경할 핸드폰 번호">
-						<button>수정</button>
-					</form>
+					<button class="privacyBtn" id="cell">수정</button>
+					<div class="changeCell">					
+						<form action="" method="post">
+							<input type="text" placeholder="변경할 핸드폰 번호">
+							<button>수정</button>
+						</form>
+					</div>
 				</td>
 			</tr>
 		</table>
 	</div>
 	<script src="/vgan/resources/js/top.js"></script>
+	<script>
+		var nickname = document.querySelector('.changeNickname');
+		var password = document.querySelector('.changePw');
+		var cell = document.querySelector('.changeCell');
+		
+		document.querySelectorAll('.privacyBtn').forEach(function(el) {
+			el.addEventListener('click', function(v) {
+				if (v.target.id == 'nickname') {
+					
+					if(nickname.style.display == 'block') {
+						nickname.style.display = 'none';
+					} else {
+						nickname.style.display = 'block';
+					}
+					password.style.display = 'none';
+					cell.style.display = 'none';
+				} else if (v.target.id == 'password') {
+					if(password.style.display == 'block') {
+						password.style.display = 'none';
+					} else {
+						password.style.display = 'block';
+					}
+					nickname.style.display = 'none';
+					cell.style.display = 'none';
+				} else {
+					if(cell.style.display == 'block') {
+						cell.style.display = 'none';
+					} else {
+						cell.style.display = 'block';
+					}
+					nickname.style.display = 'none';
+					password.style.display = 'none';
+				}
+			})
+		})
+	</script>
 </body>
 </html>

@@ -21,8 +21,8 @@ public class JDBCTemplate {
 		
 		driver = "oracle.jdbc.driver.OracleDriver";
 		url = "jdbc:oracle:thin:@localhost:1521:xe";
-		user = "BM";
-		password = "test11";
+		user = "vg";
+		password = "v1234";
 	}
 	
 	//내부클래스에 있으면 static이더라도 초기화 되지 않는다.
