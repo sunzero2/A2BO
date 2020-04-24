@@ -13,3 +13,7 @@ table {
 .privacyTd {
 	border-bottom: 1px solid;
 }
+
+.changeNickname, .changePw, .changeCell {
+	display: none;
+}

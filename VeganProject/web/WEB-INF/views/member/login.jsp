@@ -25,10 +25,10 @@
 		<div id="close" class="backPage"></div>
 		<div class="titleDiv" id="joinTitle">회원가입</div>
 		<form action="member/join" onsubmit="return validate();">
-			<input class="joinInput input1" type="text" placeholder="이름 입력"><br>
-			<input id="userEmail" class="joinEmail" type="text" placeholder="예) example@naver.com">
+			<input name="userName" class="joinInput input1" type="text" placeholder="닉네임 입력"><br>
+			<input name="userEmail" id="userEmail" class="joinEmail" type="text" placeholder="예) example@naver.com">
 			<button type="button" class="emailCheck" onclick="emailCheck();">확인</button>
-			<input id="userPwd" class="joinInput" type="password" placeholder="영어 소문자, 숫자 포함 8~15자로 입력"><br>
+			<input name="userPw" id="userPwd" class="joinInput" type="password" placeholder="영어 소문자, 숫자 포함 8~15자로 입력"><br>
 			<input class="joinInput" type="password" placeholder="비밀번호 재입력"><br>
 			<button id="joinBt" type="submit">등록하기</button>
 		</form>

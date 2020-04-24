@@ -43,7 +43,3 @@ function validate() {
 	return true;
 }
 			
-document.querySelector('#close').addEventListener('click', function(v) {
-	console.dir(v.target);
-})
-			

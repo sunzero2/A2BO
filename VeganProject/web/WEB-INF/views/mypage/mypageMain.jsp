@@ -15,6 +15,7 @@
 	<div class="mypageConWrapper">
 		<span>내가 찜한 카드</span>
 		<div class="likeMenuDiv">안녕?</div>
+		<div class="likeMenuDiv">안녕?</div>
 	</div>
 	
 	

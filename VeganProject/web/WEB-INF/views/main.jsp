@@ -12,27 +12,53 @@
 </head>
 <body>
 	<%@ include file="top/top.jsp"%>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
-	<h1>안녕하세요!</h1>
+	
+	<div class="content">
+
+		<div class="mainImage">
+			image hi
+		</div>
+
+		<div class="ingBox">
+			<div class="choice1line">
+				<div class="fxt">1<img src="../resources/image/money.jpg"></div>
+				<div class="pop">2<img src=""></div>
+				<div class="psc">3<img src=""></div>
+			</div>
+			
+			<div class="choice2line">
+				<div class="pol">4<img src=""></div>
+				<div class="lov">5<img src=""></div>
+				<div class="lto">6<img src=""></div>
+			</div>
+			
+			<div class="choice3line">
+				<div class="ovo">7<img src=""></div>
+				<div class="vgn">8<img src=""></div>	
+				<div class="ftn">9<img src=""></div>
+			</div>
+			
+		</div>
+		
+		<button class="">단계 확인하기</button>
+		
+		<div class="myLevel"></div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
+
+		<div class="menuList">
+				<div class="menuCard">
+					<div class="menuImage"><img src=""></div>
+					<div class="menuInfo">
+						<div class="menuName">메뉴 이름 : </div>
+						<div class="menuPoint">별점 : </div>	
+						<div class="menuAd">주소 : </div>	
+					</div>
+				</div>
+		</div>
+
+
+
+	</div>
+
 	
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
@@ -47,5 +73,6 @@
 	
 	<!-- 배너 스크립트입니다. -혜영 -->
 	<script src="/vgan/resources/js/top.js"></script>
+	<script src="/vgan/resources/js/iframe.js"></script>
 </body>
 </html>

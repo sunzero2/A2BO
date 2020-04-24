@@ -5,23 +5,21 @@ public class Member {
 	private String pw;
 	private String cell;
 	private String vLId;
+	private String userEmail;
 	private String nickname;
-	private String menuId;
-	private String likeYN;
 
 	public Member() {
 		super();
 	}
 
-	public Member(String userId, String pw, String cell, String vLId, String nickname, String menuId, String likeYN) {
+	public Member(String userId, String pw, String cell, String vLId, String userEmail, String nickname) {
 		super();
 		this.userId = userId;
 		this.pw = pw;
 		this.cell = cell;
 		this.vLId = vLId;
+		this.userEmail = userEmail;
 		this.nickname = nickname;
-		this.menuId = menuId;
-		this.likeYN = likeYN;
 	}
 
 	public String getUserId() {
@@ -55,7 +53,15 @@ public class Member {
 	public void setvLId(String vLId) {
 		this.vLId = vLId;
 	}
-	
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
 	public String getNickname() {
 		return nickname;
 	}
@@ -64,25 +70,9 @@ public class Member {
 		this.nickname = nickname;
 	}
 
-	public String getMenuId() {
-		return menuId;
-	}
-
-	public void setMenuId(String menuId) {
-		this.menuId = menuId;
-	}
-
-	public String getLikeYN() {
-		return likeYN;
-	}
-
-	public void setLikeYN(String likeYN) {
-		this.likeYN = likeYN;
-	}
-
 	@Override
 	public String toString() {
-		return "Member [userId=" + userId + ", pw=" + pw + ", cell=" + cell + ", vLId=" + vLId + ", nickname="
-				+ nickname + ", menuId=" + menuId + ", likeYN=" + likeYN + "]";
+		return "Member [userId=" + userId + ", pw=" + pw + ", cell=" + cell + ", vLId=" + vLId + ", userEmail="
+				+ userEmail + ", nickname=" + nickname + "]";
 	}
 }
