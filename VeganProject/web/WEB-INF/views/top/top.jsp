@@ -10,7 +10,7 @@
 		<a>회사소개</a>
 	</div>
 	
-	<c:if test="true">
+	<c:if test="${loginInfo == null}">
 		<div class="topLink join">
 			<a>회원가입</a>
 		</div>
@@ -18,9 +18,9 @@
 			<a>로그인</a>
 		</div>
 	</c:if>
-	<c:if test="false">
+	<c:if test="${loginInfo != null}">
 		<div class="topLink logout">
-			<a href="/vgan/mypage/logout">로그아웃</a>
+			<a href="/vgan/member/logout">로그아웃</a>
 		</div>
 		<div class="topLink mypage">
 			<a href="/vgan/mypage/main">마이페이지</a>

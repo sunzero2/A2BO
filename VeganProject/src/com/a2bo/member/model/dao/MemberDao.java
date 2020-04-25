@@ -17,8 +17,35 @@ public class MemberDao {
 		super();
 	}
 	
-	public void login() {
+	public Member login(Connection conn, String email, String pw) throws SQLException {
+		String sql = "select * from tmember where useremail='" + email + "' and pw='" + pw + "'";
+		Member member = null;
+		/*PreparedStatement pstm = null;*/
+		Statement stmt = null;
+		ResultSet rs = null;
 		
+		try {
+			stmt = conn.createStatement();
+			/*pstm = conn.prepareStatement(sql);
+			pstm.setString(1, email);
+			pstm.setString(2, pw);*/
+			
+			
+			rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				member = new Member();
+				member.setUserId(rs.getString(1));
+				member.setPw(rs.getString(2));
+				member.setCell(rs.getString(3));
+				member.setvLId(rs.getString(4));
+				member.setUserEmail(rs.getString(5));
+				member.setNickname(rs.getString(6));
+			}
+		} finally {
+			jdbc.close(rs, stmt);
+		}
+		
+		return member;
 	}
 	
 	public int join(Connection conn, Member member) throws SQLException {
