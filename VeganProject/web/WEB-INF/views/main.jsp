@@ -96,22 +96,12 @@
 						<div class="menuName">메뉴 이름 : </div>
 						<div class="menuPoint">별점 : </div>	
 						<div class="menuAd">주소 : </div>	
-						<button onclick="menu()">상세보기</button>
-						<script>
-						var xhr = new XMLHttpRequest();
-							function menu(){
-								xhr.open('https://www.iei.or.kr/main/main.kh');
-								xhr.send();
-							}
-						
-						
-						
-						</script>
+						<button class="ingoBtn">상세보기</button>
 						
 					</div>
 				</div>
 				<br><br><br>
-				<!-- <iframe src="https://www.iei.or.kr/main/main.kh"></iframe> -->
+				<iframe class="menuIfram"src="https://www.iei.or.kr/main/main.kh"></iframe>
 		</div>
 
 
