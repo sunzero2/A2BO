@@ -85,29 +85,24 @@
 			
 		</div>
 		
-		<button class="level" type="submit">단계 확인하기</button>
+		<button class="level" type="submit" onclick="menuList()">단계 확인하기</button>
 		
 		<div class="myLevel">나의 비건 단계 나오는 디브</div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 
 		<div class="menuList">
 				<div class="menuCard"><!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
-					<div class="menuImage"><img src="http://placehold.it/245x230"></div>
-					<div class="menuInfo">
-						<div class="menuName">메뉴 이름 : </div>
-						<div class="menuPoint">별점 : </div>	
-						<div class="menuAd">주소 : </div>	
-						<button class="ingoBtn">상세보기</button>
-						
-					</div>
+					
 				</div>
 				<br><br><br>
-				<iframe class="menuIfram"src="https://www.iei.or.kr/main/main.kh"></iframe>
+				<div class="menuInfoBox">
+				
+				</div>
 		</div>
 
 
 
 	</div>
-
+	<script src="/vgan/resources/js/main.js"></script><!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
 	
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
