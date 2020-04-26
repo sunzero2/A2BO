@@ -12,7 +12,7 @@ div, buttom, img {
 .content {
 	height:auto;
 	width:80%;
-	margin:0 auto;
+	margin: auto;
 	padding-top: 10%;
 }
 
@@ -103,5 +103,41 @@ div, buttom, img {
 
 .myLevel{
 	 border : 1px solid black;	
+}
+
+.menuCard{
+	padding-top: 20%;
+	top:20%;	
+	width : 85%;
+    height : 33%;
+	border : 3px solid black;
+    position : relative;
+	left:10%;
+	}
+	
+.menuCard div{
+     border : 1px solid black;
+      }
+
+.menuImage{
+	position : absolute;
+	top:12%;
+	left:5%;
+}
+
+.menuInfo{
+	position : absolute;
+	width: 70%;
+    height : 76%;
+	top:12%;
+	left:25%;
+}
+
+iframe{
+	padding-left:15%;
+	top : 50%;
+	width: 75%;
+	height: 100%;
+	border: 0;
 }
 

@@ -73,13 +73,25 @@
 
 		<div class="menuList">
 				<div class="menuCard"><!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
-					<div class="menuImage"><img src=""></div>
+					<div class="menuImage"><img src="http://placehold.it/245x230"></div>
 					<div class="menuInfo">
 						<div class="menuName">메뉴 이름 : </div>
 						<div class="menuPoint">별점 : </div>	
 						<div class="menuAd">주소 : </div>	
+						<button onclick="menu()">상세보기</button>
+						<script>
+						
+							function menu(){
+								 <iframe src="https://www.iei.or.kr/main/main.kh"></iframe>
+							}
+						
+						
+						
+						</script>
 					</div>
 				</div>
+				<br><br><br>
+				
 		</div>
 
 
