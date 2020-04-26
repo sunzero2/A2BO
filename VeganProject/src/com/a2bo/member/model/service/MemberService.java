@@ -23,6 +23,8 @@ public class MemberService {
 			member = mDao.login(conn, email, pw);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
 		}
 		
 		return member;

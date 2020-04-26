@@ -32,8 +32,6 @@ public class MemberController extends HttpServlet {
 		// 이렇게 contains로 해도 되고, equals로 해도 됨
 		// contains면 분기가 나눠지는 단어로 하면 되고, equals는 member/login, member/join 이런 식으로 해야 됨
 		if(command.contains("login")) {
-			System.out.println(request.getRequestURI());
-			System.out.println(request.getContextPath());
 			login(request, response);
 		} else if(command.contains("join")) {
 			System.out.println(request.getRequestURI());
@@ -53,27 +51,26 @@ public class MemberController extends HttpServlet {
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/success.jsp");
 		HttpSession session = request.getSession();
-		PrintWriter printWriter = response.getWriter();
 		String email = request.getParameter("userEmail");
 		String pw = request.getParameter("userPwd");
 		
-		System.out.println(email);
-		System.out.println(pw);
 		Member mem = mService.login(email, pw);
 		if(mem != null) {
 			session.setAttribute("loginInfo", mem);
 		}
 		
-		printWriter.print("<script>\nwindow.location.reload();\n</script>");
+		rd.forward(request, response);
 	}
 	
 	private void logOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/vgan/WEB-INF/views/main.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/main.jsp");
 		HttpSession session = request.getSession();
 		session.setAttribute("loginInfo", null);
-		
+		rd.forward(request, response);
 	}
+	
 	/**
 	 1. MethodName : join
 	 2. ClassName : MemberController.java

@@ -3,25 +3,6 @@ var span = document.querySelector('#pwdSpan');
 var check = document.querySelector('#checkSpan');
 var isSuccess = true;
 
-/*function userJoin() {
-	$.ajax({
-		url: "/vgan/member/join",
-		type: 'post',
-		data: {
-			"userName" : $('#userName').val(),
-			"userEmail" : $('#userEmail').val(),
-			"userPwd" : $('#userPwd').val()
-		},
-		success: function(data) {
-			if(data != "null") {
-				alert(data);
-				console.dir(this);
-				location.href = "http://localhost:8787/vgan/member/goin";
-			}
-		}
-	})
-}*/
-
 function emailCheck() {
 	$.ajax({
 		url: "/vgan/member/check",
