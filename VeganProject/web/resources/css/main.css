@@ -108,6 +108,16 @@ div, buttom, img {
 	 border : 1px solid black;	
 }
 
+
+.menuList{
+	border : 1px solid black;
+	width : 85%;
+	height : 70%;
+	left: 10%;
+
+
+}
+
 .menuCard{
 	padding-top: 20%;
 	top:20%;	
@@ -136,7 +146,7 @@ div, buttom, img {
 	left:25%;
 }
 
-iframe{
+.menuIfram{
 	padding-left:15%;
 	top : 50%;
 	width: 75%;
