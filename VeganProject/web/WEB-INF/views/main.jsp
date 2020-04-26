@@ -25,49 +25,67 @@
 			image hi
 		</div>
 		<br>
+		<h1>나의 단계확인하기</h1>
+		<h3>좋아하는 재료를 선택하세요</h3>
+		<br>
 		<div class="ingBox">
 			<div class="choiceline1">
-				<div id="Meat" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>육류</a></div>
+				<div id="Meat" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="meat" name="ing">육류</div>
 				
-				<div id="Poultry" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>가금류</a></div>
+				<div id="Poultry" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="poultry" name="ing">가금류</div>
 				
-				<div id="Seafood" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>어패류</a></div>
+				<div id="Seafood" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="seafood" name="ing">어패류</div>
 				
-				<div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>어류</a></div>
+				<div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="fishes" name="ing">어류</div>
 				
-				<div id="Mollusks" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>연체류</a></div>
+				<div id="Mollusks" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="mollusks" name="ing">연체류</div>
 				
 			</div>
 			
 			<div class="choiceline2">
-				<div id="Crustacean" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>갑각류</a></div>
+				<div id="Crustacean" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="crustacean" name="ing">갑각류</div>
 				
-				<div id="ShellFishes" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>조개류</a></div>
+				<div id="ShellFishes" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="shellFishes" name="ing">조개류</div>
 				
-				<div id="Eggs" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>난류</a></div>
+				<div id="Eggs" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="eggs" name="ing">난류</div>
 				
-				<div id="Oil" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>유지류</a></div>
+				<div id="Oil" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="oil" name="ing">유지류</div>
 				
-				<div id="Fungus" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>균류</a></div>
+				<div id="Fungus" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="fungus" name="ing">균류</div>
 				
 			</div>
 			
 			<div class="choiceline3">
-				<div id="Seaweed" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>해조류</a></div>
+				<div id="Seaweed" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="seaweed" name="ing">해조류</div>
 				
-				<div id="Vegetable" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>야채류</a></div>
+				<div id="Vegetable" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="vegetable" name="ing">야채류</div>
 				
-				<div id="Fruits" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>열매류</a></div>
+				<div id="Fruits" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="fruits" name="ing">열매류</div>
 				
-				<div id="Grains" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>곡류</a></div>
+				<div id="Grains" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="grains" name="ing">곡류</div>
 				
-				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div><a class="ingName"><br>유제품</a></div>
+				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+					<input type="radio" class="menuRadio" value="dairy" name="ing">유제품</div>
 				
 			</div>
 			
 		</div>
 		
-		<button class="">단계 확인하기</button>
+		<button class="level" type="submit">단계 확인하기</button>
 		
 		<div class="myLevel">나의 비건 단계 나오는 디브</div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 
@@ -80,18 +98,20 @@
 						<div class="menuAd">주소 : </div>	
 						<button onclick="menu()">상세보기</button>
 						<script>
-						
+						var xhr = new XMLHttpRequest();
 							function menu(){
-								 <iframe src="https://www.iei.or.kr/main/main.kh"></iframe>
+								xhr.open('https://www.iei.or.kr/main/main.kh');
+								xhr.send();
 							}
 						
 						
 						
 						</script>
+						
 					</div>
 				</div>
 				<br><br><br>
-				
+				<!-- <iframe src="https://www.iei.or.kr/main/main.kh"></iframe> -->
 		</div>
 
 
