@@ -20,20 +20,20 @@ div, buttom, img {
 	border: 1px solid black;
 	height:500px;
 	width:100%;
-	margin-top : -7%;
+	margin-top : -5%;
 	
 }
 
 .ingChoice{
 	border: 1px solid black;
-	height:200px;
+	height:auto;
 	width:100%;	
 }
 
 
 .choiceline1{
 	width : 100%;
-    height : 320px;
+    height : 80%;
     position : relative;
    
 	}
@@ -41,34 +41,34 @@ div, buttom, img {
 .choiceline1 div{
      width: 200px;
      height : 200px;
-     border : 1px solid black;
      position : absolute;
+     
 
       }
       
 .choiceline2{
 	width : 100%;
-    height : 320px;
+    height : 80%;
     position : relative;
+    padding-top : 15%;
 	}
 	
 .choiceline2 div{
      width: 200px;
      height : 200px;
-     border : 1px solid black;
      position : absolute;
       }
       
 .choiceline3{
 	width : 100%;
-    height : 320px;
+    height : 80%;
     position : relative;
+    padding-top : 15%;
 	}
 	
 .choiceline3 div{
      width: 200px;
      height : 200px;
-     border : 1px solid black;
      position : absolute;
 	  }
 	  
@@ -80,7 +80,7 @@ div, buttom, img {
 
 .radioBox{
 	margin-top:90%;
-	z-index : 100;
+	z-index: 100;
 }
 
 /* .menuRadio{
@@ -90,43 +90,37 @@ div, buttom, img {
 
 .ingItem1{
 	left :15%;
-	z-index : 3;
 }
 
 .ingItem2{
 	left: 30%;
-	z-index : 3;
 	}
 
 
 .ingItem3{
 	left: 45%;
-	z-index : 3;
 }
 
 
 .ingItem4{
 	left: 60%;
-	z-index : 3;
 }
 
 
 .ingItem5{
 	left: 75%;
-	z-index : 3;
 }
 
 
-.myLevel{
-	 border : 1px solid black;	
-}
+
 
 
 .menuList{
+	
 	border : 1px solid black;
 	width : 85%;
 	height : 70%;
-	left: 10%;
+	margin-left: 10%;
 }
 
 .menuCard{
@@ -134,9 +128,8 @@ div, buttom, img {
 	top:20%;	
 	width : 85%;
     height : 43%;
-	border : 3px solid black;	
     position : relative;
-	left:10%;
+	left:5%;
 	}
 	
 .menuCard div{
@@ -150,22 +143,27 @@ div, buttom, img {
 	
 }
 
+
+.leval{
+	margin-legt : 30%;
+	margin-top : 15%; 
+}
+
+.myLevel{
+	width: 70%;
+    height : 76%;
+    margin-left : 35%;
+}
+
+
 .menuInfo{
 	position : absolute;
 	width: 70%;
-    height : 76%;
+    height : 89%;
 	top:12%;
-	left:25%;
+	left:27.5%;
 	
 }
-
-/* .menuIfram{
-	padding-left:15%;
-	top : 50%;
-	width: 75%;
-	height: 100%;
-	border: 0;
-} */
 
 .menuIfram{
 	top : 150%; 
@@ -174,4 +172,4 @@ div, buttom, img {
 	left : 23%; 
 	position : absolute;
 }
-
+	

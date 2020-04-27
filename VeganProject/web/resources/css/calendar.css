@@ -115,47 +115,6 @@ calSub.jsp의 CSS 부분
 /* 
 calendar.jsp의 CSS 부분
 */
-.mainCalDayHead {
-	background: lightgray;
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	width: 1100px;
-	height: 40px;
-}
-
-.mainCalMonthRow {
-	width: 1100px;
-	height: 150px;
-}
-
-.mainCalDayDiv {
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	border-spacing: 0px;
-	border-bottom: 1px solid gray;
-}
-
-.mainCalTd {
-	height: inherit;
-	width: 220px;
-	padding: 0;
-}
-
-.mainCalTd span {
-	margin-top: 20%;	
-}
-
-.mainCalGrid {
-	border-left: 1px solid gray;	
-}
-
-.mainCalDayText {
-	position: relative;
-	width: inherit;
-	height: inherit;
-}
-
 .mainCalTotal {
 	float: right;
 	width: 300px;

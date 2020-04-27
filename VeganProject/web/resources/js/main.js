@@ -41,7 +41,7 @@ function create2(vals) {
 	return tr;
 }
 
-function menuList() {
+function menuList() { 	
 	var vals = $('input[type=text]', 1);
 	$('.menuCard').appendChild(create(vals));
 }
@@ -50,4 +50,34 @@ function menuList() {
 function menuInfoBox(){
 	var vals = $('input[type=text]', 1);
 	$('.menuInfoBox').appendChild(create2(vals));
+}
+
+
+//재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능 
+function count_ck(obj){
+
+	var chkbox = document.getElementsByName("ing");
+
+	var chkCnt = 0;
+
+	for(var i=0;i<chkbox.length; i++){
+
+		if(chkbox[i].checked){
+
+			chkCnt++;
+
+		}
+
+	}
+
+	if(chkCnt>=4){
+
+		alert("3개 이하만 선택하실수 있습니다.");
+
+		obj.checked = false;
+
+		return false;
+
+	}
+
 }

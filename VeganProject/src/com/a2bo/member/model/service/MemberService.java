@@ -35,9 +35,11 @@ public class MemberService {
 		Connection conn = jdbc.getConnection();
 		try {
 			res = mDao.join(conn, member);
+			System.out.println("service : " + res);
 			jdbc.commit(conn);
 		} catch (SQLException e) {
 			jdbc.rollback(conn);
+			e.printStackTrace();
 		} finally {
 			jdbc.close(conn);
 		}
