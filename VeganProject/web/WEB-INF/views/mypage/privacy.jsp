@@ -19,66 +19,81 @@
 	</c:if>
 	
 	<div class="mypageConWrapper"> 
-		<span>개인정보수정</span>
+		<div class="mypageTitle">개인정보수정</div>
 		<table>
-			<tr>
-				<th class="privacyTh" scope="row">닉네임</th>
-				<td class="privacyTd">
-					<div>${loginInfo.nickname}</div>
-					<button class="privacyBtn" id="nickname">수정</button>
-					<div class="changeNickname">
-						<form action="changeMember" method="post">
-							<input name="nickname" type="text" placeholder="변경할 닉네임">
-							<button>수정</button>
-						</form>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th class="privacyTh" scope="row">계정</th>
-				<td class="privacyTd">
-					<div>
-						<span>${loginInfo.userEmail}</span>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th class="privacyTh" scope="row">비밀번호</th>
-				<td class="privacyTd">
-					<div>현재 비밀번호를 입력하세요.</div>
-					<input id="pwdCheck" type="password"><br>
-					<button class="privacyBtn" id="password">수정</button>
-					<div class="changePw">
-						<form action="changeMember" method="post" onsubmit="return validate();">
-							<input name="password" id="userPwd" type="password" placeholder="새 비밀번호"><br>
-							<span id="pwdSpan" style="display: none; font-size: 13px;"></span>
-							<input type="password" id="userPwdCheck" placeholder="새 비밀번호 확인"><br>
-							<span id="checkSpan" style="display: none; font-size: 13px;"></span>
-							<button>수정</button>
-						</form>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th class="privacyTh" scope="row">핸드폰번호</th>
-				<td class="privacyTd">
-					<c:if test="${loginInfo.cell == null}">
-						<div>등록하신 핸드폰 번호가 없습니다.</div>
-					</c:if>
-					<c:if test="${loginInfo.cell != null}">
-						<div>${loginInfo.cell}</div>					
-					</c:if>
-					<button class="privacyBtn" id="cell">수정</button>
-					<div class="changeCell">					
-						<form action="changeMember" method="post">
-							<input name="cell" type="text" placeholder="변경할 핸드폰 번호">
-							<button>수정</button>
-						</form>
-					</div>
-				</td>
-			</tr>
+			<tbody>
+				<tr>
+					<th class="privacyTh" scope="row">
+						<div class="innerThDiv">닉네임</div>
+					</th>
+					<td class="privacyTd">
+						<div class="privacyTdTitle">${loginInfo.nickname}</div>
+						<button class="privacyBtn" id="nickname">수정</button>
+						<div class="changeNickname">
+							<form action="changeMember" method="post">
+								<input class="privacyInput" name="nickname" type="text" placeholder="변경할 닉네임"><br>
+								<button class="privacyBtn">수정</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th class="privacyTh" scope="row">
+						<div class="innerThDiv" style="margin-top: 0px;">계정</div>
+					</th>
+					<td class="privacyTd">
+						<div class="privacyTdTitle" style="position: relative;">${loginInfo.userEmail}</div>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th class="privacyTh" scope="row">
+						<div class="innerThDiv">비밀번호</div>
+					</th>
+					<td class="privacyTd">
+						<div class="privacyTdTitle">현재 비밀번호를 입력하세요.</div>
+						<input class="privacyInput" id="pwdCheck" type="password"><br>
+						<button class="privacyBtn" id="password">수정</button>
+						<div class="changePw">
+							<form action="changeMember" method="post" onsubmit="return validate();">
+								<input class="privacyInput" name="password" id="userPwd" type="password" placeholder="새 비밀번호"><br>
+								<span id="pwdSpan" style="display: none; font-size: 13px;"></span>
+								<input class="privacyInput" type="password" id="userPwdCheck" placeholder="새 비밀번호 확인"><br>
+								<span id="checkSpan" style="display: none; font-size: 13px;"></span>
+								<button class="privacyBtn">수정</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th class="privacyTh" scope="row">
+						<div class="innerThDiv">핸드폰번호</div>
+					</th>
+					<td class="privacyTd">
+						<c:if test="${loginInfo.cell == null}">
+							<div class="privacyTdTitle">등록하신 핸드폰 번호가 없습니다.</div>
+						</c:if>
+						<c:if test="${loginInfo.cell != null}">
+							<div class="privacyTdTitle">${loginInfo.cell}</div>					
+						</c:if>
+						<button class="privacyBtn" id="cell">수정</button>
+						<div class="changeCell">					
+							<form action="changeMember" method="post">
+								<input class="privacyInput" name="cell" type="text" placeholder="변경할 핸드폰 번호"><br>
+								<button class="privacyBtn">수정</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
+	<input id="userPw" type="hidden" value="${loginInfo.pw}">
 	<script src="/vgan/resources/js/top.js"></script>
 	<script src="/vgan/resources/js/privacy.js"></script>
 </body>

@@ -26,10 +26,6 @@ public class MemberDao {
 		
 		try {
 			stmt = conn.createStatement();
-			/*pstm = conn.prepareStatement(sql);
-			pstm.setString(1, email);
-			pstm.setString(2, pw);*/
-			
 			
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
@@ -49,7 +45,7 @@ public class MemberDao {
 	}
 	
 	public int join(Connection conn, Member member) throws SQLException {
-		String sql = "insert into tmember values(0, ?, null, null, ?, ?)";
+		String sql = "insert into tmember values(s_member.nextval, ?, null, null, ?, ?)";
 		PreparedStatement pstm = null;
 		int res = 0;
 		

@@ -10,67 +10,45 @@
 <link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/iframe.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
+<style>
+	table {
+		border: 1px solid #BDBDBD;
+		text-align: center;
+		width: 1100px;
+		height: 500px;
+		border-spacing: 0px;
+	}
+</style>
 </head>
-<body>
+<body onload="build();">
 	<%@ include file="../mypage/mypageNavi.jsp" %>
 	<%@ include file="../top/top.jsp" %>
 	
 	<div class="mypageConWrapper"> 
 		<div class="mainCalHeader">
-			<span>Calendar</span>
-			<span>이번 달 채식 횟수를 체크해보세요!</span>
-			<div class="">
-				<span>2020</span>
-				<a href="">저번 달</a>
-				<span>4</span>
-				<a href="">다음 달</a>
+			<div>
+				<div class="mypageTitle">Calendar</div>
+				<a style="float: right; font-size: 15px; margin-right: 10px;">메모장</a>
 			</div>
+			<span>이번 달 채식 횟수를 체크해보세요!</span>
 		</div>
 		<div class="mainCalContent">
-			<table class="mainCalDayHead">
-				<tbody>
-					<tr>
-						<th>일</th>
-						<th>월</th>
-						<th>화</th>
-						<th>수</th>
-						<th>목</th>
-						<th>금</th>
-						<th>토</th>
-					</tr>
-				</tbody>
+			<table align="center" id="calendar">
+				<tr>
+					<td class="tdTitle"><font color="#B3B6B3"><label onclick="beforeMonth()" id="before"></label></font></td>
+					<td class="tdTitle" colspan="5" align="center" id="yearmonth"></td>
+					<td class="tdTitle"><font color="#B3B6B3"><label onclick="nextMonth()" id="next"></label></font></td>
+				</tr>
+				<tr>
+					<td class="tdTitle" align="center"><font color="#FF9090">일</font></td>
+					<td class="tdTitle" align="center">월</td>
+					<td class="tdTitle" align="center">화</td>
+					<td class="tdTitle" align="center">수</td>
+					<td class="tdTitle" align="center">목</td>
+					<td class="tdTitle" align="center">금</td>
+					<td class="tdTitle" align="center"><font color=#7ED5E4>토</font></td>
+				</tr>
 			</table>
-			<div class="mainCalDayCon">
-				<!-- mainCalMonthRow 부분은 나중에 반복문 돌려서 출력할 것. -->
-				<div class="mainCalMonthRow">
-					<table class="mainCalDayDiv">
-						<tbody>
-							<tr>
-								<td class="mainCalTd"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-								<td class="mainCalTd mainCalGrid"></td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="mainCalDayText">
-						<tbody style="vertical-align: baseline;">
-							<tr>
-								<td class="maincalTd">1</td>
-								<td class="maincalTd">2</td>
-								<td class="maincalTd">3</td>
-								<td class="maincalTd">4</td>
-								<td class="maincalTd">5</td>
-								<td class="maincalTd">6</td>
-								<td class="maincalTd">7</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
 		</div>
 		<div class="mainCalTotal">
 			<span class="mainCalTotalSum">30</span>
@@ -86,5 +64,6 @@
 		</div>
 	</div>
 	<script src="/vgan/resources/js/iframe.js"></script>
+	<script src="/vgan/resources/js/calendar.js"></script>
 </body>
 </html>

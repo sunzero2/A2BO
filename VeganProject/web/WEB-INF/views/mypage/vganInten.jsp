@@ -12,7 +12,7 @@
 	<%@ include file="mypageNavi.jsp" %>
 	<%@ include file="../top/top.jsp" %>
 	<div class="mypageConWrapper"> 
-		<span>채식지향 설정</span>
+		<div class="mypageTitle">채식지향 설정</div>
 		OO 님의 채식 지향은 OOO입니다.
 	</div>
 	<script src="/vgan/resources/js/top.js"></script>
