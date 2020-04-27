@@ -35,7 +35,7 @@ function create2(vals) {
 	})
 
 	var dtd = document.createElement('td');
-	dtd.innerHTML = "<iframe name='menuIf' class='menuIfram'src='https://www.iei.or.kr/main/main.kh' style='top : 150%; width: 60%; height: 80%; left=30%; position : absolute;'></iframe>"
+	dtd.innerHTML = "<iframe name='menuIf' class='menuIfram'src='https://www.iei.or.kr/main/main.kh'></iframe>"
 	tr.appendChild(dtd);
 
 	return tr;
