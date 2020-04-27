@@ -29,78 +29,79 @@
 		<h3>좋아하는 재료를 선택하세요</h3>
 		<br>
 		<div class="ingBox">
+		
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="meat" name="ing">육류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="meat" name="ing" onclick="count_ck()">육류</div></div>
 				
 				<div id="Poultry" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="poultry" name="ing">가금류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="poultry" name="ing" onclick="count_ck()">가금류</div></div>
 				
 				<div id="Seafood" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="seafood" name="ing">어패류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seafood" name="ing" onclick="count_ck()">어패류</div></div>
 				
 				<div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="fishes" name="ing">어류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fishes" name="ing" onclick="count_ck()">어류</div></div>
 				
 				<div id="Mollusks" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="mollusks" name="ing">연체류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="mollusks" name="ing" onclick="count_ck()">연체류</div></div>
 				
 			</div>
 			
 			<div class="choiceline2">
 				<div id="Crustacean" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="crustacean" name="ing">갑각류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="crustacean" name="ing" onclick="count_ck()">갑각류</div></div>
 				
 				<div id="ShellFishes" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="shellFishes" name="ing">조개류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="shellFishes" name="ing" onclick="count_ck()">조개류</div></div>
 				
 				<div id="Eggs" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="eggs" name="ing">난류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="eggs" name="ing" onclick="count_ck()">난류</div></div>
 				
 				<div id="Oil" class="ingItem4">
 					<div class="ingImage">
 						<img src="http://placehold.it/200x150">
 					</div>
 					<div class="radioBox">
-						<input type="radio" class="menuRadio" value="oil" name="ing">유지류
+						<input type="checkbox" class="menuRadio" value="oil" name="ing" onclick="count_ck()">유지류
 					</div>
 				</div>
 				
 				<div id="Fungus" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="fungus" name="ing">균류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fungus" name="ing" onclick="count_ck()">균류</div></div>
 				
 			</div>
 			
 			<div class="choiceline3">
 				<div id="Seaweed" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="seaweed" name="ing">해조류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seaweed" name="ing" onclick="count_ck()">해조류</div></div>
 				
 				<div id="Vegetable" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="vegetable" name="ing">야채류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="vegetable" name="ing" onclick="count_ck()">야채류</div></div>
 				
 				<div id="Fruits" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="fruits" name="ing">열매류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fruits" name="ing" onclick="count_ck()">열매류</div></div>
 				
 				<div id="Grains" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="grains" name="ing">곡류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="grains" name="ing" onclick="count_ck()">곡류</div></div>
 				
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="radio" class="menuRadio" value="dairy" name="ing">유제품</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div>
 				
 			</div>
 			
 		</div>
-		
-		<button class="level" type="submit" onclick="menuList()">단계 확인하기</button>
-		
-		<div class="myLevel">나의 비건 단계 나오는 디브</div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
+		<div class = "leval">
+			<button type="submit" onclick="menuList()">단계 확인하기</button>
+		</div>
+		<div class="myLevel"><h1>나의 비건 단계 나오는 디브</h1></div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 
 		<div class="menuList">
 				<div class="menuCard"><!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
 					
 				</div>
 				<br><br><br>
-				<div class="menuInfoBox">
+					<div class="menuInfoBox">
 				
 				</div>
 		</div>
