@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
 </head>
-<body>
+<body onload="">
 <div style="height: 650px; width: 750px;">
 	<form>
 		<div class="subCalTitle">
-			<span>2020년 4월 24일</span>
+			
 		</div>
 		<img class="subCalMenuImg" src="http://placehold.it/300x470">
 		<div class="subCalIconDiv">
@@ -65,14 +65,6 @@
 		<button class="subCalBtn remove">삭제</button>
 	</form>
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>
-	
-	<script>
-		document.querySelectorAll('.subCalIconCheck').forEach(function(el) {
-			el.addEventListener('click', function(v) {
-				console.dir(v);
-			})
-		})
-	</script>
 </div>
 </body>
 </html>
