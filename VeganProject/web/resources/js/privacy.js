@@ -4,7 +4,7 @@ var cell = document.querySelector('.changeCell');
 var span = document.querySelector('#pwdSpan');
 var check = document.querySelector('#checkSpan');
 var isSuccess = true;
-		
+var userPw = document.querySelector('#userPw');
 		
 document.querySelectorAll('.privacyBtn').forEach(function(el) {
 	el.addEventListener('click', function(v) {
@@ -32,10 +32,8 @@ document.querySelectorAll('.privacyBtn').forEach(function(el) {
 })
 		
 function pwdCheck() {
-	var check = "${loginInfo.pw}";
 	var current = document.querySelector('#pwdCheck');
-	console.dir(current.value);
-	if(current.value == check) {
+	if(current.value == userPw.value) {
 		if(password.style.display == 'block') {
 			password.style.display = 'none';
 		} else {
@@ -51,9 +49,8 @@ function pwdCheck() {
 		
 function validate() {
 	var changePw = document.querySelector("#userPwd");
-	var userPw = "${loginInfo.pw}";
 			
-	if(changePw.value == userPw) {
+	if(changePw.value == userPw.value) {
 		alert("같은 비밀번호로 변경할 수 없습니다.");
 		isSuccess = false;
 	}

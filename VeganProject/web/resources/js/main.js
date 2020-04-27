@@ -18,7 +18,7 @@ function create(vals) {
 
 	var dtd = document.createElement('td');
 	dtd.innerHTML = "<div class='menuImage'><img src='http://placehold.it/245x230'></div><div class='menuInfo'><div class='menuName'>메뉴 이름 : </div><div class='menuPoint'>별점 : </div><div class='menuAd'>주소 : </div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>"
-		+ "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'>a태그 상세보기</a></div></div>"
+		+ "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>"
 	tr.appendChild(dtd);
 
 	return tr;
@@ -35,13 +35,13 @@ function create2(vals) {
 	})
 
 	var dtd = document.createElement('td');
-	dtd.innerHTML = "<iframe name='menuIf' class='menuIfram'src='https://www.iei.or.kr/main/main.kh' style='top : 150%; width: 60%; height: 80%; left=30%; position : absolute;'></iframe>"
+	dtd.innerHTML = "<iframe name='menuIf' class='menuIfram'src='https://www.iei.or.kr/main/main.kh'></iframe>"
 	tr.appendChild(dtd);
 
 	return tr;
 }
 
-function menuList() {
+function menuList() { 	
 	var vals = $('input[type=text]', 1);
 	$('.menuCard').appendChild(create(vals));
 }
@@ -50,4 +50,34 @@ function menuList() {
 function menuInfoBox(){
 	var vals = $('input[type=text]', 1);
 	$('.menuInfoBox').appendChild(create2(vals));
+}
+
+
+//재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능 
+function count_ck(obj){
+
+	var chkbox = document.getElementsByName("ing");
+
+	var chkCnt = 0;
+
+	for(var i=0;i<chkbox.length; i++){
+
+		if(chkbox[i].checked){
+
+			chkCnt++;
+
+		}
+
+	}
+
+	if(chkCnt>=4){
+
+		alert("3개 이하만 선택하실수 있습니다.");
+
+		obj.checked = false;
+
+		return false;
+
+	}
+
 }
