@@ -18,6 +18,13 @@ public class MainController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String uri = request.getRequestURI();
+		String conPath = request.getContextPath();
+		String command = uri.substring(conPath.length());
+		
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
