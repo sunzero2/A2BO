@@ -8,12 +8,46 @@ table {
 .privacyTh {
 	border-right: 1px solid;
 	border-bottom: 1px solid;
+	width: 150px;
+	text-align: left;
+	font-size: 14px;
 }
 
 .privacyTd {
 	border-bottom: 1px solid;
+	width: 600px;
+	padding: 15px;
 }
 
 .changeNickname, .changePw, .changeCell {
 	display: none;
+}
+
+.privacyTdTitle {
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+.privacyBtn {
+	border: 1px solid gray;
+	background: white;
+	width: 60px;
+	height: 30px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.innerThDiv {
+	margin-left: 10px;
+}
+
+.privacyInput {
+	margin: 10px;
+	width: 200px;
+	height: 25px;
+}
+
+tbody {
+	vertical-align: initial;
 }

@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="topBanner">
-	<a class="topLogo" href="<%=request.getContextPath()%>/welcome"><div>
+	<a class="topLogo" href="<%=request.getContextPath()%>/welcome">
+		<div>
 		<img src="">로고넣는곳
 	</div></a>
 	<div class="topLine">헤드라인 넣는곳</div>

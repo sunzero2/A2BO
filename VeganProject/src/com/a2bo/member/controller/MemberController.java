@@ -34,7 +34,6 @@ public class MemberController extends HttpServlet {
 		if(command.contains("login")) {
 			login(request, response);
 		} else if(command.contains("join")) {
-			System.out.println(request.getRequestURI());
 			join(request, response);
 		} else if(command.contains("goin")) {
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/login.jsp");
@@ -87,6 +86,7 @@ public class MemberController extends HttpServlet {
 		mem.setUserEmail(request.getParameter("userEmail"));
 		mem.setNickname(request.getParameter("userName"));
 
+		System.out.println("controller : " + mem.toString());
 		if(mService.join(mem) > 0) {
 			request.setAttribute("isSuccess", "가입을 축하드립니다!");
 			request.setAttribute("sendMsg", "가입하신 계정과 비밀번호로 로그인해주세요.");

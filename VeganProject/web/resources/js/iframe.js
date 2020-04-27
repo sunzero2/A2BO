@@ -8,7 +8,9 @@ document.querySelector('.closeBtn').addEventListener('click', function(v) {
 
 document.querySelectorAll('td').forEach(function(el) {
 	el.addEventListener('click', function(v) {
-		screenDiv.style.display = "block";
-		innerDiv.style.display = "block";
+		if(v.target.className != "tdTitle") {
+			screenDiv.style.display = "block";
+			innerDiv.style.display = "block";
+		}
 	})
 })
