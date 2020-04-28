@@ -5,6 +5,7 @@ function $(selector, ln) {
 		return document.querySelector(selector);
 	}
 }
+//나의 단계가 나온 후에 메뉴 카드 리스트가 나오게 하는 기능
 
 function create(vals) {
 	var tr = document.createElement('tr');
@@ -24,6 +25,7 @@ function create(vals) {
 	return tr;
 }
 
+//메뉴 리스트 카드에서 상세보기 했을 때 아이프레임으로 나오게 하는 기능
 function create2(vals) {
 	var tr = document.createElement('tr');
 	var td = document.createElement('td');
@@ -57,27 +59,31 @@ function menuInfoBox(){
 function count_ck(obj){
 
 	var chkbox = document.getElementsByName("ing");
-
 	var chkCnt = 0;
-
 	for(var i=0;i<chkbox.length; i++){
-
 		if(chkbox[i].checked){
-
 			chkCnt++;
-
 		}
-
 	}
-
 	if(chkCnt>=4){
-
 		alert("3개 이하만 선택하실수 있습니다.");
-
 		obj.checked = false;
-
 		return false;
-
 	}
+	
+}	
 
+//체크박스 버튼 값 가져오는 기능
+function radiock(){
+	var ck = document.querySelectorAll("menuRadio")
+	for(var i = 0; i < ck.length; i++){
+		if(ck[i].chcked){
+			alert(ck[i].value + "선택하셨습니다.");
+			break;
+		}
+	}
 }
+
+
+
+

@@ -26,73 +26,72 @@
 		</div>
 		<br>
 		<h1>나의 단계확인하기</h1>
-		<h3>좋아하는 재료를 선택하세요</h3>
+		<h3>좋아하는 재료를 3가지만 선택하세요</h3>
 		<br>
 		<div class="ingBox">
 		
 			<div class="choiceline1">
-				<div id="Meat" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="meat" name="ing" onclick="count_ck()">육류</div></div>
+				<div id="Meat" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="meat" name="ing" onclick="count_ck(this)">육류</div></div>
 				
-				<div id="Poultry" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="poultry" name="ing" onclick="count_ck()">가금류</div></div>
+				<div id="Poultry" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="poultry" name="ing" onclick="count_ck(this)">가금류</div></div>
 				
-				<div id="Seafood" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seafood" name="ing" onclick="count_ck()">어패류</div></div>
+				<div id="Seafood" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seafood" name="ing" onclick="count_ck(this)">어패류</div></div>
 				
-				<div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+				<!-- <div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fishes" name="ing" onclick="count_ck()">어류</div></div>
 				
 				<div id="Mollusks" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="mollusks" name="ing" onclick="count_ck()">연체류</div></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="mollusks" name="ing" onclick="count_ck()">연체류</div></div> -->
 				
 			</div>
 			
 			<div class="choiceline2">
-				<div id="Crustacean" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+				<!-- <div id="Crustacean" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="crustacean" name="ing" onclick="count_ck()">갑각류</div></div>
 				
 				<div id="ShellFishes" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="shellFishes" name="ing" onclick="count_ck()">조개류</div></div>
+				 -->
+				<div id="Eggs" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="eggs" name="ing" onclick="count_ck(this)">난류</div></div>
 				
-				<div id="Eggs" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="eggs" name="ing" onclick="count_ck()">난류</div></div>
-				
-				<div id="Oil" class="ingItem4">
+				<div id="Oil" class="ingItem2">
 					<div class="ingImage">
-						<img src="http://placehold.it/200x150">
+						<img src="http://placehold.it/300x200">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="oil" name="ing" onclick="count_ck()">유지류
+						<input type="checkbox" class="menuRadio" value="oil" name="ing" onclick="count_ck(this)">유지류
 					</div>
 				</div>
 				
-				<div id="Fungus" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fungus" name="ing" onclick="count_ck()">균류</div></div>
+				<div id="Fungus" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fungus" name="ing" onclick="count_ck(this)">균류</div></div>
 				
 			</div>
 			
 			<div class="choiceline3">
-				<div id="Seaweed" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seaweed" name="ing" onclick="count_ck()">해조류</div></div>
+				<div id="Seaweed" class="ingItem1"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="seaweed" name="ing" onclick="count_ck(this)">해조류</div></div>
 				
-				<div id="Vegetable" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="vegetable" name="ing" onclick="count_ck()">야채류</div></div>
+				<div id="Vegetable" class="ingItem2"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="vegetable" name="ing" onclick="count_ck(this)">야채류</div></div>
 				
-				<div id="Fruits" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fruits" name="ing" onclick="count_ck()">열매류</div></div>
+				<div id="Fruits" class="ingItem3"><div class="ingImage"><img src="http://placehold.it/300x200"></div>
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fruits" name="ing" onclick="count_ck(this)">열매류</div></div>
 				
-				<div id="Grains" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
+				<!-- <div id="Grains" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="grains" name="ing" onclick="count_ck()">곡류</div></div>
 				
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
-					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div>
-				
+					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
 			
 		</div>
 		<div class = "leval">
-			<button type="submit" onclick="menuList()">단계 확인하기</button>
+			<button type="submit" onclick="radiock()">단계 확인하기</button>
 		</div>
 		<div class="myLevel"><h1>나의 비건 단계 나오는 디브</h1></div><!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 

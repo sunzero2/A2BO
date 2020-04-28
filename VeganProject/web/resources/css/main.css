@@ -50,7 +50,7 @@ div, buttom, img {
 	width : 100%;
     height : 80%;
     position : relative;
-    padding-top : 15%;
+    padding-top : 23%;
 	}
 	
 .choiceline2 div{
@@ -63,7 +63,7 @@ div, buttom, img {
 	width : 100%;
     height : 80%;
     position : relative;
-    padding-top : 15%;
+    padding-top : 23%;
 	}
 	
 .choiceline3 div{
@@ -79,7 +79,7 @@ div, buttom, img {
 }
 
 .radioBox{
-	margin-top:90%;
+	margin-top:100%;
 	z-index: 100;
 }
 
@@ -89,27 +89,27 @@ div, buttom, img {
 }	 */  
 
 .ingItem1{
-	left :15%;
+	left :7%;
 }
 
 .ingItem2{
-	left: 30%;
+	left: 40%;
 	}
 
 
 .ingItem3{
-	left: 45%;
+	left: 73%;
 }
 
 
-.ingItem4{
+/* .ingItem4{
 	left: 60%;
 }
 
 
 .ingItem5{
 	left: 75%;
-}
+} */
 
 
 
