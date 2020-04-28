@@ -77,7 +77,7 @@ function count_ck(obj){
 function radiock(){
 	var ck = document.querySelectorAll("menuRadio")
 	for(var i = 0; i < ck.length; i++){
-		if(ck[i].chcked){
+		if(ck[i].chcked == true){
 			alert(ck[i].value + "선택하셨습니다.");
 			break;
 		}
