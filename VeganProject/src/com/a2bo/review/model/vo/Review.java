@@ -1,30 +1,49 @@
-package com.a2bo.review.model.vo;
+package vg.review.model.vo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Review {
-	private String reviewTitle;
-	private String reviewContents;
-	private int starRating;
-	private int boardNum;
-	private Date regDate;
-	private String menuId;
-	private String reviewWriter;
+public class Review implements Serializable{
 
-	public Review() {
-		super();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3179650745480378326L;
+
+	private int reviewNo;
+	private String reviewTitle;
+	private String reviewWriter;
+	private Date reviewDate;
+	private String reviewContent;
+	private int reviewStar;
+	private String menuId;
+	private String original_filepath;
+	private String rename_filepath;
+	
+	public Review(){
+		
 	}
 
-	public Review(String reviewTitle, String reviewContents, int starRating, int boardNum, Date regDate, String menuId,
-			String reviewWriter) {
+	public Review(int reviewNo, String reviewTitle, String reviewWriter, Date reviewDate, String reviewContent,
+			int reviewStar, String menuId, String original_filepath, String rename_filepath) {
 		super();
+		this.reviewNo = reviewNo;
 		this.reviewTitle = reviewTitle;
-		this.reviewContents = reviewContents;
-		this.starRating = starRating;
-		this.boardNum = boardNum;
-		this.regDate = regDate;
-		this.menuId = menuId;
 		this.reviewWriter = reviewWriter;
+		this.reviewDate = reviewDate;
+		this.reviewContent = reviewContent;
+		this.reviewStar = reviewStar;
+		this.menuId = menuId;
+		this.original_filepath = original_filepath;
+		this.rename_filepath = rename_filepath;
+	}
+
+	public int getReviewNo() {
+		return reviewNo;
+	}
+
+	public void setReviewNo(int reviewNo) {
+		this.reviewNo = reviewNo;
 	}
 
 	public String getReviewTitle() {
@@ -35,36 +54,36 @@ public class Review {
 		this.reviewTitle = reviewTitle;
 	}
 
-	public String getReviewContents() {
-		return reviewContents;
+	public String getReviewWriter() {
+		return reviewWriter;
 	}
 
-	public void setReviewContents(String reviewContents) {
-		this.reviewContents = reviewContents;
+	public void setReviewWriter(String reviewWriter) {
+		this.reviewWriter = reviewWriter;
 	}
 
-	public int getStarRating() {
-		return starRating;
+	public Date getReviewDate() {
+		return reviewDate;
 	}
 
-	public void setStarRating(int starRating) {
-		this.starRating = starRating;
+	public void setReviewDate(Date reviewDate) {
+		this.reviewDate = reviewDate;
 	}
 
-	public int getBoardNum() {
-		return boardNum;
+	public String getReviewContent() {
+		return reviewContent;
 	}
 
-	public void setBoardNum(int boardNum) {
-		this.boardNum = boardNum;
+	public void setReviewContent(String reviewContent) {
+		this.reviewContent = reviewContent;
 	}
 
-	public Date getRegDate() {
-		return regDate;
+	public int getReviewStar() {
+		return reviewStar;
 	}
 
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setReviewStar(int reviewStar) {
+		this.reviewStar = reviewStar;
 	}
 
 	public String getMenuId() {
@@ -75,18 +94,36 @@ public class Review {
 		this.menuId = menuId;
 	}
 
-	public String getReviewWriter() {
-		return reviewWriter;
+	public String getOriginal_filepath() {
+		return original_filepath;
 	}
 
-	public void setReviewWriter(String reviewWriter) {
-		this.reviewWriter = reviewWriter;
+	public void setOriginal_filepath(String original_filepath) {
+		this.original_filepath = original_filepath;
+	}
+
+	public String getRename_filepath() {
+		return rename_filepath;
+	}
+
+	public void setRename_filepath(String rename_filepath) {
+		this.rename_filepath = rename_filepath;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
 	public String toString() {
-		return "Review [reviewTitle=" + reviewTitle + ", reviewContents=" + reviewContents + ", starRating="
-				+ starRating + ", boardNum=" + boardNum + ", regDate=" + regDate + ", menuId=" + menuId
-				+ ", reviewWriter=" + reviewWriter + "]";
+		return "Review [reviewNo=" + reviewNo + ", reviewTitle=" + reviewTitle + ", reviewWriter=" + reviewWriter
+				+ ", reviewDate=" + reviewDate + ", reviewContent=" + reviewContent + ", reviewStar=" + reviewStar
+				+ ", menuId=" + menuId + ", original_filepath=" + original_filepath + ", rename_filepath="
+				+ rename_filepath + "]";
 	}
+
+	
+	
+	
+	
 }

@@ -10,15 +10,6 @@
 <link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/iframe.css"/>
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
-<style>
-	table {
-		border: 1px solid #BDBDBD;
-		text-align: center;
-		width: 1100px;
-		height: 500px;
-		border-spacing: 0px;
-	}
-</style>
 </head>
 <body onload="build();">
 	<%@ include file="../mypage/mypageNavi.jsp" %>
@@ -32,21 +23,25 @@
 			</div>
 			<span>이번 달 채식 횟수를 체크해보세요!</span>
 		</div>
-		<div class="mainCalContent">
-			<table align="center" id="calendar">
+		<div class="mainCalTable">
+			<table class="mainCalTable" id="calendar">
 				<tr>
-					<td class="tdTitle"><font color="#B3B6B3"><label onclick="beforeMonth()" id="before"></label></font></td>
-					<td class="tdTitle" colspan="5" align="center" id="yearmonth"></td>
-					<td class="tdTitle"><font color="#B3B6B3"><label onclick="nextMonth()" id="next"></label></font></td>
+					<td class="tdTitle">
+						<label onclick="beforeMonth();" id="before"></label>
+					</td>
+					<td class="tdTitle" colspan="5" id="yearmonth"></td>
+					<td class="tdTitle">
+						<label onclick="nextMonth();" id="next"></label>
+					</td>
 				</tr>
 				<tr>
-					<td class="tdTitle" align="center"><font color="#FF9090">일</font></td>
-					<td class="tdTitle" align="center">월</td>
-					<td class="tdTitle" align="center">화</td>
-					<td class="tdTitle" align="center">수</td>
-					<td class="tdTitle" align="center">목</td>
-					<td class="tdTitle" align="center">금</td>
-					<td class="tdTitle" align="center"><font color=#7ED5E4>토</font></td>
+					<td class="tdTitle" style="color: #FF9090;">일</td>
+					<td class="tdTitle">월</td>
+					<td class="tdTitle">화</td>
+					<td class="tdTitle">수</td>
+					<td class="tdTitle">목</td>
+					<td class="tdTitle">금</td>
+					<td class="tdTitle" style="color: #7ED5E4;">토</td>
 				</tr>
 			</table>
 		</div>
@@ -63,7 +58,7 @@
 			<iframe class="iframe" src="http://localhost:8787/vgan/calendar/calSub"></iframe>
 		</div>
 	</div>
-	<script src="/vgan/resources/js/iframe.js"></script>
 	<script src="/vgan/resources/js/calendar.js"></script>
+	<script src="/vgan/resources/js/iframe.js"></script>
 </body>
 </html>
