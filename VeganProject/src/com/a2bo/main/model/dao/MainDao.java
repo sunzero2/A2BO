@@ -23,6 +23,7 @@ public class MainDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		
+		String sql = "select * from "
 	
 		
 		
