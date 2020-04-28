@@ -11,7 +11,6 @@
 <body>
 	<%@ include file="../top/top.jsp" %>
 	<%@ include file="mypageNavi.jsp" %>
-	
 	<div class="mypageConWrapper">
 		<div class="mypageTitle">내가 찜한 카드</div>
 		<div class="likeMenuDiv">안녕?</div>

@@ -1,7 +1,7 @@
 package com.a2bo.calendar.model.vo;
 
 public class Calendar {
-	private String userId;
+	private int userId;
 	private String cDate;
 	private String icon;
 	private String cMenu;
@@ -12,7 +12,7 @@ public class Calendar {
 		super();
 	}
 
-	public Calendar(String userId, String cDate, String icon, String cMenu, int cPrice, String cCont) {
+	public Calendar(int userId, String cDate, String icon, String cMenu, int cPrice, String cCont) {
 		super();
 		this.userId = userId;
 		this.cDate = cDate;
@@ -22,11 +22,11 @@ public class Calendar {
 		this.cCont = cCont;
 	}
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

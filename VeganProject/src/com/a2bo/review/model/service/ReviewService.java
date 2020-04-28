@@ -87,11 +87,11 @@ public class ReviewService {
 		return res;
 	}
 	
-	public int getStarrate(Review review) {
+	public int getStarrate(String menuid) {
 		int res = 0;
 		Connection conn = jdbc.getConnection();
 		try {
-			res = rDao.getstarrate(conn, review);
+			res = rDao.getStarrate(conn, menuid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -99,39 +99,34 @@ public class ReviewService {
 		}
 		return res;
 	}
-	
-	public void contentCnt() {
-		
-	}
    
-   public Review selectNotice(int reviewNo) {
-	   Review review = null;
-	   Connection conn = jdbc.getConnection();
-	   
-	   try {
-		review=rDao.selectNotice(conn,reviewNo);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}finally {
-		jdbc.close(conn);
+	public int contentCnt (String menuid) {
+		
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		try {
+			res=rDao.contentCnt(conn, menuid);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		return res;
 	}
-	return review;
-   }
-  
-	   
-	   public Map<String, Object> selectNoticeList(String orderby, int currentPage, int cntPerPage){
+		
+	//선택한 메뉴의 리뷰리스트를 nlist키값에 담아 페이지 수와 갯수에맞게 뿌려줌
+	   public Map<String, Object> selectedRevList(String menuid, int currentPage, int cntPerPage){
 	       Map<String, Object> res = new HashMap<>();
 	       Connection con = jdbc.getConnection();
 	       Paging p = null;
-	       List<Notice> nlist = null;
+	       List<Review> rlist = null;
 	       
 	       try {
-	         p = new Paging(nDao.contentCnt(con),currentPage, cntPerPage);
-	         nlist = nDao.selectNoticeList(con, p, orderby);
+	         p = new Paging(rDao.contentCnt(con, menuid),currentPage, cntPerPage);
+	         rlist = rDao.selectedRevList(con, p);
 	         res.put("paging", p);
-	         res.put("nlist", nlist);
+	         res.put("nlist", rlist);
 	      } catch (SQLException e) {
-	         // TODO Auto-generated catch block
 	         e.printStackTrace();
 	      } finally {
 	    	  jdbc.close(con);

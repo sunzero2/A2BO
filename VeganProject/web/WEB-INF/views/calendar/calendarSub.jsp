@@ -8,63 +8,71 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
 </head>
-<body onload="">
+<body>
+<c:if test="${success != null}">
+	<script>
+		window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
+	</script>
+</c:if>
+
 <div style="height: 650px; width: 750px;">
-	<form>
-		<div class="subCalTitle">
-			
+	<form action="addEvent">
+		<div class="subCalTitle"></div>
+		<div>
+			<textarea class="subCalMenuContent" name="content" placeholder="오늘의 일기를 작성해보세요!(최대 300자까지 입력가능)" maxlength=300></textarea><br>
 		</div>
-		<img class="subCalMenuImg" src="http://placehold.it/300x470">
 		<div class="subCalIconDiv">
-			<div class="subCalSelectDiv  ">
-				<input class="subCalIconCheck" type="checkbox">
+			<div class="subCalSelectDiv">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="FXT">
 				<span class="subCalIcon">플렉시테리언</span>
 			</div>
 			<div class="subCalSelectDiv col2" style="">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="POP">
 				<span class="subCalIcon">폴로페스코</span>
 			</div>
 			<div class="subCalSelectDiv col3">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="PSC">
 				<span class="subCalIcon">페스코</span>
 			</div>
 			<div class="subCalSelectDiv row2">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="POL">
 				<span class="subCalIcon">폴로</span>
 			</div>
 			<div class="subCalSelectDiv col2 row2">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="LOV">
 				<span class="subCalIcon">락토오보</span>
 			</div>
 			<div class="subCalSelectDiv col3 row2">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="LTO">
 				<span class="subCalIcon">락토</span>
 			</div>
 			<div class="subCalSelectDiv row3">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="OVO">
 				<span class="subCalIcon">오보</span>
 			</div>
 			<div class="subCalSelectDiv col2 row3">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="VGN">
 				<span class="subCalIcon">비건</span>
 			</div>
 			<div class="subCalSelectDiv col3 row3">
-				<input class="subCalIconCheck" type="checkbox">
+				<input name="inten" class="subCalIconCheck" type="checkbox" value="FTN">
 				<span class="subCalIcon">프루테리언</span>
 			</div>
 		</div>
 		<div class="subCalInputDiv subCalPrice">
 			<div class="subCalInputTitle">가격</div>
-			<input class="subCalInput" type="text">
+			<input name="price" class="subCalInput" type="text">
 		</div>
 		<div class="subCalInputDiv subCalMenu">
 			<div class="subCalInputTitle">음식</div>
-			<input class="subCalInput" type="text">
+			<input name="menu" class="subCalInput" type="text">
 		</div>
-		<button class="subCalBtn save">저장</button>
-		<button class="subCalBtn remove">삭제</button>
+		<button name="save" class="subCalBtn save">저장</button>
+		<button name="remove" class="subCalBtn remove">삭제</button>
+		<input name="date" type="hidden" value="">
 	</form>
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>
 </div>
+<script src="/vgan/resources/js/iframe.js"></script>
 </body>
 </html>
