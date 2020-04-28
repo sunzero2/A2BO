@@ -1,5 +1,6 @@
 package com.a2bo.review.model.dao;
 
+import java.awt.Window;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -132,11 +133,11 @@ public class ReviewDao {
 
 	// 각 메뉴 별점 : 선택메뉴의 전체 별점총점가져오기 나누기 카운트별점행수
 
-	public int getstarrate(Connection conn, Review review) throws SQLException {
+	public int getStarrate(Connection conn, String menuid) throws SQLException {
 
 		int res = 0;
 
-		String sql = "select sum(revstar)/count(revstar) from treivew where menuid =" + review.getMenuId();
+		String sql = "select sum(revstar)/count(revstar) from treivew where menuid =" + menuid;
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -152,12 +153,12 @@ public class ReviewDao {
 		return res;
 	}
 
-	// 전체 리뷰게시물 갯수 가져오기
-	public int contentCnt(Connection conn) throws SQLException {
+	// 선택된 메뉴  리뷰게시물 갯수 가져오기
+	public int contentCnt(Connection conn, String menuid) throws SQLException {
 
 		int res = 0;
 
-		String sql = "select count(*) from treview";
+		String sql = "select count(revMenu) from treview where meuid = "+ menuid;
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -172,33 +173,43 @@ public class ReviewDao {
 		}
 		return res;
 	}
+	
+	//선택한 메뉴의 리뷰리스트를 nlist키값에 담아 페이지 수와 갯수에맞게 뿌려줌
+	public List<Review> selectedRevList(Connection conn, Paging p) throws SQLException {
 
-	/*
-	 * public List<Review> selectNoticeList(Connection conn, Paging p, String
-	 * orderby) throws SQLException{ System.out.println(p.toString()); List<Review>
-	 * nlist = new ArrayList<Review>(); String sql =
-	 * "select * from (select rownum rnum, n1.* " + "from (" +
-	 * "select * from tb_notice" + " order by "+ orderby +" desc)n1)" +
-	 * "where rnum between ? and ?";
-	 * 
-	 * PreparedStatement pstm=null; ResultSet rs = null;
-	 * 
-	 * try { pstm = conn.prepareStatement(sql); pstm.setInt(1, p.getStart());
-	 * pstm.setInt(2, p.getEnd());
-	 * 
-	 * myRevs.setReviewTitle(rs.getString(2));
-	 * myRevs.setReviewWriter(rs.getString(3));
-	 * myRevs.setReviewContent(rs.getString(5)); myRevs.setReviewStar(rs.getInt(6));
-	 * myRevs.setMenuId(rs.getString(7));
-	 * myRevs.setOriginal_filepath(rs.getString(8));
-	 * myRevs.setRename_filepath(rs.getString(9));
-	 * 
-	 * rs = pstm.executeQuery(); while(rs.next()) { Review notice = new Review();
-	 * notice.setReviewNo(rs.getInt(2)); notice.setNoticeTitle(rs.getString(3));
-	 * notice.setNoticeDate(rs.getDate(4));
-	 * notice.setNoticeContent(rs.getString(5));
-	 * 
-	 * nlist.add(notice); } }finally { jdt.close(pstm); } return nlist; }
-	 */
+		List<Review> rlist = new ArrayList<Review>();
+
+		String sql = "select * from (select rownum rnum, n1.* from ("
+				+ "select * from treview order by revDate desc)n1)" + "where rnum between ? and ?";
+
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, p.getStart());
+			pstm.setInt(2, p.getEnd());
+
+			rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				Review review = new Review();			
+				review.setReviewTitle(rs.getString(2));
+				review.setReviewWriter(rs.getString(3));
+				review.setReviewDate(rs.getDate(4));
+				review.setReviewContent(rs.getString(5));
+				review.setReviewStar(rs.getInt(6));
+				review.setMenuId(rs.getString(7));
+				review.setOriginal_filepath(rs.getString(8));
+				review.setRename_filepath(rs.getString(9));
+
+				rlist.add(review);
+			}
+		} finally {
+			jdt.close(pstm);
+		}
+		return rlist;
+
+	}
 
 }
