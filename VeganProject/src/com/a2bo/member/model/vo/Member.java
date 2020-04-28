@@ -9,7 +9,7 @@ public class Member implements Serializable{
 	 */
 	private static final long serialVersionUID = 2493957361653714231L;
 	
-	private String userId;
+	private int userId;
 	private String pw;
 	private String cell;
 	private String vLId;
@@ -20,7 +20,7 @@ public class Member implements Serializable{
 		super();
 	}
 
-	public Member(String userId, String pw, String cell, String vLId, String userEmail, String nickname) {
+	public Member(int userId, String pw, String cell, String vLId, String userEmail, String nickname) {
 		super();
 		this.userId = userId;
 		this.pw = pw;
@@ -30,11 +30,11 @@ public class Member implements Serializable{
 		this.nickname = nickname;
 	}
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

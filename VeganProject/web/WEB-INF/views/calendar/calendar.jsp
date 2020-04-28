@@ -15,6 +15,13 @@
 <body onload="build();">
 	<%@ include file="../mypage/mypageNavi.jsp" %>
 	<%@ include file="../top/top.jsp" %>
+		
+	<c:if test="${loginInfo == null}">
+		<script>
+			alert("로그인이 종료되어 메인페이지로 이동합니다.");
+			location.href = "http://localhost:8787/vgan/welcome";
+		</script>
+	</c:if>
 	
 	<div class="mypageConWrapper"> 
 		<div class="mainCalHeader">

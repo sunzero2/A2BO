@@ -24,8 +24,22 @@ public class MypageDao {
 		
 	}
 	
-	public void changeVL() {
+	public int changeVL(Connection conn, String vl, int userId) throws SQLException {
+		String sql = "update tmember set vlid=? where userid=?";
+		PreparedStatement pstm = null;
+		int res = 0;
 		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, vl);
+			pstm.setInt(2, userId);
+			res = pstm.executeUpdate();
+			
+			System.out.println("dao res : " + res);
+		} finally {
+			jdbc.close(pstm);
+		}
+		return res;
 	}
 	
 	public int changeMember(Connection conn, String nickname, String pw, String cell) throws SQLException {

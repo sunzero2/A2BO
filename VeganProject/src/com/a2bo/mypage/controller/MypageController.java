@@ -25,6 +25,7 @@ public class MypageController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getRequestURI().substring(request.getContextPath().length());
 		RequestDispatcher rd = null;
+		System.out.println(request.getRequestURI());
 		
 		if(command.contains("main")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/mypage/mypageMain.jsp");
@@ -37,6 +38,8 @@ public class MypageController extends HttpServlet {
 			rd.forward(request, response);
 		} else if(command.contains("changeMember")) {
 			changeMember(request, response);
+		} else if(command.contains("intenVL")) {
+			changeVL(request, response);
 		}
 		
 	}
@@ -55,9 +58,37 @@ public class MypageController extends HttpServlet {
 		
 	}
 	
-	// 회원의 채식지향 변경 메서드
+	/**
+	 1. MethodName : changeVL
+	 2. ClassName : MypageController.java
+	 3. Comment : 회원의 채식지향 변경 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 4. 29.
+	 */
 	private void changeVL(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/mypage/main.jsp");
+		HttpSession session = request.getSession();
+
+		// select의 option 값을 가져옴
+		String vl = request.getParameter("vLevel");
+		System.out.println("vl 가져오나 ? : " + vl);
 		
+		// session 변경하기 위한 member 객체 선언
+		Member member = (Member) session.getAttribute("loginInfo");
+		
+		// 매개변수로 vl이랑 userid 보내서 정상 작동됐는지 확인
+		int res = mService.changeVL(vl, member.getUserId());
+		
+		// 0보다 크면 제대로 실행된 거니까 loginInfo 안에 들어갈 member의 값을 바꿔줌
+		if(res > 0) {
+			member.setvLId(vl);
+			session.setAttribute("loginInfo", member);
+			request.setAttribute("alertMsg", "정상적으로 변경되었습니다.");
+		} else {
+			request.setAttribute("alertMsg", "변경에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		
+		rd.forward(request, response);
 	}
 	
 	

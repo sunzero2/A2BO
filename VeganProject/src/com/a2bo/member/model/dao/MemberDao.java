@@ -30,7 +30,7 @@ public class MemberDao {
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
 				member = new Member();
-				member.setUserId(rs.getString(1));
+				member.setUserId(rs.getInt(1));
 				member.setPw(rs.getString(2));
 				member.setCell(rs.getString(3));
 				member.setvLId(rs.getString(4));

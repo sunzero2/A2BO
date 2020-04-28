@@ -18,7 +18,9 @@ document.querySelector('.topLogo').addEventListener('click', function() {
 	location.href='localhost:8787/vgan/welcome';
 })
 
-document.querySelector('.closeBtn').addEventListener('click', function(v) {
-	screenDiv.style.display = "none";
-	innerDiv.style.display = "none";
-})
+if(document.querySelector('.closeBtn') != null) {
+	document.querySelector('.closeBtn').addEventListener('click', function(v) {
+		screenDiv.style.display = "none";
+		innerDiv.style.display = "none";
+	})
+}

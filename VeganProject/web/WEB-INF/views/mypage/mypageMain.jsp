@@ -11,6 +11,14 @@
 <body>
 	<%@ include file="../top/top.jsp" %>
 	<%@ include file="mypageNavi.jsp" %>
+	
+	<c:if test="${loginInfo == null}">
+		<script>
+			alert("로그인이 종료되어 메인페이지로 이동합니다.");
+			location.href = "http://localhost:8787/vgan/welcome";
+		</script>
+	</c:if>
+	
 	<div class="mypageConWrapper">
 		<div class="mypageTitle">내가 찜한 카드</div>
 		<div class="likeMenuDiv">안녕?</div>

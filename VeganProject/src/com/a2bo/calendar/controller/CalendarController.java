@@ -56,7 +56,7 @@ public class CalendarController extends HttpServlet {
 		int cPrice = Integer.parseInt(request.getParameter("price"));
 		String cMenu = request.getParameter("menu");
 		String date = request.getParameter("date");
-		int userId = Integer.parseInt(member.getUserId());
+		int userId = member.getUserId();
 		
 		String year = date.substring(0, 4);
 		String month = "";

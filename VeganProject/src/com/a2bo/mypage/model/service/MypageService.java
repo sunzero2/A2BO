@@ -24,8 +24,20 @@ public class MypageService {
 
 	}
 
-	public void changeVL() {
-
+	public int changeVL(String vl, int userId) {
+		System.out.println("service vl : " + vl);
+		System.out.println("service userId : " + userId);
+		
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		try {
+			res = mDao.changeVL(conn, vl, userId);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		}
+		return res;
 	}
 
 	public int changeMember(String nickname, String pw, String cell) {
