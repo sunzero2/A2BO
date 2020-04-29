@@ -20,7 +20,7 @@ public class MainService {
 		super();
 	}
 	
-	public Map<Integer, Object> searchingVg(List<Integer> vg) {
+	public MainVlv searchingVg(List<Integer> vg) {
 		
 		Connection conn = jdt.getConnection();
 		Map<Integer, Object> vgMap = new HashMap<>();
@@ -34,10 +34,9 @@ public class MainService {
 		}
 		
 		
-		return vgMap;
+		return mvl;
 	}
+
+
 	
-	public Map<Integer, Object> searchingMenu() {
-		return null;
-	}
 }
