@@ -29,6 +29,7 @@
 		</div>
 		<div class="ingBox">
 		<form action="/vgan/main/searchingVg">
+		<table>
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1">
 					<div class="ingImage">
@@ -81,7 +82,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="4"
-							name="checkbox[]" onclick="count_ck(this)">난류
+							name="ing" onclick="count_ck(this)">난류
 					</div>
 				</div>
 
@@ -91,7 +92,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="5"
-							name="checkbox[]" onclick="count_ck(this)">유지류
+							name="ing" onclick="count_ck(this)">유지류
 					</div>
 				</div>
 
@@ -101,7 +102,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="6"
-							name="checkbox[]" onclick="count_ck(this)">균류
+							name="ing" onclick="count_ck(this)">균류
 					</div>
 				</div>
 
@@ -114,7 +115,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="7"
-							name="checkbox[]" onclick="count_ck(this)">해조류
+							name="ing" onclick="count_ck(this)">해조류
 					</div>
 				</div>
 
@@ -124,7 +125,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="8"
-							name="checkbox[]" onclick="count_ck(this)">야채류
+							name="ing" onclick="count_ck(this)">야채류
 					</div>
 				</div>
 
@@ -134,7 +135,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="9"
-							name="checkbox[]" onclick="count_ck(this)">열매류
+							name="ing" onclick="count_ck(this)">열매류
 					</div>
 				</div>
 
@@ -147,6 +148,7 @@
 		<div class="leval">
 			<button onclick="radiock();">단계 확인하기</button>
 		</div>
+		</table>
 		</form>
 		</div>
 
