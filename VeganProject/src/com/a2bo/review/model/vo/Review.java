@@ -1,4 +1,4 @@
-package vg.review.model.vo;
+package com.a2bo.review.model.vo;
 
 import java.io.Serializable;
 import java.sql.Date;

@@ -1,34 +1,37 @@
 package com.a2bo.map.model.vo;
 
 public class Map {
-	private int myLocation;
-	private int menuLocation;
+	private int xlatitude;
+	private int ylongitude;
+	private String menuLocation;
 	private String menuId;
+	private String restId;
 
 	public Map() {
 		super();
 	}
 
-	public Map(int myLocation, int menuLocation, String menuId) {
-		super();
-		this.myLocation = myLocation;
-		this.menuLocation = menuLocation;
-		this.menuId = menuId;
+	public int getXlatitude() {
+		return xlatitude;
 	}
 
-	public int getMyLocation() {
-		return myLocation;
+	public void setXlatitude(int xlatitude) {
+		this.xlatitude = xlatitude;
 	}
 
-	public void setMyLocation(int myLocation) {
-		this.myLocation = myLocation;
+	public int getYlongitude() {
+		return ylongitude;
 	}
 
-	public int getMenuLocation() {
+	public void setYlongitude(int ylongitude) {
+		this.ylongitude = ylongitude;
+	}
+
+	public String getMenuLocation() {
 		return menuLocation;
 	}
 
-	public void setMenuLocation(int menuLocation) {
+	public void setMenuLocation(String menuLocation) {
 		this.menuLocation = menuLocation;
 	}
 
@@ -40,8 +43,20 @@ public class Map {
 		this.menuId = menuId;
 	}
 
+	public String getRestId() {
+		return restId;
+	}
+
+	public void setRestId(String restId) {
+		this.restId = restId;
+	}
+
 	@Override
 	public String toString() {
-		return "Map [myLocation=" + myLocation + ", menuLocation=" + menuLocation + ", menuId=" + menuId + "]";
+		return "Map [xlatitude=" + xlatitude + ", ylongitude=" + ylongitude + ", menuLocation=" + menuLocation
+				+ ", menuId=" + menuId + ", restId=" + restId + "]";
 	}
+	
+	
+
 }
