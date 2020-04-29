@@ -2,6 +2,7 @@ package com.a2bo.calendar.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.Month;
 import java.time.Year;
 import java.util.Date;
@@ -34,9 +35,7 @@ public class CalendarController extends HttpServlet {
 		
 		if(command.contains("main")) {
 			List<Calendar> calList = eventList(request, response);
-			if(calList != null) {
-				request.setAttribute("calList", calList);
-			}
+			request.setAttribute("calList", calList);
 			rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendar.jsp");
 			rd.forward(request, response);
 		} else if(command.contains("calSub")) {
@@ -44,8 +43,10 @@ public class CalendarController extends HttpServlet {
 			rd.forward(request, response);
 		} else if(command.contains("addEvent")) {
 			addEvent(request, response);
+		} else if(command.contains("calList")) {
+			List<Calendar> calList = eventList(request, response);
+			request.setAttribute("calList", calList);
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -81,6 +82,8 @@ public class CalendarController extends HttpServlet {
 		calendar.setIcon(icon);
 		calendar.setUserId(userId);
 		
+		System.out.println(icon);
+		
 		int res = cService.addEvent(calendar);
 		
 		if(res > 0) {
@@ -105,15 +108,16 @@ public class CalendarController extends HttpServlet {
 	private List<Calendar> eventList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int userid = ((Member)session.getAttribute("loginInfo")).getUserId();
+		String month = "";
 		
-		GregorianCalendar calendar = new GregorianCalendar();
-		int month = calendar.get(calendar.MONTH) + 1;
+		if(request.getParameter("month") == null) {
+			GregorianCalendar calendar = new GregorianCalendar();
+			month = String.valueOf(calendar.get(calendar.MONTH) + 1);
+		} else {
+			month = request.getParameter("month");
+		}
 		
 		List<Calendar> calList = cService.eventList(userid, month);
-		
-		
-		
-		
 		return calList;
 	}
 	
