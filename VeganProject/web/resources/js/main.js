@@ -58,7 +58,7 @@ function menuInfoBox(){
 //재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능 
 function count_ck(obj){
 
-	var chkbox = document.getElementsByName("ing");
+	var chkbox = document.getElementsByName("checkbox[]");
 	var chkCnt = 0;
 	for(var i=0;i<chkbox.length; i++){
 		if(chkbox[i].checked){
@@ -75,13 +75,16 @@ function count_ck(obj){
 
 //체크박스 버튼 값 가져오는 기능
 function radiock(){
-	var ck = document.querySelectorAll("menuRadio")
-	for(var i = 0; i < ck.length; i++){
-		if(ck[i].chcked == true){
-			alert(ck[i].value + "선택하셨습니다.");
-			break;
-		}
+	var checkboxes = document.getElementsByName('checkbox[]');
+	var vals = 0;
+	for (var i=0, n=checkboxes.length;i<n;i++) {
+	       if (checkboxes[i].checked) {
+	           vals += ","+checkboxes[i].value;
+	          
+	       }
+	      
 	}
+	 alert(vals + "를 선택하셨습니다.")
 }
 
 
