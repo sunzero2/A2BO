@@ -17,8 +17,8 @@
     <servlet-class>com.a2bo.mypage.controller.MypageController</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>calendar</servlet-name>
-  	<servlet-class>com.a2bo.calendar.controller.CalendarController</servlet-class>
+    <servlet-name>calendar</servlet-name>
+    <servlet-class>com.a2bo.calendar.controller.CalendarController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>welcome</servlet-name>
@@ -33,7 +33,7 @@
     <url-pattern>/mypage/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>calendar</servlet-name>
-  	<url-pattern>/calendar/*</url-pattern>
+    <servlet-name>calendar</servlet-name>
+    <url-pattern>/calendar/*</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,9 +1,10 @@
-package com.a2bo.review.controller;
+/*package com.a2bo.review.controller;
 
 import java.io.IOException;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import com.a2bo.member.model.vo.Member;
+import com.a2bo.review.model.service.ReviewService;
 import com.a2bo.review.model.vo.Review;
 import common.util.FileUtil;
 import common.vo.UploadFile;
@@ -66,11 +67,11 @@ public class ReviewController {
          notice.setOriginal_filepath(file.getOrginalFileName());
          notice.setRename_filepath(file.getRenameFileName());
 
-        /* //더미데이터 작성코드
+         //더미데이터 작성코드
          for(int i =0; i<50; i++) {
         	 notice.setNoticeTitle(i+"번째 게시물 입니다.");
         	 ns.noticeUpload(notice);
-         }*/
+         }
          
          if (ns.noticeUpload(notice) > 0) {
             mav.addObject("alertMsg", "게시글 등록이 완료되었습니다.");
@@ -113,4 +114,4 @@ return mav;
    
    
 
-}
+}*/

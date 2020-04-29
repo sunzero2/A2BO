@@ -15,6 +15,7 @@ import com.a2bo.review.model.vo.Review;
 import common.JDBCTemplate;
 import common.util.Paging;
 
+
 public class ReviewDao {
 
 	JDBCTemplate jdt = JDBCTemplate.getInstance();
@@ -22,7 +23,9 @@ public class ReviewDao {
 	public ReviewDao() {
 
 	}
-
+	// 내리뷰가져오기 아이디로 불러와서 리스트에 담아 반환
+	// 작성자 Kate
+	// Mypage랑 연동되어 관리가능
 	public List<Review> myReviews(Connection conn, String id) throws SQLException {
 
 		List<Review> rlist = new ArrayList<Review>();
