@@ -2,6 +2,7 @@ package com.a2bo.calendar.model.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.a2bo.calendar.model.dao.CalendarDao;
 import com.a2bo.calendar.model.vo.Calendar;
@@ -37,8 +38,16 @@ public class CalendarService {
 		
 	}
 	
-	public void eventList() {
+	public List<Calendar> eventList(int userid, int month) {
+		Connection conn = jdbc.getConnection();
+		List<Calendar> calList = null;
 		
+		try {
+			calList = cDao.eventList(conn, userid, month);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return calList;
 	}
 	
 	public void changeMemo() {

@@ -3,7 +3,10 @@ package com.a2bo.calendar.controller;
 import java.io.File;
 import java.io.IOException;
 import java.time.Month;
-
+import java.time.Year;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.apache.catalina.tribes.util.Arrays;
 import org.eclipse.jdt.internal.compiler.lookup.MemberTypeBinding;
-
 import com.a2bo.calendar.model.service.CalendarService;
 import com.a2bo.calendar.model.vo.Calendar;
 import com.a2bo.member.model.vo.Member;
@@ -32,6 +33,10 @@ public class CalendarController extends HttpServlet {
 		RequestDispatcher rd = null;
 		
 		if(command.contains("main")) {
+			List<Calendar> calList = eventList(request, response);
+			if(calList != null) {
+				request.setAttribute("calList", calList);
+			}
 			rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendar.jsp");
 			rd.forward(request, response);
 		} else if(command.contains("calSub")) {
@@ -52,7 +57,7 @@ public class CalendarController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member member = (Member) session.getAttribute("loginInfo");
 		String cCont = request.getParameter("content");
-		String icon = request.getParameter("inten");
+		String icon = request.getParameter("icon");
 		int cPrice = Integer.parseInt(request.getParameter("price"));
 		String cMenu = request.getParameter("menu");
 		String date = request.getParameter("date");
@@ -97,8 +102,19 @@ public class CalendarController extends HttpServlet {
 	}
 	
 	// 일정 리스트 가져오는 메서드
-	private void eventList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private List<Calendar> eventList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		int userid = ((Member)session.getAttribute("loginInfo")).getUserId();
 		
+		GregorianCalendar calendar = new GregorianCalendar();
+		int month = calendar.get(calendar.MONTH) + 1;
+		
+		List<Calendar> calList = cService.eventList(userid, month);
+		
+		
+		
+		
+		return calList;
 	}
 	
 	// 메모 변경 메서드

@@ -23,39 +23,39 @@
 		</div>
 		<div class="subCalIconDiv">
 			<div class="subCalSelectDiv">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="FXT">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="FXT">
 				<span class="subCalIcon">플렉시테리언</span>
 			</div>
 			<div class="subCalSelectDiv col2" style="">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="POP">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="POP">
 				<span class="subCalIcon">폴로페스코</span>
 			</div>
 			<div class="subCalSelectDiv col3">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="PSC">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="PSC">
 				<span class="subCalIcon">페스코</span>
 			</div>
 			<div class="subCalSelectDiv row2">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="POL">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="POL">
 				<span class="subCalIcon">폴로</span>
 			</div>
 			<div class="subCalSelectDiv col2 row2">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="LOV">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="LOV">
 				<span class="subCalIcon">락토오보</span>
 			</div>
 			<div class="subCalSelectDiv col3 row2">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="LTO">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="LTO">
 				<span class="subCalIcon">락토</span>
 			</div>
 			<div class="subCalSelectDiv row3">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="OVO">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="OVO">
 				<span class="subCalIcon">오보</span>
 			</div>
 			<div class="subCalSelectDiv col2 row3">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="VGN">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="VGN">
 				<span class="subCalIcon">비건</span>
 			</div>
 			<div class="subCalSelectDiv col3 row3">
-				<input name="inten" class="subCalIconCheck" type="checkbox" value="FTN">
+				<input name="icon" class="subCalIconCheck" type="checkbox" value="FTN">
 				<span class="subCalIcon">프루테리언</span>
 			</div>
 		</div>

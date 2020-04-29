@@ -31,7 +31,7 @@
 		<hr style="margin-top: 25px;">
 		
 		<c:if test="${loginInfo.vLId != null}">
-			<div id="vL">${loginInfo.vLId}</div>
+			<div id="vL">${setVLevel}</div>
 			<div>새롭게 설정하고 싶다면 아래 버튼을 눌러주세요!</div>
 		</c:if>
 		
@@ -40,7 +40,7 @@
 		</c:if>
 		<button class="intenBtn" onclick="setVegan();">설정하러 가기</button>
 		<button class="intenBtn" onclick="vganExplain();">채식 지향에 대해 알아보기</button>
-		<form action="intenVL" style="display: none;" method="get">
+		<form action="changeVL" style="display: none;" method="get">
 			<select name="vLevel">
 				<option value="FXT">플렉시테리언</option>
 				<option value="POP">폴로페스코</option>

@@ -20,12 +20,12 @@
 	<%@ include file="top/top.jsp"%>
 	
 	<div class="content">
-
-		<div class="mainImage">
-			image hi
+			<div class="mainImage">
+				image hi
+			</div>
+			<br>
+			<h1>나의 단계확인하기</h1>
 		</div>
-		<br>
-		<h1>나의 단계확인하기</h1>
 		<h3>좋아하는 재료를 3가지만 선택하세요</h3>
 		<br>
 		<div class="ingBox">
@@ -107,7 +107,6 @@
 
 
 
-	</div>
 	<script src="/vgan/resources/js/main.js"></script><!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
 	
 	<!--

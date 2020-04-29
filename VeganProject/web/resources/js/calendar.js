@@ -59,17 +59,24 @@ function build() {
 		cell.className = "calendarTd";
 		cnt = cnt + 1;
 	}
-		
+	
+	// 날짜만큼 cell 만들기
 	for (i = 1; i <= lastDate.getDate(); i++) {
 		cell = row.insertCell();
 		cell.innerHTML = i;
 		cell.className = "calendarTd";
+		cell.id = "day" + i;
+		
+		// cell 안에 div 넣기
+		var div = document.createElement('div');
+		div.className = "calInnerDiv";
+		cell.appendChild(div);
 		cnt = cnt + 1;
+		
 		// 일요일
 		if (cnt % 7 == 1) {
 			cell.style.color = "#FF9090";
 		}
-			
 		// 토요일
 		if (cnt % 7 == 0) { 
 			cell.style.color = "#7ED5E4";
@@ -80,6 +87,7 @@ function build() {
 		}
 	}
 	
+	// 마지막 날이 토요일 전이면 빈 칸을 더 만듦.
 	if(lastDate.getDay() < 6) {
 		for(i = 0; i < (6 - lastDate.getDay()); i++) {
 			cell = row.insertCell();

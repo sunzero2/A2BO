@@ -34,8 +34,6 @@ public class MypageDao {
 			pstm.setString(1, vl);
 			pstm.setInt(2, userId);
 			res = pstm.executeUpdate();
-			
-			System.out.println("dao res : " + res);
 		} finally {
 			jdbc.close(pstm);
 		}

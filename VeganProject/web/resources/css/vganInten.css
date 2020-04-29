@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 table {
+	margin-top: 25px;
 	text-align: center;
 	border: 1px solid #BDBDBD;
 	border-spacing: 0px;

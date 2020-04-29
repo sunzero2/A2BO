@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.a2bo.member.model.service.MemberService;
 import com.a2bo.member.model.vo.Member;
 import com.a2bo.mypage.model.service.MypageService;
+import com.google.common.base.CaseFormat;
 
 public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +26,6 @@ public class MypageController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getRequestURI().substring(request.getContextPath().length());
 		RequestDispatcher rd = null;
-		System.out.println(request.getRequestURI());
 		
 		if(command.contains("main")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/mypage/mypageMain.jsp");
@@ -38,7 +38,7 @@ public class MypageController extends HttpServlet {
 			rd.forward(request, response);
 		} else if(command.contains("changeMember")) {
 			changeMember(request, response);
-		} else if(command.contains("intenVL")) {
+		} else if(command.contains("changeVL")) {
 			changeVL(request, response);
 		}
 		
@@ -66,12 +66,11 @@ public class MypageController extends HttpServlet {
 	 5. 작성일 : 2020. 4. 29.
 	 */
 	private void changeVL(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/mypage/main.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/mypage/vganInten.jsp");
 		HttpSession session = request.getSession();
 
 		// select의 option 값을 가져옴
 		String vl = request.getParameter("vLevel");
-		System.out.println("vl 가져오나 ? : " + vl);
 		
 		// session 변경하기 위한 member 객체 선언
 		Member member = (Member) session.getAttribute("loginInfo");
@@ -81,8 +80,41 @@ public class MypageController extends HttpServlet {
 		
 		// 0보다 크면 제대로 실행된 거니까 loginInfo 안에 들어갈 member의 값을 바꿔줌
 		if(res > 0) {
+			// member에는 vlid로 넣어줌
 			member.setvLId(vl);
 			session.setAttribute("loginInfo", member);
+			
+			// 사용자가 알아볼 수 있는 단어로 바꿔서 넣어줌.
+			switch (vl) {
+			case "FXT":
+				vl = "플렉시테리언";
+				break;
+			case "POP":
+				vl = "폴로페스코";
+				break;
+			case "PSC":
+				vl = "페스코";
+				break;
+			case "POL":
+				vl = "폴로";
+				break;
+			case "LOV":
+				vl = "락토오보";
+				break;
+			case "LTO":
+				vl = "락토";
+				break;
+			case "OVO":
+				vl = "오보";
+				break;
+			case "VGN":
+				vl = "비건";
+				break;
+			case "FTN":
+				vl = "프루테리언";
+				break;
+			}
+			request.setAttribute("setVLevel", vl);
 			request.setAttribute("alertMsg", "정상적으로 변경되었습니다.");
 		} else {
 			request.setAttribute("alertMsg", "변경에 실패하였습니다. 다시 시도해주십시오.");

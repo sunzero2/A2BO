@@ -15,7 +15,8 @@ function callIframe() {
 				innerDiv.style.display = "block";
 				
 				var yearmonth = document.querySelector('#yearmonth').innerHTML;
-				var day = v.target.innerHTML;
+				var day = v.target.innerText;
+				console.dir(v.target.innerText);
 				var date = yearmonth + " " + day + "일";
 				if(day < 10) {
 					var inputDate = yearmonth + "0" + day;

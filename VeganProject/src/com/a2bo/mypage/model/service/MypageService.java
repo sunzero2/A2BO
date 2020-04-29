@@ -25,9 +25,6 @@ public class MypageService {
 	}
 
 	public int changeVL(String vl, int userId) {
-		System.out.println("service vl : " + vl);
-		System.out.println("service userId : " + userId);
-		
 		int res = 0;
 		Connection conn = jdbc.getConnection();
 		try {

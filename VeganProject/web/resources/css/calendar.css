@@ -97,18 +97,15 @@ calSub.jsp의 CSS 부분
 }
 
 .subCalBtn {
-	position: absolute;
 	height: 50px;
 	width: 70px;
 	margin-top: 450px;
-}
-
-.save {
-	margin-left: 600px;
+	float: right;
 }
 
 .remove {
-	margin-left: 680px;
+	display: none;
+	margin-right: 10px;
 }
 
 .subCalMsg {
@@ -150,7 +147,7 @@ calendar.jsp의 CSS 부분
 
 .calendarTd {
 	width: 225px;
-	height: 90px;
+	height: 120px;
 	border-top: 1px solid #BDBDBD;
 	border-left: 1px solid #BDBDBD;
 	vertical-align: baseline;
@@ -160,4 +157,12 @@ calendar.jsp의 CSS 부분
 	text-align: center;
 	width: 225px;
 	height: 40px;
+}
+
+.calInnerDiv {
+	border: 1px solid;
+	width: 70px;
+	height: 70px;
+	margin-top: 48px;
+	float: right;
 }
