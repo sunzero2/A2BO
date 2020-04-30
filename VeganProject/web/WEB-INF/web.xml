@@ -5,7 +5,7 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
    <servlet>
-    <servlet-name>main</servlet-name>
+    <servlet-name>vgList</servlet-name>
     <servlet-class>com.a2bo.main.controller.MainController</servlet-class>
   </servlet>
   
@@ -42,7 +42,7 @@
     <url-pattern>/calendar/*</url-pattern>
   </servlet-mapping>
    <servlet-mapping>
-  	<servlet-name>main</servlet-name>
+  	<servlet-name>vgList</servlet-name>
   	<url-pattern>/main/*</url-pattern>
   </servlet-mapping>
    

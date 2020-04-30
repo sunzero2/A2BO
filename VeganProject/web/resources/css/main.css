@@ -145,14 +145,16 @@ div, buttom, img {
 
 
 .leval{
-	margin-legt : 30%;
-	margin-top : 15%; 
+	margin-left : 87%;
+	margin-top : 20%; 
 }
 
 .myLevel{
 	width: 70%;
     height : 76%;
-    margin-left : 35%;
+	margin-left : 35%;
+	/* opacity: 0; */
+	/* display : none; */
 }
 
 

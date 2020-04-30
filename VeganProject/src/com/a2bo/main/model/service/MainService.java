@@ -2,6 +2,7 @@ package com.a2bo.main.model.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,21 +21,29 @@ public class MainService {
 		super();
 	}
 	
-	public MainVlv searchingVg(List<Integer> vg) {
+	public List<MainVlv> searchingVg(List<Integer> list) {
 		
 		Connection conn = jdt.getConnection();
-		Map<Integer, Object> vgMap = new HashMap<>();
+		List<MainVlv> vgList = new ArrayList<MainVlv>();
 		
 		try {
-			MainVlv mvl = mDao.searchingVg(conn, vg);
+			vgList = mDao.searchingVg(conn, list);
+//			vgMap.put("isSuccess", true);
+//			vgMap.put("res", "불러오는데 성공했다야");
 		} catch (SQLException e) {
+//			vgMap.put("isSuccess", false);
+//			vgMap.put("res", "관리자에게 문의 하세요");
 			e.printStackTrace();
 		}finally {
 			jdt.close(conn);
 		}
 		
 		
-		return mvl;
+		
+		System.out.println("서비스 단에서 list " + list);
+		System.out.println("서비스 단에서 vgList " + vgList);		
+		return vgList;
+		
 	}
 
 

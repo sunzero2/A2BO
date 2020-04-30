@@ -117,8 +117,6 @@ public class MainVlv implements Serializable {
 
 	@Override
 	public String toString() {
-		return "MainVlv [vLId=" + vLId + ", meat=" + meat + ", bird=" + bird + ", fish=" + fish + ", eggs=" + eggs
-				+ ", milk=" + milk + ", mushroom=" + mushroom + ", seeweed=" + seeweed + ", veg=" + veg + ", fruit="
-				+ fruit + "]";
+		return "MainVlv [vLId=" + vLId + "]";
 	}
 }

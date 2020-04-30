@@ -1,6 +1,11 @@
+<%@page import="com.a2bo.main.model.vo.MainVlv"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <%
+   List vgList = (List)request.getAttribute("vgList");
+%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -145,30 +150,38 @@
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
+			
 		<div class="leval">
-			<button onclick="radiock();">단계 확인하기</button>
+			<button onclick="radiock();">선택완료</button>
+			
 		</div>
 		</table>
 		</form>
 		</div>
-
+		<!-- <button onclick="levelChose();">나의 단계는</button> -->
+		
 		<div class="myLevel">
-			<h1>나의 비건 단계 나오는 디브</h1>
+		
+			<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>
 		</div>
+		
+		
 		<!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
+		
+		<form action="/vgan/main/searchingMenu">
 
-		<div class="menuList">
-			<div class="menuCard">
-				<!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
-
+			<div class="menuList">
+				<div class="menuCard">
+					<!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
+	
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="menuInfoBox"></div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<div class="menuInfoBox"></div>
-		</div>
 
-
+		</form>
 
 	</div>
 	<script src="/vgan/resources/js/main.js"></script>

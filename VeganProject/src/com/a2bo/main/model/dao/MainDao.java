@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,16 +22,18 @@ public class MainDao {
 		super();
 	}
 	
-	public MainVlv searchingVg(Connection conn, List<Integer> vg) throws SQLException {
+	public List<MainVlv> searchingVg(Connection conn, List<Integer> list) throws SQLException {
 		
-		PreparedStatement pstm = null;
+		//PreparedStatement pstm = null;
+		Statement stmt = null;
 		ResultSet rs = null;
-		MainVlv mvl = null;
+		List<MainVlv> mvl = new ArrayList<MainVlv>();
+		//MainVlv mvl = null;
 		String sql = "select vlid from tvl where ";
 		
-		for(int i = 0; i < vg.size(); i++) {
+		for(int i = 0; i < list.size(); i++) {
 			
-			switch(vg.get(i)) {
+			switch(list.get(i)) {
 				case 1 : sql += "meat= 'Y' and ";
 					break;
 				case 2 : sql += "bird= 'Y' and ";	
@@ -52,17 +55,18 @@ public class MainDao {
 			}
 		}
 		
-		sql.substring(0, sql.length()-4);
+		sql = sql.substring(0, sql.length()-4);
+		
 		
 		try {
-			pstm = conn.prepareStatement(sql);
-			rs = pstm.executeQuery();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 			
-			if(rs.next()) {
+//			if(rs.next()) {
 				
-				mvl = new MainVlv();
-				
-				mvl.setvLid(rs.getString(1));
+//				mvl = new MainVlv(rs.getString(1), sql, sql, sql, sql, sql, sql, sql, sql, sql);
+//				level = rs.getString(1);
+				//mvl.setvLid(rs.getString(1));
 				
 				/*mlv.setMeat(rs.getString(1));
 				mlv.setBird(rs.getString(1));
@@ -73,14 +77,28 @@ public class MainDao {
 				mlv.setSeeweed(rs.getString(1));
 				mlv.setVeg(rs.getString(1));
 				mlv.setFruit(rs.getString(1));*/
+			while(rs.next()){
+				MainVlv mainvlv = new MainVlv();
+				mainvlv.setvLid(rs.getString(1));
+	
+				
+				mvl.add(mainvlv);
+				
 			}
 			
 		}finally {
-			jdt.close(rs, pstm);
+			jdt.close(rs, stmt);
 		}
-			
+		
+
+		System.out.println("다오에서 리스트 :" + list);
+		System.out.println("다오에서 sql : " + sql);
+		System.out.println("다오에서 pstm : " + stmt);
+		System.out.println("다오에서 rs : " + rs);
+		System.out.println("다오에서 mvl : " + mvl);
 	
-		return mvl;
+	return mvl;
+		
 	}
 	
 	public Map<Integer, Object> searchingMenu() {
