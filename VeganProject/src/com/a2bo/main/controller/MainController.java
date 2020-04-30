@@ -62,12 +62,7 @@ public class MainController extends HttpServlet {
 		System.out.println("컨트롤러 단에서 리스트 투스트링" + list.toString());
 		//MainVlv mvl = mService.searchingVg(list);
 		
-		
-		
-		
 		List<MainVlv> vgList = mService.searchingVg(list);
-		
-		
 		
 		String myLevle = "";
 		

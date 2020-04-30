@@ -163,6 +163,7 @@
 		<div class="myLevel">
 		
 			<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>
+			
 		</div>
 		
 		
