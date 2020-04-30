@@ -39,5 +39,21 @@ function callIframe() {
 function addTitle(date, inputDate) {
 	var body = document.querySelector('.iframe').contentWindow.document.body;
 	body.children[0].children[0].children[0].innerHTML = date;
+	body.children[0].children[0][0].value = "";
 	body.children[0].children[0][14].value = inputDate;
+	body.children[0].children[0][10].value = "";
+	body.children[0].children[0][11].value = "";
+	body.children[0].children[0][12].style.display = "block";
+	body.children[0].children[0][13].style.display = "none";
+	body.children[0].children[0][14].style.display = "none";
+}
+
+function changeCont(menu, price, content) {
+	var body = document.querySelector('.iframe').contentWindow.document.body;
+	body.children[0].children[0][0].value = content;
+	body.children[0].children[0][10].value = price;
+	body.children[0].children[0][11].value = menu;
+	body.children[0].children[0][12].style.display = "none";
+	body.children[0].children[0][13].style.display = "block";
+	body.children[0].children[0][14].style.display = "block";
 }

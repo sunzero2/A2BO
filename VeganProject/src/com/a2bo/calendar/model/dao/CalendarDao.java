@@ -81,20 +81,20 @@ public class CalendarDao {
 		return calList;
 	}
 	
-	public void changeMemo() {
+	public Calendar getEvent(Connection conn, String userid, String date) throws SQLException {
+		String sql = "select * from tcalendar where userid = ? and cdate like ?";
 		
-	}
-	
-	
-	public Calendar getEvent(Connection conn, int userid, String day) throws SQLException {
-		String sql = "select * from tcalendar where userid = '" + userid + "' and cdate = '" + day + "'";
-		Statement stmt = null;
+
+		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		Calendar calendar = null;
 		
 		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userid);
+			pstm.setString(2, date);
+			rs = pstm.executeQuery();
+			
 			if(rs.next()) {
 				calendar = new Calendar();
 				calendar.setIcon(rs.getString(3));
@@ -103,7 +103,7 @@ public class CalendarDao {
 				calendar.setcCont(rs.getString(6));
 			}
 		} finally {
-			jdbc.close(rs, stmt);
+			jdbc.close(rs, pstm);
 		}
 		
 		return calendar;

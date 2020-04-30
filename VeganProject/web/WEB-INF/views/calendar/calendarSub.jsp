@@ -68,8 +68,9 @@
 			<div class="subCalInputTitle">음식</div>
 			<input name="menu" class="subCalInput" type="text">
 		</div>
-		<button name="save" class="subCalBtn save">저장</button>
-		<button name="remove" class="subCalBtn remove">삭제</button>
+		<button name="btn" value="save" class="subCalBtn save">저장</button>
+		<button name="btn" value="remove" class="subCalBtn remove">삭제</button>
+		<button name="btn" value="change" class="subCalBtn change">수정</button>
 		<input name="date" type="hidden" value="">
 	</form>
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>

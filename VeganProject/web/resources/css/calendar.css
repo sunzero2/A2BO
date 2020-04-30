@@ -108,6 +108,11 @@ calSub.jsp의 CSS 부분
 	margin-right: 10px;
 }
 
+.change {
+	display: none;
+	margin-right: 10px;
+}
+
 .subCalMsg {
 	position: absolute;
 	font-size: 30px;

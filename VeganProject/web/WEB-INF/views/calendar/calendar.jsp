@@ -69,55 +69,19 @@
 		<%
 			List list = (List)request.getAttribute("calList");
 			List dayList = new ArrayList();
-			List iconList = new ArrayList();
+			String day = "";
+			
 			for(int i = 0; i < list.size(); i++) {
-				dayList.add(i, ((Calendar)list.get(i)).getcDate());
-				iconList.add(i, ((Calendar)list.get(i)).getIcon());
+				day = ((Calendar)list.get(i)).getcDate();
+				dayList.add(i, day.substring(day.length() - 2, day.length()));
 			}
+			
+			String month = day.substring(5, 7);
 			pageContext.setAttribute("dayList", dayList);
-			pageContext.setAttribute("iconList", iconList);
-			pageContext.setAttribute("list", list);
+			pageContext.setAttribute("month", month);
 		%>
 	</c:if>
 	
-	<script>
-		var dayList = ${dayList};
-		
-		function addIcon() {
-			if(dayList != null) {
-				document.querySelectorAll('.calendarTd').forEach(function(el) {
-					for(var i = 0; i < dayList.length; i++) {
-						if(dayList[i] == el.id) {
-							$.ajax({
-								url:
-							})
-							el.children[0].style.background = "url('/vgan/resources/image/money.jpg')";
-							/* el.children[0].style.background = "url('/vgan/resources/image/" + icon + ".png')"; */
-						}
-					}
-				})
-			}
-		}
-		
-		function addData(data) {
-			for(var i = 0; i < dayList.length; i++) {
-				console.dir(dayList[i]);
-				console.dir(data.id);
-				if(dayList[i] == data.id) {
-					console.log("dddddd");
-					//${list.get(i)};
-					console.log(i);
-					var content = "${calList.get(i).cCont}";
-					var price = ${calList.get(i).cPrice};
-					var menu = "${calList.get(i).cMenu}";
-					
-					console.log(content);
-					console.log(price);
-					console.log(menu);
-				}
-			}
-		}
-	</script>
 	 
 	 <!-- iframe -->
 	<div class="screenDiv"></div>
@@ -132,5 +96,58 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="/vgan/resources/js/calendar.js"></script>
 	<script src="/vgan/resources/js/iframe.js"></script>
+	<script>
+		var month = ${month};
+		var dayList = ${dayList};
+		var icon = "";
+		
+		
+		function addIcon() {
+			if(dayList != null) {
+				document.querySelectorAll('.calendarTd').forEach(function(el) {
+					for(var i = 0; i < dayList.length; i++) {
+						if(dayList[i] == el.id) {
+							$.ajax({
+								url: "http://localhost:8787/vgan/calendar/getEvent",
+								data: {
+									"day" : dayList[i],
+									"month" : month
+								},
+								success: function(v) {
+									var jObj = JSON.parse(v);
+									icon = jObj.icon;
+								}
+							})
+							el.children[0].style.background = "url('/vgan/resources/image/money.jpg')";
+							/* el.children[0].style.background = "url('/vgan/resources/image/" + icon + ".png')"; */
+						}
+					}
+				})
+			}
+		}
+		
+		function addData(data) {
+			for(var i = 0; i < dayList.length; i++) {
+				if(dayList[i] == data.id) {
+					$.ajax({
+						url: "http://localhost:8787/vgan/calendar/getEvent",
+						data: {
+							"day" : dayList[i],
+							"month" : month
+						},
+						success: function(v) {
+							var jObj = JSON.parse(v);
+							var menu = jObj.cMenu;
+							var price = jObj.cPrice;
+							var content = jObj.cCont;
+							
+							changeCont(menu, price, content);
+						}
+					})
+					
+				}
+			}
+		}
+	</script>
 </body>
 </html>

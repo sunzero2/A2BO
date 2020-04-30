@@ -49,6 +49,13 @@ public class MemberController extends HttpServlet {
 		doGet(request, response);
 	}
 
+	/**
+	 1. MethodName : login
+	 2. ClassName : MemberController.java
+	 3. Comment : 유저 로그인 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 1.
+	 */
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/success.jsp");
 		HttpSession session = request.getSession();
@@ -63,6 +70,13 @@ public class MemberController extends HttpServlet {
 		rd.forward(request, response);
 	}
 	
+	/**
+	 1. MethodName : logOut
+	 2. ClassName : MemberController.java
+	 3. Comment : 유저 로그아웃 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 1.
+	 */
 	private void logOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 		HttpSession session = request.getSession();
