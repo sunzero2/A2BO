@@ -42,8 +42,8 @@ calSub.jsp의 CSS 부분
 
 .subCalIconCheck {
 	position: absolute;
-	width: 100px;
-	height: 50px;
+	width: 100%;
+	height: 100%;
 	opacity: 0;
 }
 

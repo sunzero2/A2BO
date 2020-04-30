@@ -38,7 +38,7 @@ public class CalendarService {
 		
 	}
 	
-	public List<Calendar> eventList(int userid, int month) {
+	public List<Calendar> eventList(int userid, String month) {
 		Connection conn = jdbc.getConnection();
 		List<Calendar> calList = null;
 		

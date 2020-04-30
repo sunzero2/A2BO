@@ -3,14 +3,29 @@ var today = new Date();
 
 // 이전 달 값을 today에 저장하는 함수
 function beforeMonth() {
+	// getMonth()는 0부터 11까지
 	today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+	getIcon();
 	build();
 }
 
 // 다음 달 값을 today에 저장하는 함수
 function nextMonth() {
 	today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+	getIcon();
 	build();
+}
+
+function getIcon() {
+	var todayM = today.getMonth()+1;
+	
+	$.ajax({
+		url: "http://localhost:8787/vgan/calendar/calList",
+		data: {
+			"month": todayM
+		},
+		type: "get"
+	})
 }
 
 // 달력 만드는 함수
@@ -65,9 +80,9 @@ function build() {
 		cell = row.insertCell();
 		cell.innerHTML = i;
 		cell.className = "calendarTd";
-		cell.id = "day" + i;
+		cell.id = i;
 		
-		// cell 안에 div 넣기
+		// cell 안에 div 넣기(icon 담을 박스임)
 		var div = document.createElement('div');
 		div.className = "calInnerDiv";
 		cell.appendChild(div);

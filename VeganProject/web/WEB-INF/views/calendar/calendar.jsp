@@ -60,6 +60,12 @@
 		</div>
 	</div>
 	
+	<c:if test="${calList != null}">
+		<c:forEach items="${calList}" var="list">
+			<div>머냐? : ${list.icon}</div>
+		</c:forEach>
+	</c:if>
+	
 	<div class="screenDiv"></div>
 	<div class="innerDiv">
 		<div class="iframeWrapper">
@@ -67,6 +73,8 @@
 			<iframe class="iframe" src="http://localhost:8787/vgan/calendar/calSub"></iframe>
 		</div>
 	</div>
+	 <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="/vgan/resources/js/calendar.js"></script>
 	<script src="/vgan/resources/js/iframe.js"></script>
 </body>
