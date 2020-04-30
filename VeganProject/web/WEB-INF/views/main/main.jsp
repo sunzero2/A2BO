@@ -172,6 +172,7 @@
 
 			<div class="menuList">
 				<div class="menuCard">
+					
 					<!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
 	
 				</div>

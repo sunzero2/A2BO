@@ -81,8 +81,12 @@ function radiock() {
 		}
 	}
 
+
+	
 	str.subString(str.length - 2, str.length);
 //	alert(str + "를 선택하셨습니다.");
+
+
 }
 
 // & 나의 단계 나오게 하는 기 
