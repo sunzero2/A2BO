@@ -64,7 +64,7 @@ public class MemberController extends HttpServlet {
 	}
 	
 	private void logOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/main.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 		HttpSession session = request.getSession();
 		session.setAttribute("loginInfo", null);
 		rd.forward(request, response);

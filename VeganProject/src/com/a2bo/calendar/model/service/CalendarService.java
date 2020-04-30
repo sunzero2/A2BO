@@ -53,4 +53,16 @@ public class CalendarService {
 	public void changeMemo() {
 		
 	}
+	
+	public Calendar getEvent(int userid, String day) {
+		Calendar calendar = null;
+		Connection conn = jdbc.getConnection();
+		try {
+			calendar = cDao.getEvent(conn, userid, day);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return calendar;
+	}
 }

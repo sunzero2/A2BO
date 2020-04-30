@@ -20,6 +20,9 @@ import org.eclipse.jdt.internal.compiler.lookup.MemberTypeBinding;
 import com.a2bo.calendar.model.service.CalendarService;
 import com.a2bo.calendar.model.vo.Calendar;
 import com.a2bo.member.model.vo.Member;
+import com.sun.xml.internal.txw2.Document;
+
+import sun.management.counter.Variability;
 
 public class CalendarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,6 +49,10 @@ public class CalendarController extends HttpServlet {
 		} else if(command.contains("calList")) {
 			List<Calendar> calList = eventList(request, response);
 			request.setAttribute("calList", calList);
+		} else if(command.contains("memoList")) {
+			
+		} else if(command.contains("getEvent")) {
+			getEvent(request, response);
 		}
 	}
 
@@ -124,5 +131,22 @@ public class CalendarController extends HttpServlet {
 	// 메모 변경 메서드
 	private void changeMemo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+	}
+	
+	/**
+	 1. MethodName : getEvent
+	 2. ClassName : CalendarController.java
+	 3. Comment : 단일 일정 가져오는 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 1.
+	 */
+	private void getEvent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int userid = ((Member)request.getSession().getAttribute("loginInfo")).getUserId();
+		String day = request.getParameter("day");
+		
+		Calendar calendar = cService.getEvent(userid, day);
+		
+		PrintWriter pw = response.getWriter();
+		pw.print(calendar);
 	}
 }
