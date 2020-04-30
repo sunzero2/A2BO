@@ -188,6 +188,34 @@
 	<script src="/vgan/resources/js/main.js"></script>
 	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
 
+		
+		<form action="/vgan/main/searchingMenu">
+		<div class="myLevel">
+			<div name="mLevel">당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</div>
+		</div>
+		
+		<div class="myMemu">
+			<button>나의 메뉴 확인하기</button>
+		</div>
+			
+			<div class="menuList">
+				<div class="menuCard">
+					
+					<!-- 메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정 -->
+	
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="menuInfoBox"></div>
+			</div>
+
+		</form>
+
+	</div>
+	<script src="/vgan/resources/js/main.js"></script>
+	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
+
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
 	-->

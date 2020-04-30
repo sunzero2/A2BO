@@ -101,7 +101,7 @@ public class MainDao {
 		
 	}
 	
-	public Map<Integer, Object> searchingMenu() {
+	public Map<Integer, Object> searchingMenu(String myLevel) {
 		
 		
 		

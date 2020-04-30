@@ -6,7 +6,6 @@ function $(selector, ln) {
 	}
 }
 // 나의 단계가 나온 후에 메뉴 카드 리스트가 나오게 하는 기능
-
 function create(vals) {
 	var tr = document.createElement('tr');
 	var td = document.createElement('td');
@@ -68,6 +67,8 @@ function count_ck(obj) {
 		obj.checked = false;
 		return false;
 	}
+
+	
 
 }
 
