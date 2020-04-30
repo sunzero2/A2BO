@@ -160,16 +160,19 @@
 		</div>
 		<!-- <button onclick="levelChose();">나의 단계는</button> -->
 		
-		<div class="myLevel">
-		
-			<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>
-		</div>
 		
 		
 		<!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 		
 		<form action="/vgan/main/searchingMenu">
-
+		<div class="myLevel">
+			<div name="mLevel">당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</div>
+		</div>
+		
+		<div class="myMemu">
+			<button>나의 메뉴 확인하기</button>
+		</div>
+			
 			<div class="menuList">
 				<div class="menuCard">
 					

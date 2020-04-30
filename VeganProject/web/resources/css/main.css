@@ -148,6 +148,10 @@ div, buttom, img {
 	margin-left : 87%;
 	margin-top : 20%; 
 }
+.myMemu{
+	margin-left : 87%;
+	margin-top : 20%; 
+}
 
 .myLevel{
 	width: 70%;
@@ -173,5 +177,4 @@ div, buttom, img {
 	height: 80%; 
 	left : 23%; 
 	position : absolute;
-}
-	
+}	
