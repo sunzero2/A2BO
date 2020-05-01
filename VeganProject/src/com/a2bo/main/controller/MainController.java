@@ -112,10 +112,16 @@ public class MainController extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		HttpSession session = request.getSession();
-		String Level = "";
+		String myLevel = "테스트";
+		String Level = "테스트";
 		Map<String, Object> vgList = mService.searchingMenu(Level);
 		
+		vgList = mService.searchingMenu(myLevel);
 		System.out.println("컨트롤러에서 서칭메뉴 Level " + Level) ;
+		
+		
+		rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
+		rd.forward(request, response); 
 		
 	}
 	
