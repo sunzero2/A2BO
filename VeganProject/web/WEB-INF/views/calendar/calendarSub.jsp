@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
 </head>
 <body>
-<c:if test="${success != null}">
+<%-- <c:if test="${success != null}">
 	<script>
 		window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
 	</script>
 </c:if>
-
+ --%>
 <div style="height: 650px; width: 750px;">
 	<form action="addEvent">
 		<div class="subCalTitle"></div>

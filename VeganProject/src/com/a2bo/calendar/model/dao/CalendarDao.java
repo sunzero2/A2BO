@@ -44,12 +44,45 @@ public class CalendarDao {
 		return res;
 	}
 	
-	public void changeEvent() {
+	public int changeEvent(Connection conn, Calendar calendar) throws SQLException {
+		String sql = "update tcalendar set icon=?, cmenu=?, cprice=?, ccont=? where userid=? and cdate=?";
+		PreparedStatement pstm = null;
+		int res = 0;
 		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, calendar.getIcon());
+			pstm.setString(2, calendar.getcMenu());
+			pstm.setInt(3, calendar.getcPrice());
+			pstm.setString(4, calendar.getcCont());
+			pstm.setInt(5, calendar.getUserId());
+			pstm.setString(6, calendar.getcDate());
+			
+			res = pstm.executeUpdate();
+			
+		} finally {
+			jdbc.close(pstm);
+		}
+		
+		return res;
 	}
 	
-	public void removeEvent() {
+	public int removeEvent(Connection conn, int userid, String cdate) throws SQLException {
+		String sql = "delete from tcalendar where userid=? and cdate=?";
+		PreparedStatement pstm = null;
+		int res = 0;
 		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, userid);
+			pstm.setString(2, cdate);
+			
+			res = pstm.executeUpdate();
+			
+		} finally {
+			jdbc.close(pstm);
+		}
+		return res;
 	}
 	
 	public List<Calendar> eventList(Connection conn, int userid, String month) throws SQLException {
