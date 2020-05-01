@@ -11,29 +11,29 @@ div, buttom, img {
 
 .content {
 	height:auto;
-	width:80%;
+	width:1700px;
 	margin: auto;
-	padding-top: 10%;
+	padding-top: 150px;
 }
 
 .mainImage{
 	border: 1px solid black;
-	height:500px;
-	width:100%;
+	height:700px;
+	width:1700px;
 	margin-top : -5%;
 	
 }
 
-.ingChoice{
+/* .ingChoice{
 	border: 1px solid black;
 	height:auto;
 	width:100%;	
-}
+} */
 
 
 .choiceline1{
-	width : 100%;
-    height : 80%;
+	width : 1700px;
+    height : 225px;
     position : relative;
    
 	}
@@ -47,10 +47,10 @@ div, buttom, img {
       }
       
 .choiceline2{
-	width : 100%;
-    height : 80%;
+	width : 1700px;
+    height : 225px;
     position : relative;
-    padding-top : 15%;
+    padding-top : 10px;
 	}
 	
 .choiceline2 div{
@@ -60,10 +60,10 @@ div, buttom, img {
       }
       
 .choiceline3{
-	width : 100%;
-    height : 80%;
+	width : 1700px;
+    height : 225px;
     position : relative;
-    padding-top : 15%;
+    padding-top : 10px;
 	}
 	
 .choiceline3 div{
@@ -73,10 +73,10 @@ div, buttom, img {
 	  }
 	  
 .choiceline4{
-	width : 100%;
-    height : 80%;
+	width : 1700px;
+    height : 225px;
     position : relative;
-    padding-top : 15%;
+    padding-top : 10px;
 	}
 	
 .choiceline4 div{
@@ -130,9 +130,9 @@ div, buttom, img {
 .menuList{
 	
 	border : 1px solid black;
-	width : 85%;
-	height : 70%;
-	margin-left: 10%;
+	width : 1700ps;
+	height : auto;
+	/* margin-left: 2%; */
 }
 
 .menuCard{
@@ -156,17 +156,22 @@ div, buttom, img {
 }
 
 
-.leval{
-	margin-left : 87%;
-	margin-top : 20%; 
+.leval{/* 선택완료 버튼 */
+	margin-left :1500px;
+	margin-top : 30px; 
 }
 
 .myLevel{
 	width: 70%;
     height : 76%;
-	margin-left : 35%;
+	margin-left : 30%;
 	/* opacity: 0; */
 	/* display : none; */
+}
+
+.myMemu{/* 메뉴보기 버튼 */
+	margin-left :1500px;
+	margin-top : 30px; 
 }
 
 

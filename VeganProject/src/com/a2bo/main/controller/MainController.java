@@ -1,6 +1,7 @@
 package com.a2bo.main.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,7 +52,7 @@ public class MainController extends HttpServlet {
 
 	
 	private void searchingVg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Integer> list = new ArrayList<>();
+		/*List<Integer> list = new ArrayList<>();
 		RequestDispatcher rd = null;
 		HttpSession session = request.getSession();
 		String[] ingList = request.getParameterValues("ing");
@@ -95,17 +96,16 @@ public class MainController extends HttpServlet {
 		
 		
 		System.out.println("컨트롤러 단에서 myLevle " + myLevle);
-		
-		
-		request.setAttribute("myLevel", myLevle);
-		
-		
-		rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
-		rd.forward(request, response); 
 		System.out.println("컨트롤러 단에서 리스트 " + list);//아직 숫자로 나옴
 		System.out.println("컨트롤러 단에서 vgList " + vgList);
 		
 		
+		PrintWriter pw = response.getWriter();
+		pw.print(myLevle);*/
+		System.out.println("안녕..");
+		String ing = request.getParameter("ing");
+		PrintWriter pw = response.getWriter();
+		pw.print(ing);
 	}
 	
 	private void searchingMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

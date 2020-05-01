@@ -107,9 +107,9 @@ public class MainDao {
 		ResultSet rs = null;
 		Map<String, Object> menu = null;
 		
-		String sql = "select * from tmenu  inner join trest using (restid) where vlid like " + myLevel;
+		String sql = "select * from tmenu  inner join trest using (restid) where vlid like '" + myLevel + "'";
 
-		
+			
 		try {
 			menu = new HashMap<String, Object>();
 			pstm = conn.prepareStatement(sql);

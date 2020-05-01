@@ -74,7 +74,7 @@ function count_ck(obj) {
 
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {
-	var checkboxes = document.getElementsByName('ing');
+	/*var checkboxes = document.getElementsByName('ing');
 	var str = "";
 	for (var i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
@@ -82,12 +82,11 @@ function radiock() {
 		}
 	}
 
-
+*/
 	
-	str.subString(str.length - 2, str.length);
+	//str.subString(str.length - 2, str.length);
 //	alert(str + "를 선택하셨습니다.");
-
-
+	
 }
 
 // & 나의 단계 나오게 하는 기 
@@ -96,5 +95,9 @@ function radiock() {
 	myLevel1.style.display = "block";
 
 } */
+
+
+
+
 
 
