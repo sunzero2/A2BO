@@ -49,6 +49,21 @@ public class MainService {
 
 	public Map<String, Object> searchingMenu(String myLevel){
 		
+		Map<String, Object> Menu = new HashMap<String, Object>();
+		List<Integer> list = null;
+		
+		List<MainVlv> vgList = new ArrayList<MainVlv>();
+		vgList = searchingVg(list);
+		
+		
+		System.out.println("서칭 메뉴 서비스 단에서 vgList" + vgList);
+		
+		
+		
+		
+		
+		
+		
 		return null;
 		
 	}

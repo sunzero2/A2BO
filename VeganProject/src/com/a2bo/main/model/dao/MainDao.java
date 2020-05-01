@@ -101,7 +101,7 @@ public class MainDao {
 		
 	}
 	
-	public Map<Integer, Object> searchingMenu(String myLevel) {
+	public Map<Integer, Object> searchingMenu(Connection conn,String myLevel) {
 		
 		
 		
