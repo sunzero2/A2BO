@@ -110,9 +110,19 @@ public class MainController extends HttpServlet {
 	
 	private void searchingMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Map<String, Object> menuMap = new HashMap<>();
+		RequestDispatcher rd = null;
+		HttpSession session = request.getSession();
+		String[] Menu = request.getParameterValues("ing");
+		
+		for (String ing : Menu) {
+			System.out.println(Menu);
+		}
+		
+		System.out.println("컨트롤러 단에서 리스트 투스트링" + Menu.toString());
 		
 		
-		
+		System.out.println("추천메뉴는" + Menu);
 		
 	}
 	
