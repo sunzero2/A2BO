@@ -23,7 +23,8 @@ import com.google.common.collect.HashBiMap;
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private MainService mService = new MainService();   
-	
+	private String myLevel = "";
+
     public MainController() {
         super();
     }
@@ -71,33 +72,30 @@ public class MainController extends HttpServlet {
 		
 		
 		
-		String myLevle = "";
 		
 		if(vgList.toString().contains("FTN")) {
-			myLevle = "프루테리언";
+			myLevel = "프루테리언";
 		}else if(vgList.toString().contains("VGN")) {
-			myLevle = "비건";
+			myLevel = "비건";
 		}else if(vgList.toString().contains("OVO")) {
-			myLevle = "오보";
+			myLevel = "오보";
 		}else if(vgList.toString().contains("LTO")) {
-			myLevle = "락토";
+			myLevel = "락토";
 		}else if(vgList.toString().contains("LOV")) {
-			myLevle = "락토오보";
+			myLevel = "락토오보";
 		}else if(vgList.toString().contains("POL")) {
-			myLevle = "폴로";
+			myLevel = "폴로";
 		}else if(vgList.toString().contains("PSC")) {
-			myLevle = "페스코";
+			myLevel = "페스코";
 		}else if(vgList.toString().contains("POP")) {
-			myLevle = "폴로페스코";
+			myLevel = "폴로페스코";
 		}else if(vgList.toString().contains("FXT")) {
-			myLevle = "플렉시테리언";
+			myLevel = "플렉시테리언";
 		}
+		System.out.println("컨트롤러 단에서 myLevel " + myLevel);
 		
 		
-		System.out.println("컨트롤러 단에서 myLevle " + myLevle);
-		
-		
-		request.setAttribute("myLevel", myLevle);
+		request.setAttribute("myLevel", myLevel);
 		
 		
 		rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
@@ -112,17 +110,21 @@ public class MainController extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		HttpSession session = request.getSession();
-		String myLevel = "테스트";
-		String Level = "테스트";
-		Map<String, Object> vgList = mService.searchingMenu(Level);
 		
-		vgList = mService.searchingMenu(myLevel);
-		System.out.println("컨트롤러에서 서칭메뉴 Level " + Level) ;
+		// String Level = "테스트";
+		// Map<String, Object> vgList = mService.searchingMenu(Level);
+	    // vgList = mService.searchingMenu(myLevel);
+		System.out.println("컨트롤러에서 서칭메뉴 Level " + myLevel) ;
 		
 		
 		rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 		rd.forward(request, response); 
 		
+	}
+
+	private String searchingVg(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

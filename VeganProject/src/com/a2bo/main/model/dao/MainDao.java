@@ -98,7 +98,7 @@ public class MainDao {
 		System.out.println("다오에서 rs : " + rs);
 		System.out.println("다오에서 mvl : " + mvl);
 	
-	return mvl;
+		return mvl;
 		
 	}
 	
@@ -134,11 +134,6 @@ public class MainDao {
 		}finally {
 			jdt.close(rs, pstm);
 		}
-		
-		
-		
-		
-		
 		
 		return menu;
 	}
