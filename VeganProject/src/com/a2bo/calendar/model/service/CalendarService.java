@@ -50,7 +50,15 @@ public class CalendarService {
 		return calList;
 	}
 	
-	public void changeMemo() {
+	public Calendar getEvent(String userid, String date) {
+		Calendar calendar = null;
+		Connection conn = jdbc.getConnection();
+		try {
+			calendar = cDao.getEvent(conn, userid, date);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
+		return calendar;
 	}
 }

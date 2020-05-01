@@ -82,6 +82,7 @@ function build() {
 		cell.className = "calendarTd";
 		cell.id = i;
 		
+		
 		// cell 안에 div 넣기(icon 담을 박스임)
 		var div = document.createElement('div');
 		div.className = "calInnerDiv";
@@ -109,6 +110,6 @@ function build() {
 			cell.className = "calendarTd";
 		}
 	}
-	
+	addIcon();
 	callIframe();
 }

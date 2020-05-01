@@ -19,19 +19,20 @@
 	<form action="addEvent">
 		<div class="subCalTitle"></div>
 		<div>
-			<textarea class="subCalMenuContent" name="content" placeholder="오늘의 일기를 작성해보세요!(최대 300자까지 입력가능)" maxlength=300></textarea><br>
+			<textarea class="subCalMenuContent" name="content" placeholder="오늘의 일기를 작성해보세요!(최대 300자까지 입력가능)" maxlength=300>
+			</textarea><br>
 		</div>
 		<div class="subCalIconDiv">
 			<div class="subCalSelectDiv">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="FXT">
+				<input name="icon" class="subCalIconCheck" type="radio" value="FXT">
 				<span class="subCalIcon">플렉시테리언</span>
 			</div>
 			<div class="subCalSelectDiv col2" style="">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="POP">
+				<input name="icon" class="subCalIconCheck" type="radio" value="POP">
 				<span class="subCalIcon">폴로페스코</span>
 			</div>
 			<div class="subCalSelectDiv col3">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="PSC">
+				<input name="icon" class="subCalIconCheck" type="radio" value="PSC">
 				<span class="subCalIcon">페스코</span>
 			</div>
 			<div class="subCalSelectDiv row2">
@@ -67,8 +68,9 @@
 			<div class="subCalInputTitle">음식</div>
 			<input name="menu" class="subCalInput" type="text">
 		</div>
-		<button name="save" class="subCalBtn save">저장</button>
-		<button name="remove" class="subCalBtn remove">삭제</button>
+		<button name="btn" value="save" class="subCalBtn save">저장</button>
+		<button name="btn" value="remove" class="subCalBtn remove">삭제</button>
+		<button name="btn" value="change" class="subCalBtn change">수정</button>
 		<input name="date" type="hidden" value="">
 	</form>
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>

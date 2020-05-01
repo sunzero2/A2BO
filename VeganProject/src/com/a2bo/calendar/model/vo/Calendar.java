@@ -1,6 +1,9 @@
 package com.a2bo.calendar.model.vo;
 
-public class Calendar {
+import java.io.Serializable;
+
+public class Calendar implements Serializable{
+	private static final long serialVersionUID = -7184005844243141537L;
 	private int userId;
 	private String cDate;
 	private String icon;

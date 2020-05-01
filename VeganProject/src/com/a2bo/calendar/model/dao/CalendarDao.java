@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.catalina.session.PersistentManager;
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 import com.a2bo.calendar.model.vo.Calendar;
 import com.google.common.util.concurrent.Service.State;
@@ -59,11 +60,6 @@ public class CalendarDao {
 		List<Calendar> calList = new ArrayList<>();
 		
 		try {
-			/*
-			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, userid);
-			pstm.setString(2, month);
-			rs = pstm.executeQuery();*/
 			pstm = conn.createStatement();
 			rs = pstm.executeQuery(sql);
 			
@@ -85,8 +81,31 @@ public class CalendarDao {
 		return calList;
 	}
 	
-	public void changeMemo() {
+	public Calendar getEvent(Connection conn, String userid, String date) throws SQLException {
+		String sql = "select * from tcalendar where userid = ? and cdate like ?";
 		
+
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		Calendar calendar = null;
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userid);
+			pstm.setString(2, date);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				calendar = new Calendar();
+				calendar.setIcon(rs.getString(3));
+				calendar.setcMenu(rs.getString(4));
+				calendar.setcPrice(rs.getInt(5));
+				calendar.setcCont(rs.getString(6));
+			}
+		} finally {
+			jdbc.close(rs, pstm);
+		}
+		
+		return calendar;
 	}
-	
 }
