@@ -65,24 +65,51 @@
 		</script>
 	</c:if>
 	
-	<c:if test="${calList != null}">
 		<%
 			List list = (List)request.getAttribute("calList");
-			List dayList = new ArrayList();
-			String day = "";
-			
-			for(int i = 0; i < list.size(); i++) {
-				day = ((Calendar)list.get(i)).getcDate();
-				dayList.add(i, day.substring(day.length() - 2, day.length()));
+		
+			if(list.size() > 0) {
+				List dayList = new ArrayList();
+				String day = "";
+				
+				for(int i = 0; i < list.size(); i++) {
+					day = ((Calendar)list.get(i)).getcDate();
+					dayList.add(i, day.substring(day.length() - 2, day.length()));
+				}
+				
+				String month = day.substring(5, 7);
+				pageContext.setAttribute("dayList", dayList);
+				pageContext.setAttribute("month", month);
+			} else {
+				pageContext.setAttribute("dayList", 0);
+				pageContext.setAttribute("month", 0);
 			}
-			
-			String month = day.substring(5, 7);
-			pageContext.setAttribute("dayList", dayList);
-			pageContext.setAttribute("month", month);
 		%>
+	
+	<c:if test="${changeEvent != null}">
+		<script>
+			alert("${changeEvent}");
+		</script>
 	</c:if>
 	
-	 
+	<c:if test="${removeEvent != null}">
+		<script>
+			alert("${removeEvent}");
+		</script>
+	</c:if>
+	
+	<c:if test="${addEvent != null}">
+		<script>
+			alert("${addEvent}");
+		</script>
+	</c:if>
+	
+	<c:if test="${success != null}">
+		<script>
+			window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
+		</script>
+	</c:if>
+	
 	 <!-- iframe -->
 	<div class="screenDiv"></div>
 	<div class="innerDiv">
@@ -97,13 +124,12 @@
 	<script src="/vgan/resources/js/calendar.js"></script>
 	<script src="/vgan/resources/js/iframe.js"></script>
 	<script>
-		var month = ${month};
+	 	var month = ${month};
 		var dayList = ${dayList};
-		var icon = "";
-		
+		var icon = ""; 
 		
 		function addIcon() {
-			if(dayList != null) {
+			if(dayList > 0) {
 				document.querySelectorAll('.calendarTd').forEach(function(el) {
 					for(var i = 0; i < dayList.length; i++) {
 						if(dayList[i] == el.id) {

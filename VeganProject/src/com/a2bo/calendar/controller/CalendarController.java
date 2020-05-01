@@ -36,7 +36,7 @@ import sun.management.counter.Variability;
 public class CalendarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private CalendarService cService = new CalendarService();   
-	
+    
     public CalendarController() {
         super();
     }
@@ -47,7 +47,11 @@ public class CalendarController extends HttpServlet {
 		
 		if(command.contains("main")) {
 			List<Calendar> calList = eventList(request, response);
-			request.setAttribute("calList", calList);
+			if(calList != null) {
+				request.setAttribute("calList", calList);
+			} else {
+				request.setAttribute("calList", "noneList");
+			}
 			rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendar.jsp");
 			rd.forward(request, response);
 		} else if(command.contains("calSub")) {
@@ -61,12 +65,9 @@ public class CalendarController extends HttpServlet {
 			} else {
 				changeEvent(request, response);
 			}
-			
 		} else if(command.contains("calList")) {
 			List<Calendar> calList = eventList(request, response);
 			request.setAttribute("calList", calList);
-		} else if(command.contains("memoList")) {
-			
 		} else if(command.contains("getEvent")) {
 			getEvent(request, response);
 		}
@@ -112,26 +113,89 @@ public class CalendarController extends HttpServlet {
 		calendar.setIcon(icon);
 		calendar.setUserId(userId);
 		
-		System.out.println(icon);
-		
 		int res = cService.addEvent(calendar);
 		
 		if(res > 0) {
-			request.setAttribute("success", calendar);
+			request.setAttribute("addEvent", "일정 추가에 성공하였습니다.");
+			request.setAttribute("success", "일정 추가에 성공하였습니다.");
+		} else {
+			request.setAttribute("addEvent", "일정 추가에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendarSub.jsp");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8787/vgan/calendar/main");
 		rd.forward(request, response);
 	}
 	
-	// 일정 변경 메서드
+	
+	/**
+	 1. MethodName : changeEvent
+	 2. ClassName : CalendarController.java
+	 3. Comment : 일정 변경 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 1.
+	 */
 	private void changeEvent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int userid = ((Member)request.getSession().getAttribute("loginInfo")).getUserId();
+		String content = request.getParameter("content");
+		int price = Integer.parseInt(request.getParameter("price"));
+		String menu = request.getParameter("menu");
+		String date = request.getParameter("date");
+		String month = "";
+		if(date.substring(7, 8).equals("월")) {
+			month = "0" + date.substring(6, 7);
+		} else {
+			month = date.substring(6, 8);
+		}
+		String cdate = date.substring(0, 4) + "/" + month + "/" + date.substring(date.length() - 2, date.length());
 		
+		Calendar calendar = new Calendar();
+		calendar.setcCont(content);
+		calendar.setcDate(cdate);
+		calendar.setcMenu(menu);
+		calendar.setcPrice(price);
+		calendar.setUserId(userid);
+		
+		int res = cService.changeEvent(calendar);
+		if(res > 0) {
+			request.setAttribute("changeEvent", "일정 변경에 성공하였습니다.");
+			request.setAttribute("success", "일정 변경에 성공하였습니다.");
+		} else {
+			request.setAttribute("changeEvent", "일정 변경에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8787/vgan/calendar/main");
+		rd.forward(request, response);
 	}
 	
-	// 일정 삭제 메서드
+	/**
+	 1. MethodName : removeEvent
+	 2. ClassName : CalendarController.java
+	 3. Comment : 일정 삭제 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 1.
+	 */
 	private void removeEvent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int userid = ((Member)request.getSession().getAttribute("loginInfo")).getUserId();
+		String date = request.getParameter("date");
+		String month = "";
+		if(date.substring(7, 8).equals("월")) {
+			month = "0" + date.substring(6, 7);
+		} else {
+			month = date.substring(6, 8);
+		}
+		String cdate = date.substring(0, 4) + "/" + month + "/" + date.substring(date.length() - 2, date.length());
 		
+		int res = cService.removeEvent(userid, cdate);
+		if(res > 0) {
+			request.setAttribute("removeEvent", "일정 삭제에 성공하였습니다.");
+			request.setAttribute("success", "일정 삭제에 성공하였습니다.");
+		} else {
+			request.setAttribute("removeEvent", "일정 삭제에 실패하였습니다. 다시 시도해주십시오.");
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8787/vgan/calendar/main");
+		rd.forward(request, response);
 	}
 	
 	
