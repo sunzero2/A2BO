@@ -29,7 +29,6 @@ public class MainDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		List<MainVlv> mvl = new ArrayList<MainVlv>();
-		//MainVlv mvl = null;
 		String sql = "select vlid from tvl where ";
 		
 		for(int i = 0; i < list.size(); i++) {
@@ -63,21 +62,7 @@ public class MainDao {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
-//			if(rs.next()) {
-				
-//				mvl = new MainVlv(rs.getString(1), sql, sql, sql, sql, sql, sql, sql, sql, sql);
-//				level = rs.getString(1);
-				//mvl.setvLid(rs.getString(1));
-				
-				/*mlv.setMeat(rs.getString(1));
-				mlv.setBird(rs.getString(1));
-				mlv.setFish(rs.getString(1));
-				mlv.setEggs(rs.getString(1));
-				mlv.setMilk(rs.getString(1));
-				mlv.setMushroom(rs.getString(1));
-				mlv.setSeeweed(rs.getString(1));
-				mlv.setVeg(rs.getString(1));
-				mlv.setFruit(rs.getString(1));*/
+
 			while(rs.next()){
 				MainVlv mainvlv = new MainVlv();
 				mainvlv.setvLid(rs.getString(1));
@@ -92,30 +77,35 @@ public class MainDao {
 		}
 		
 
-		System.out.println("다오에서 리스트 :" + list);
-		System.out.println("다오에서 sql : " + sql);
-		System.out.println("다오에서 pstm : " + stmt);
-		System.out.println("다오에서 rs : " + rs);
-		System.out.println("다오에서 mvl : " + mvl);
+		//System.out.println("다오에서 리스트 :" + list);
+		//System.out.println("다오에서 sql : " + sql);
+		//System.out.println("다오에서 pstm : " + stmt);
+		//System.out.println("다오에서 rs : " + rs);
+		//System.out.println("다오에서 mvl : " + mvl);
 	
 		return mvl;
 		
 	}
 	
-	public Map<String, Object> searchingMenu(Connection conn,String myLevel) throws SQLException {
+	
+	
+	
+	public Map<String, Object> searchingMenu(Connection conn,String myLevelId) throws SQLException {
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		Map<String, Object> menu = null;
 		
-		String sql = "select * from tmenu  inner join trest using (restid) where vlid like " + myLevel;
-
-		
+		String sql = "select * from tmenu  inner join trest using (restid) where vlid like '" + myLevelId + "'";
+		List<Map<String, Object>> result  = null;
+		sql += " and Rownum <5";
 		try {
+			result = new ArrayList<Map<String,Object>>();
 			menu = new HashMap<String, Object>();
 			pstm = conn.prepareStatement(sql);
 			rs = pstm.executeQuery();
+			
+			
 			while(rs.next()) {
-					
 					//디비에서 출력되는 순서
 					//레스트 아이디,메뉴 아이디, 비건 아이디, 메뉴이름, 가격, 레스트 이름, 주소, 전화번호, 매장영업시간, 레스트체인점
 					menu.put("메뉴이름", rs.getString(4));
@@ -124,17 +114,34 @@ public class MainDao {
 					menu.put("주소", rs.getString(7));
 					menu.put("전화번호", rs.getString(8));
 					menu.put("영업시간", rs.getString(9));
+					result.add(menu);		
 					
-				
+							
+					System.out.println(menu);
+
 					
-			}
+//					for(int i=0; i < 5; i++) {
+//						System.out.println(menu.get(i));
+//					}
+					
+					
+		    }
+			
+			
+			
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			jdt.close(rs, pstm);
 		}
 		
+		System.out.println("서칭 메뉴 다오단에서 " + menu);
+		
+		System.out.println(sql);
+		
 		return menu;
+		
+	
 	}
 }

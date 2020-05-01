@@ -28,43 +28,34 @@ public class MainService {
 		
 		try {
 			vgList = mDao.searchingVg(conn, list);
-//			vgMap.put("isSuccess", true);
-//			vgMap.put("res", "불러오는데 성공했다야");
 		} catch (SQLException e) {
-//			vgMap.put("isSuccess", false);
-//			vgMap.put("res", "관리자에게 문의 하세요");
 			e.printStackTrace();
 		}finally {
 			jdt.close(conn);
 		}
 		
-		
-		
-		System.out.println("서비스 단에서 list " + list);
-		System.out.println("서비스 단에서 vgList " + vgList);		
+		//System.out.println("서비스 단에서 list " + list);
+		//System.out.println("서비스 단에서 vgList " + vgList);		
 		return vgList;
-		
+
 	}
-
-
-	public Map<String, Object> searchingMenu(String myLevel){
+	public Map<String, Object> searchingMenu(String myLevelId){
 		
-		Map<String, Object> Menu = new HashMap<String, Object>();
-		List<Integer> list = null;
+		Connection conn = jdt.getConnection();
+		Map<String, Object> menu = new HashMap<String, Object>();
+			
+		try {
+			menu = mDao.searchingMenu(conn, myLevelId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			jdt.close(conn);
+		}
 		
-		List<MainVlv> vgList = new ArrayList<MainVlv>();
+		System.out.println("서칭 메뉴 서비스 단에서 " + myLevelId);
+				
 		
-		
-		
-		System.out.println("서칭 메뉴 서비스 단에서 vgList" + vgList);
-		
-		
-		
-		
-		
-		
-		
-		return Menu;
+		return menu;
 		
 	}
 	

@@ -19,6 +19,7 @@ public class Welcome extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
+		// 새로고침할때마다 쿠키값 지워주기 
 		view.forward(request, response);
 	}
 
