@@ -17,8 +17,6 @@ function create(vals) {
 	})
 
 	var dtd = document.createElement('td');
-/*	dtd.className= "menuImage";
-	body.appendChild(dtd);*/
 	dtd.innerHTML = "<div class='menuImage'><img src='http://placehold.it/245x230'></div><div class='menuInfo'><div class='menuName'>메뉴 이름 : </div><div class='menuPoint'>별점 : </div><div class='menuAd'>주소 : </div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>"
 			+ "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>"
 	tr.appendChild(dtd);
@@ -76,7 +74,7 @@ function count_ck(obj) {
 
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {
-	var checkboxes = document.getElementsByName('ing');
+	/*var checkboxes = document.getElementsByName('ing');
 	var str = "";
 	for (var i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
@@ -84,10 +82,11 @@ function radiock() {
 		}
 	}
 
-	str.subString(str.length - 2, str.length);
+*/
+	
+	//str.subString(str.length - 2, str.length);
 //	alert(str + "를 선택하셨습니다.");
-
-
+	
 }
 
 // & 나의 단계 나오게 하는 기 
@@ -96,5 +95,9 @@ function radiock() {
 	myLevel1.style.display = "block";
 
 } */
+
+
+
+
 
 

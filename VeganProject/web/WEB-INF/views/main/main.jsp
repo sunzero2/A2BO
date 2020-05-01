@@ -33,7 +33,7 @@
 			<br>
 		</div>
 		<div class="ingBox">
-		<form action="/vgan/main/searchingVg">
+		<!-- <form action="/vgan/main/searchingVg"> -->
 		<table>
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1">
@@ -171,7 +171,7 @@
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">새유
+							name="ing" onclick="count_ck(this)">새우
 					</div>
 				</div>
 
@@ -230,23 +230,24 @@
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
 			
-		<div class="leval">
-			<button onclick="radiock();">선택완료</button>
+		<div class="leval" id="ajax">
+			<button onclick="click();">선택완료</button>
+			
+			
 			
 		</div>
 		</table>
-		</form>
+		<!-- </form> -->
 		</div>
 		<!-- <button onclick="levelChose();">나의 단계는</button> -->
 		
-		<div class="myLevel">
-		
-			<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>
+		<div class="myLevel" id="ajax">
+			<%-- <h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1> --%>
 		</div>
 		
 		
 		<!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
-		
+		<div>
 		<form action="/vgan/main/searchingMenu">
 			<div class="myMemu">
 				<button name="ing">나의 메뉴 확인하기</button>
@@ -266,15 +267,12 @@
 		</form>
 
 	</div>
-	<script src="/vgan/resources/js/main.js"></script>
 	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
 	
 				
-		
+
 			
-	</div>
-	<script src="/vgan/resources/js/main.js"></script>
-	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
+	
 
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
@@ -288,6 +286,25 @@
 	</div>
 
 	<!-- 배너 스크립트입니다. -혜영 -->
+	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
+	</script>
+	<script>
+		function click() {
+			console.log("tq");
+			$.ajax({
+				url: "/vgan/main/searchingVg",
+				type: 'post',
+				data: {
+					"ing" : "3"
+				},
+				success: function(f) {
+					console.dir("ㅇㄹㄴㅇ린ㅇ리나얼")
+				}
+			})
+		}
+		
+	</script>
+	<script src="/vgan/resources/js/main.js"></script>
 	<script src="/vgan/resources/js/top.js"></script>
 </body>
 </html>

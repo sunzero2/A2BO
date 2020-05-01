@@ -30,12 +30,32 @@ public class CalendarService {
 		return res;
 	}
 	
-	public void changeEvent() {
+	public int changeEvent(Calendar calendar) {
+		Connection conn = jdbc.getConnection();
+		int res = 0;
+		try {
+			res = cDao.changeEvent(conn, calendar);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		}
 		
+		return res;
 	}
 	
-	public void removeEvent() {
+	public int removeEvent(int userid, String cdate) {
+		Connection conn = jdbc.getConnection();
+		int res = 0;
+		try {
+			res = cDao.removeEvent(conn, userid, cdate);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		}
 		
+		return res;
 	}
 	
 	public List<Calendar> eventList(int userid, String month) {
