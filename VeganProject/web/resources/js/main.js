@@ -70,23 +70,28 @@ function count_ck(obj) {
 function radiock() {
 	console.log("tq");
 	console.log($);
- 	var checkboxes = document.getElementsByName('ing');
-	var str = "";
+ 	//var checkboxes = document.getElementsByName('ing');
+ 	var str = [];
 	for (var i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
 			str += checkboxes[i].value + ", ";
 		}
 	} 
+ 	
 	console.log(str);
 	$.ajax({
 				url: "/vgan/main/searchingVg",
 				type: 'get',
 				data:{ 
-					"str" : str
+					 str
 				},
 				success: function() {
 					document.querySelector('.myLevel').innerHTML = '<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>'
 				}
+				,error:function(request,status,error){
+					alert("code:"+request.status+ "\n" +"message:"+request.responseText+  "\n" + "error:" + error);
+				}
+				
 			})
 
 //	str.subString(str.length - 2, str.length);
@@ -114,6 +119,5 @@ function radiock() {
 		}
 	}) 
 } */
-
 
 

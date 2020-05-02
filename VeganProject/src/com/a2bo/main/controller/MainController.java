@@ -58,20 +58,18 @@ public class MainController extends HttpServlet {
       List<Integer> list = new ArrayList<>();
       RequestDispatcher rd = null;
       HttpSession session = request.getSession();
-      String[] ingList = request.getParameterValues("ing");
-      //jsp에서 네임이ing라는 벨류값을 가진 아이들을 가져온다.
+      String ingList = request.getParameter("str");
+      System.out.println(ingList);
       String myLevel ="";
+      List<MainVlv> vgList = mService.searchingVg(list);
       PrintWriter pw = response.getWriter();
-      for (String ing : ingList) {
-         list.add(Integer.parseInt(ing));
-      }
+//      for (String ing : ingList) {
+//    	  list.add(Integer.parseInt(ing));
+//      }
       
       System.out.println("컨트롤러 단에서 리스트 " + list);
       System.out.println("컨트롤러 단에서 리스트 투스트링" + list.toString());
-      //MainVlv mvl = mService.searchingVg(list);
-      
-      
-      List<MainVlv> vgList = mService.searchingVg(list);
+  
       
       
       if(vgList.toString().contains("FTN")) {
@@ -102,11 +100,12 @@ public class MainController extends HttpServlet {
       System.out.println("컨트롤러 단에서 vgList " + vgList);
       Cookie cookie = new Cookie("myLevel", myLevel);
       response.addCookie(cookie);
-      
+     
+      pw.write(myLevel);
       
 //      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 //      rd.forward(request, response); 
-      	pw.write(myLevel);
+      	
    }
    
    private void searchingMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
