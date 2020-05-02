@@ -157,7 +157,7 @@ public class MainController extends HttpServlet {
       List<Map<String, Object>> menu = mService.searchingMenu(myLevelId);
       System.out.println("컨트롤러에서 서칭메뉴 myLevel " + myLevel) ;
       System.out.println("컨트롤러에서 서칭메뉴 myLevelId " + myLevelId) ;
-      System.out.println("컨트롤러에서 서칭메뉴 menu " + menu);
+      
       
       request.setAttribute("myLevelId", myLevelId);
             

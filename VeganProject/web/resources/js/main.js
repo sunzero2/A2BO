@@ -130,6 +130,8 @@ function radiock() {
 } */
 function menuList(){
 	console.dir("dd");
+		
+	
 	var menu;
 	$.ajax({
 				url: "/vgan/main/searchingMenu",
@@ -140,9 +142,9 @@ function menuList(){
 					menu : menu
 				},
 				
-				success: function() {
+				success: function(menu) {
 					console.dir("aa")
-					document.querySelector('.menuCard').innerHTML = print;
+					document.querySelector('.menuCard').innerHTML = menu;
 				}
 				
 				
