@@ -34,7 +34,8 @@
 		</div>
 		<div class="ingBox">
 		<!-- <form action="/vgan/main/searchingVg"> -->
-		<table>
+		
+		<!-- <form action="vgList"></form> -->
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1">
 					<div class="ingImage">
@@ -229,19 +230,18 @@
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
-			
-		<div class="leval" id="ajax">
-			<button onclick="click();">선택완료</button>
-			
+			<button onclick="radiock();">선택완료</button>
+		<div class="leval">
 			
 			
 		</div>
-		</table>
+		
+		
 		<!-- </form> -->
 		</div>
 		<!-- <button onclick="levelChose();">나의 단계는</button> -->
 		
-		<div class="myLevel" id="ajax">
+		<div class="myLevel">
 			<%-- <h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1> --%>
 		</div>
 		
@@ -267,6 +267,23 @@
 		</form>
 
 	</div>
+	</div>
+<!-- 	<script>
+		function click() {
+			console.log("tq");
+			$.ajax({
+				url: "/vgan/main/searchingVg",
+				type: 'post',
+				data: {
+					"ing" : "3"
+				},
+				success: function(f) {
+					console.dir("ㅇㄹㄴㅇ린ㅇ리나얼")
+				}
+			})
+		}
+		
+	</script> -->
 	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
 	
 				
@@ -286,24 +303,11 @@
 	</div>
 
 	<!-- 배너 스크립트입니다. -혜영 -->
-	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
-	</script>
-	<script>
-		function click() {
-			console.log("tq");
-			$.ajax({
-				url: "/vgan/main/searchingVg",
-				type: 'post',
-				data: {
-					"ing" : "3"
-				},
-				success: function(f) {
-					console.dir("ㅇㄹㄴㅇ린ㅇ리나얼")
-				}
-			})
-		}
-		
-	</script>
+<!-- 	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
+	</script> -->
+	
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous" type="text/javascript"></script>
+	
 	<script src="/vgan/resources/js/main.js"></script>
 	<script src="/vgan/resources/js/top.js"></script>
 </body>

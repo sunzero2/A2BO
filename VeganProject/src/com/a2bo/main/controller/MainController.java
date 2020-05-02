@@ -1,6 +1,7 @@
 package com.a2bo.main.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.HttpCookie;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,17 +54,20 @@ public class MainController extends HttpServlet {
 
    
    private void searchingVg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	  System.out.println("여기까지는 왔나?");
       List<Integer> list = new ArrayList<>();
       RequestDispatcher rd = null;
       HttpSession session = request.getSession();
       String[] ingList = request.getParameterValues("ing");
       //jsp에서 네임이ing라는 벨류값을 가진 아이들을 가져온다.
       String myLevel ="";
+      PrintWriter pw = response.getWriter();
       for (String ing : ingList) {
          list.add(Integer.parseInt(ing));
       }
       
-      //System.out.println("컨트롤러 단에서 리스트 투스트링" + list.toString());
+      System.out.println("컨트롤러 단에서 리스트 " + list);
+      System.out.println("컨트롤러 단에서 리스트 투스트링" + list.toString());
       //MainVlv mvl = mService.searchingVg(list);
       
       
@@ -95,14 +99,14 @@ public class MainController extends HttpServlet {
       request.setAttribute("myLevel", myLevel);
       
       
-      //System.out.println("컨트롤러 단에서 리스트 " + list);//아직 숫자로 나옴
-      //System.out.println("컨트롤러 단에서 vgList " + vgList);
+      System.out.println("컨트롤러 단에서 vgList " + vgList);
       Cookie cookie = new Cookie("myLevel", myLevel);
       response.addCookie(cookie);
       
       
-      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
-      rd.forward(request, response); 
+//      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
+//      rd.forward(request, response); 
+      	pw.write(myLevel);
    }
    
    private void searchingMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -147,6 +151,8 @@ public class MainController extends HttpServlet {
       
       rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
       rd.forward(request, response); 
+      
+      
       
    }
 
