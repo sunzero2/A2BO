@@ -39,10 +39,10 @@ public class MainService {
       return vgList;
 
    }
-   public Map<String, Object> searchingMenu(String myLevelId){
+   public List<Map<String, Object>> searchingMenu(String myLevelId){
       
       Connection conn = jdt.getConnection();
-      Map<String, Object> menu = new HashMap<String, Object>();
+      List<Map<String, Object>> menu = null;
          
       try {
          menu = mDao.searchingMenu(conn, myLevelId);
@@ -52,7 +52,7 @@ public class MainService {
          jdt.close(conn);
       }
       
-      System.out.println("서칭 메뉴 서비스 단에서 " + myLevelId);
+      System.out.println("서칭 메뉴 서비스 단에서 " + menu);
             
       
       return menu;

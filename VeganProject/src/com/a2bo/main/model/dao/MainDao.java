@@ -90,17 +90,16 @@ public class MainDao {
    
    
    
-   public Map<String, Object> searchingMenu(Connection conn,String myLevelId) throws SQLException {
+   public List<Map<String, Object>> searchingMenu(Connection conn,String myLevelId) throws SQLException {
       PreparedStatement pstm = null;
       ResultSet rs = null;
       Map<String, Object> menu = null;
       
       String sql = "select * from tmenu  inner join trest using (restid) where vlid like '" + myLevelId + "'";
       List<Map<String, Object>> result  = null;
-      sql += " and Rownum <5";
+      sql += " and Rownum <6";
       try {
          result = new ArrayList<Map<String,Object>>();
-         menu = new HashMap<String, Object>();
          pstm = conn.prepareStatement(sql);
          rs = pstm.executeQuery();
          
@@ -108,6 +107,8 @@ public class MainDao {
          while(rs.next()) {
                //디비에서 출력되는 순서
                //레스트 아이디,메뉴 아이디, 비건 아이디, 메뉴이름, 가격, 레스트 이름, 주소, 전화번호, 매장영업시간, 레스트체인점
+        	 
+        	   menu = new HashMap<>();
                menu.put("메뉴이름", rs.getString(4));
                menu.put("가격", rs.getInt(5));
                menu.put("레스트 이름", rs.getString(6));
@@ -117,14 +118,14 @@ public class MainDao {
                result.add(menu);      
                
                      
-               System.out.println(menu);
-
+               System.out.println("와일문 안에 담기는 메뉴 " + menu);
+        	
                
 //               for(int i=0; i < 5; i++) {
 //                  System.out.println(menu.get(i));
 //               }
                
-               
+  
           }
          
          
@@ -136,11 +137,12 @@ public class MainDao {
          jdt.close(rs, pstm);
       }
       
-      System.out.println("서칭 메뉴 다오단에서 " + menu);
+      System.out.println("서칭 메뉴 다오단에서 menu " + menu);
+      System.out.println("서칭 메뉴 다오단에서 result " + result);
       
-      System.out.println(sql);
+//      System.out.println(sql);
       
-      return menu;
+      return result;
       
    
    }

@@ -230,9 +230,9 @@
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
-			<button onclick="radiock();">선택완료</button>
-		<div class="leval">
 			
+		<div class="leval">
+			<button onclick="radiock();">선택완료</button>
 			
 		</div>
 		
@@ -248,9 +248,9 @@
 		
 		<!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 		<div>
-		<form action="/vgan/main/searchingMenu">
+		<!-- <form action="/vgan/main/searchingMenu"> -->
 			<div class="myMemu">
-				<button name="ing">나의 메뉴 확인하기</button>
+				<button name="ing" onclick="menuList()">나의 메뉴 확인하기</button>
 			</div>
 			<div class="menuList">
 				<div class="menuCard">
@@ -264,7 +264,7 @@
 				<div class="menuInfoBox"></div>
 			</div>
 
-		</form>
+		<!-- </form> -->
 
 	</div>
 	</div>

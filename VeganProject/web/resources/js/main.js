@@ -69,28 +69,37 @@ function count_ck(obj) {
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {
 	console.log("tq");
-	console.log($);
- 	//var checkboxes = document.getElementsByName('ing');
+	
+ 	var checkboxes = document.getElementsByName('ing');
  	var str = [];
 	for (var i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
-			str += checkboxes[i].value + ", ";
+			str += checkboxes[i].value;
 		}
 	} 
+
+	// $("input[name=ing]:checked").each(function(i){   //jQuery로 for문 돌면서 check 된값 배열에 담는다
+    //         str.push($(this).val());
+    //           });
+
  	
 	console.log(str);
+	console.log(checkboxes);
 	$.ajax({
 				url: "/vgan/main/searchingVg",
 				type: 'get',
-				data:{ 
-					 str
+				headers: {
+					'Content-Type':'application/x-www-form-urlencoded'
 				},
-				success: function() {
-					document.querySelector('.myLevel').innerHTML = '<h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1>'
-				}
-				,error:function(request,status,error){
+				data:{ 
+					 str : str
+				},
+				 success: function(str) {
+					document.querySelector('.myLevel').innerHTML = /* '<h1>당신의 비건 단계는' +myLevel + '입니다~</h1>' */str;
+				} 
+				/* ,error:function(request,status,error){
 					alert("code:"+request.status+ "\n" +"message:"+request.responseText+  "\n" + "error:" + error);
-				}
+				} */
 				
 			})
 
@@ -119,5 +128,25 @@ function radiock() {
 		}
 	}) 
 } */
+function menuList(){
+	console.dir("dd");
+	var menu;
+	$.ajax({
+				url: "/vgan/main/searchingMenu",
+				type: 'get',
+				headers: {
+					'Content-Type':'application/x-www-form-urlencoded'
+				},data :{
+					menu : menu
+				},
+				
+				success: function() {
+					console.dir("aa")
+					document.querySelector('.menuCard').innerHTML = print;
+				}
+				
+				
+			})
 
+}
 
