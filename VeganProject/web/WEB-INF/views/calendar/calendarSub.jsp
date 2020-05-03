@@ -36,27 +36,27 @@
 				<span class="subCalIcon">페스코</span>
 			</div>
 			<div class="subCalSelectDiv row2">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="POL">
+				<input name="icon" class="subCalIconCheck" type="radio" value="POL">
 				<span class="subCalIcon">폴로</span>
 			</div>
 			<div class="subCalSelectDiv col2 row2">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="LOV">
+				<input name="icon" class="subCalIconCheck" type="radio" value="LOV">
 				<span class="subCalIcon">락토오보</span>
 			</div>
 			<div class="subCalSelectDiv col3 row2">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="LTO">
+				<input name="icon" class="subCalIconCheck" type="radio" value="LTO">
 				<span class="subCalIcon">락토</span>
 			</div>
 			<div class="subCalSelectDiv row3">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="OVO">
+				<input name="icon" class="subCalIconCheck" type="radio" value="OVO">
 				<span class="subCalIcon">오보</span>
 			</div>
 			<div class="subCalSelectDiv col2 row3">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="VGN">
+				<input name="icon" class="subCalIconCheck" type="radio" value="VGN">
 				<span class="subCalIcon">비건</span>
 			</div>
 			<div class="subCalSelectDiv col3 row3">
-				<input name="icon" class="subCalIconCheck" type="checkbox" value="FTN">
+				<input name="icon" class="subCalIconCheck" type="radio" value="FTN">
 				<span class="subCalIcon">프루테리언</span>
 			</div>
 		</div>
