@@ -165,10 +165,27 @@ public class MainController extends HttpServlet {
 //      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 //      rd.forward(request, response); 
       for(int i = 0; i < menu.size(); i++) {
-      pw.println("<div class='menuCard" + i + "><div class='menuInfo'><div class='menuName'>메뉴 이름 : " + menu.get(i).get("메뉴이름") + "</div>"
-    		  	+"<div class='menuPoint'>별점 : </div><div class='menuAd'>주소 : " +  menu.get(i).get("주소") + "</div>"
-    		    +"<button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>" 
-      				+ "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>");
+      pw.println(
+    		 "<div class='menuCard" + i + "'>" + 
+    		  "<div class='menuInfo'>" + 
+    		  "<div class='menuName'><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
+    		  "<div class='menuPri'>가격 : " + menu.get(i).get("가격") + "원</div>" + 
+    		  "<div class='menuPoint'>별점 : " + "" + "</div>" + 
+    		  "<div><h3>******* 매장 소개********</h3></div>" + 
+    		  "<div class='restName'>" + menu.get(i).get("레스트 이름")  + "</div>" + 
+    		  "<div class='restAd'>주소 : " + menu.get(i).get("주소") + "</div>" + 
+    		  "<div class='restNum'>전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
+    		  "<div class='restOpen'>영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
+    		  "<div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button></div>" + 
+    		  "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a>" + 
+    		  "</div>" +
+    		  "</div>"
+    		  );
+      
+      
+      
+      
+      
 //      pw.println("<h3>" + menu+ "</h3>");
       }
       pw.flush();

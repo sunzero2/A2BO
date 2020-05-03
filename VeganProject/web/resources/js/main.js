@@ -1,4 +1,10 @@
-
+function all(selector, ln) {
+	if (arguments.length >= 2) {
+		return document.querySelectorAll(selector);
+	} else {
+		return document.querySelector(selector);
+	}
+}
 // 나의 단계가 나온 후에 메뉴 카드 리스트가 나오게 하는 기능
 function create(vals) {
 	var tr = document.createElement('tr');
@@ -18,32 +24,40 @@ function create(vals) {
 	return tr;
 }
 
+
+
 // 메뉴 리스트 카드에서 상세보기 했을 때 아이프레임으로 나오게 하는 기능
 function create2(vals) {
 	var tr = document.createElement('tr');
 	var td = document.createElement('td');
-
-	vals.forEach(function (v) {
+	
+/*	vals.forEach(function (v) {
 		var td = document.createElement('td');
 		td.textContent = v.value;
 		tr.appendChild(td);
 	})
-
+*/
 	var dtd = document.createElement('td');
-	dtd.innerHTML = "<iframe name='menuIf' class='menuIfram'src='https://www.iei.or.kr/main/main.kh'></iframe>"
+	dtd.innerHTML = "<div><div><button onclick='xbtn();'>x</button></div><iframe name='menuIf' class='menuIfram' src='https://www.iei.or.kr/main/main.kh'></iframe></div>"
 	tr.appendChild(dtd);
 
 	return tr;
 }
 
 function menuList() {
-	var vals = $('input[type=text]', 1);
-	$('.menuCard').appendChild(create(vals));
+	var vals = all('input[type=text]', 1);
+	all('.menuCard').appendChild(create(vals));
 }
 
 function menuInfoBox() {
-	var vals = $('input[type=text]', 1);
-	$('.menuInfoBox').appendChild(create2(vals));
+	var vals = all('input[type=text]', 1);
+	all('.menuInfoBox').appendChild(create2(vals));
+}
+
+
+function xbtn(){
+	var menuInfoBox = document.querySelector('.menuInfoBox');
+	menuInfoBox.close();
 }
 
 // 재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능
