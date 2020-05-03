@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
 </head>
 <body>
-<%-- <c:if test="${success != null}">
+<c:if test="${success != null}">
 	<script>
 		window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
 	</script>
 </c:if>
- --%>
+
 <div style="height: 650px; width: 750px;">
 	<form action="addEvent">
 		<div class="subCalTitle"></div>
@@ -24,41 +24,44 @@
 		</div>
 		<div class="subCalIconDiv">
 			<div class="subCalSelectDiv">
+				<img id="FXT" src="/vgan/resources/image/FXT.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="FXT">
-				<span class="subCalIcon">플렉시테리언</span>
 			</div>
-			<div class="subCalSelectDiv col2" style="">
+			
+			<div class="subCalSelectDiv col2">
+				<img id="POP" src="/vgan/resources/image/POP.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="POP">
-				<span class="subCalIcon">폴로페스코</span>
 			</div>
+			
 			<div class="subCalSelectDiv col3">
+				<img id="PSC" src="/vgan/resources/image/PSC.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="PSC">
-				<span class="subCalIcon">페스코</span>
 			</div>
+			
 			<div class="subCalSelectDiv row2">
+				<img id="POL" src="/vgan/resources/image/POL.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="POL">
-				<span class="subCalIcon">폴로</span>
-			</div>
+			</div>	
 			<div class="subCalSelectDiv col2 row2">
+				<img id="LOV" src="/vgan/resources/image/LOV.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="LOV">
-				<span class="subCalIcon">락토오보</span>
 			</div>
 			<div class="subCalSelectDiv col3 row2">
+				<img id="LTO" src="/vgan/resources/image/LTO.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="LTO">
-				<span class="subCalIcon">락토</span>
 			</div>
 			<div class="subCalSelectDiv row3">
+				<img id="OVO" src="/vgan/resources/image/OVO.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="OVO">
-				<span class="subCalIcon">오보</span>
 			</div>
 			<div class="subCalSelectDiv col2 row3">
+				<img id="VGN" src="/vgan/resources/image/VGN.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="VGN">
-				<span class="subCalIcon">비건</span>
 			</div>
 			<div class="subCalSelectDiv col3 row3">
+				<img id="FTN" src="/vgan/resources/image/FTN.png">
 				<input name="icon" class="subCalIconCheck" type="radio" value="FTN">
-				<span class="subCalIcon">프루테리언</span>
-			</div>
+			</div>	
 		</div>
 		<div class="subCalInputDiv subCalPrice">
 			<div class="subCalInputTitle">가격</div>
@@ -76,5 +79,21 @@
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>
 </div>
 <script src="/vgan/resources/js/iframe.js"></script>
+<script>
+	var img = document.querySelectorAll('img');
+	document.querySelectorAll('.subCalIconCheck').forEach(function(el) {
+		el.addEventListener('click', function(v) {
+			if(v.target.checked) {
+				for(i = 0; i < img.length; i++) {
+					if(img[i].id == v.target.value) {
+						img[i].parentNode.style.background = "#ffbd40";
+					} else {
+						img[i].parentNode.style.background = "white";
+					}
+				}
+			}
+		})
+	})
+</script>
 </body>
 </html>

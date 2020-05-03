@@ -13,7 +13,7 @@ calSub.jsp의 CSS 부분
 	position: absolute;
 	width: 300px;
 	height: 450px;
-	border: 1px solid;
+	border: 1px solid #7d7d7d;
 	margin-top: 30px;
 	margin-left: 30px;
 }
@@ -36,7 +36,7 @@ calSub.jsp의 CSS 부분
 	position: absolute;
 	width: 120px;
 	height: 80px;
-	border: 1px solid;
+	border: 1px solid #c5c5c5;
 	border-radius: 8px;
 }
 
@@ -69,7 +69,6 @@ calSub.jsp의 CSS 부분
 
 .subCalInputDiv {
 	position: absolute;
-	border: 1px solid;
 	margin-left: 350px;
 	width: 400px;
 	height: 35px;
@@ -120,6 +119,69 @@ calSub.jsp의 CSS 부분
 	margin-left: 180px;
 }
 
+#FXT {
+	width: 85px;
+	height: inherit;
+	margin-left: 15px;
+	position: absolute;
+}
+
+#POP {
+	width: 109px;
+	margin-left: 5px;
+	margin-top: 13px;
+	position: absolute;
+}
+
+#PSC {
+	width: 64px;
+	margin-left: 28px;
+	margin-top: 10px;
+	position: absolute;
+}
+
+#POL {
+	width: 80px;
+	height: inherit;
+	margin-left: 19px;
+	position: absolute;
+}
+
+#LOV {
+	width: 73px;
+	height: inherit;
+	margin-left: 19px;
+	position: absolute;
+}
+
+#LTO {
+	width: 72px;
+	height: inherit;
+	margin-left: 23px;
+	position: absolute;
+}
+
+#OVO {
+	width: 82px;
+	height: inherit;
+	margin-left: 13px;
+	position: absolute;
+}
+
+#VGN {
+	width: 99px;
+	height: inherit;
+	margin-left: 11px;
+	margin-top: -10px;
+	position: absolute;
+}
+
+#FTN {
+	width: 79px;
+	height: inherit;
+	margin-left: 20px;
+	position: absolute;
+}
 /* 
 calendar.jsp의 CSS 부분
 */
@@ -127,7 +189,6 @@ calendar.jsp의 CSS 부분
 	float: right;
 	width: 300px;
 	height: 50px;
-	border: 1px solid;
 }
 
 .mainCalTotalTitle {
@@ -165,7 +226,6 @@ calendar.jsp의 CSS 부분
 }
 
 .calInnerDiv {
-	border: 1px solid;
 	width: 70px;
 	height: 70px;
 	margin-top: 48px;

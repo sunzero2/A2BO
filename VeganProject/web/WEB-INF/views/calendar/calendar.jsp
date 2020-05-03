@@ -24,7 +24,6 @@
 		<div class="mainCalHeader">
 			<div>
 				<div class="mypageTitle">Calendar</div>
-				<a href="/vgan/calendar/memoList" style="float: right; font-size: 15px; margin-right: 10px;">메모장</a>
 			</div>
 			<span>이번 달 채식 횟수를 체크해보세요!</span>
 		</div>
@@ -51,7 +50,7 @@
 			</table>
 		</div>
 		<div class="mainCalTotal">
-			<span class="mainCalTotalSum">30</span>
+			<span class="mainCalTotalSum"></span>
 			<span class="mainCalTotalTitle">이번 달 나의 채식 횟수 :</span>
 		</div>
 	</div>
@@ -65,51 +64,24 @@
 		</script>
 	</c:if>
 	
+	<c:if test="${calList != null}">
 		<%
 			List list = (List)request.getAttribute("calList");
-		
-			if(list.size() > 0) {
-				List dayList = new ArrayList();
-				String day = "";
-				
-				for(int i = 0; i < list.size(); i++) {
-					day = ((Calendar)list.get(i)).getcDate();
-					dayList.add(i, day.substring(day.length() - 2, day.length()));
-				}
-				
-				String month = day.substring(5, 7);
-				pageContext.setAttribute("dayList", dayList);
-				pageContext.setAttribute("month", month);
-			} else {
-				pageContext.setAttribute("dayList", 0);
-				pageContext.setAttribute("month", 0);
+			List dayList = new ArrayList();
+			String day = "";
+			
+			for(int i = 0; i < list.size(); i++) {
+				day = ((Calendar)list.get(i)).getcDate();
+				dayList.add(i, day.substring(day.length() - 2, day.length()));
 			}
+			
+			String month = day.substring(5, 7);
+			pageContext.setAttribute("dayList", dayList);
+			pageContext.setAttribute("month", month);
 		%>
-	
-	<c:if test="${changeEvent != null}">
-		<script>
-			alert("${changeEvent}");
-		</script>
 	</c:if>
 	
-	<c:if test="${removeEvent != null}">
-		<script>
-			alert("${removeEvent}");
-		</script>
-	</c:if>
-	
-	<c:if test="${addEvent != null}">
-		<script>
-			alert("${addEvent}");
-		</script>
-	</c:if>
-	
-	<c:if test="${success != null}">
-		<script>
-			window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
-		</script>
-	</c:if>
-	
+	 
 	 <!-- iframe -->
 	<div class="screenDiv"></div>
 	<div class="innerDiv">
@@ -124,12 +96,13 @@
 	<script src="/vgan/resources/js/calendar.js"></script>
 	<script src="/vgan/resources/js/iframe.js"></script>
 	<script>
-	 	var month = ${month};
+		var month = ${month};
 		var dayList = ${dayList};
-		var icon = ""; 
+		var icon = "";
+		var sum = 0;
 		
 		function addIcon() {
-			if(dayList > 0) {
+			if(dayList != null) {
 				document.querySelectorAll('.calendarTd').forEach(function(el) {
 					for(var i = 0; i < dayList.length; i++) {
 						if(dayList[i] == el.id) {
@@ -141,11 +114,12 @@
 								},
 								success: function(v) {
 									var jObj = JSON.parse(v);
-									icon = jObj.icon;
+									sum++;
+									el.children[0].style.background = "url('/vgan/resources/image/" + jObj.icon + ".png')";
+									el.children[0].style.backgroundSize = "contain";
+									document.querySelector('.mainCalTotalSum').textContent = sum;
 								}
 							})
-							el.children[0].style.background = "url('/vgan/resources/image/money.jpg')";
-							/* el.children[0].style.background = "url('/vgan/resources/image/" + icon + ".png')"; */
 						}
 					}
 				})
