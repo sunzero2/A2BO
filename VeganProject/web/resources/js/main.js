@@ -144,7 +144,7 @@ function menuList(){
 				
 				success: function(menu) {
 					console.dir("aa")
-					document.querySelector('.menuCard').innerHTML = menu;
+					document.querySelector('.menuList').innerHTML += menu;
 				}
 				
 				

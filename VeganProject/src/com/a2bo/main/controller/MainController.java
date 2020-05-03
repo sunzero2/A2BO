@@ -164,9 +164,13 @@ public class MainController extends HttpServlet {
       System.out.println("컨트롤러에서 맵 메뉴" + menu);
 //      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
 //      rd.forward(request, response); 
-//      pw.println("<div class='menuImage'><img src='http://placehold.it/245x230'></div><div class='menuInfo'><div class='menuName'>메뉴 이름 : " + menu + "</div><div class='menuPoint'>별점 : </div><div class='menuAd'>주소 : </div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>\"\r\n" + 
-//      				"+ <a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>");
-      pw.println("<h3>" + menu+ "</h3>");
+      for(int i = 0; i < menu.size(); i++) {
+      pw.println("<div class='menuCard" + i + "><div class='menuInfo'><div class='menuName'>메뉴 이름 : " + menu.get(i).get("메뉴이름") + "</div>"
+    		  	+"<div class='menuPoint'>별점 : </div><div class='menuAd'>주소 : " +  menu.get(i).get("주소") + "</div>"
+    		    +"<button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>" 
+      				+ "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>");
+//      pw.println("<h3>" + menu+ "</h3>");
+      }
       pw.flush();
       pw.close();
       
