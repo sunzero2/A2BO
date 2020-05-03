@@ -260,7 +260,7 @@
 				<br>
 				<br>
 				<br>
-				<div class="menuInfoBox"></div>
+				<!-- <div class="menuInfoBox"></div> -->
 			</div>
 
 		<!-- </form> -->
