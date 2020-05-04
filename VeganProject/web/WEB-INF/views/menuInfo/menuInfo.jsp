@@ -15,8 +15,8 @@
 <%@ include file="../top/top.jsp" %>
 <br>
 <hr>
-<!-- <div class = menuInfo_TopWrapper> -->
-<%-- <img src= "/vgan/resources/image/${request.menuId}.jpg" class = "menuImg"> --%>
+<div class = menuInfo_TopWrapper>
+<img src= "/vgan/resources/image/${request.menuName}.jpg" class = "menuImg">
 <div class = "menuInfoWrapper">
 <p class = "menuName">${request.menuName}</p>
 <p><br></p>

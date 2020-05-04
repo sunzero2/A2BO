@@ -20,16 +20,16 @@
                 <td>No.</td>
                 <td width="400px" style="text-align-last: center;">Contents</td>
                 <td width="100px">Rate</td>
-                <td width="100px">Writer</td>
+                <td width="100px"></td>
                 <td width="100px">Date</td>
             </tr>
         </thead>
         <tbody id="body">
             <tr>
                 <td class="num">No.</td>
-                <td width="400px" style="text-align-last: center;">Contents</td>
-                <td width="100px">Rate</td>
-                <td width="100px">Writer</td>
+                <td class="subject" width="400px" style="text-align-last: center;"><a hrdf="#!">Contents</a></td>
+                <td width="100px">${resMenuinfo.revStarrate}</td>
+                <td width="100px">${loginInfo.nickname}</td>
                 <td width="100px">Date</td>
             </tr>
         </tbody>
@@ -38,7 +38,7 @@
        <tbody>
            <tr>
                <td class="num">
-                   <strong class="warning">NOTICE</strong>
+                
                </td>
                <td class="subject"><a href="#!">[학원공지]2/26~3/9 휴원 <span class="icon new"><em>새 글</em></span></a></td>
                <td class="date">2020-02-05</td>
