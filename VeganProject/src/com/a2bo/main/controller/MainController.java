@@ -166,7 +166,7 @@ public class MainController extends HttpServlet {
 //      rd.forward(request, response); 
       for(int i = 0; i < menu.size(); i++) {
       pw.println(
-    		  "<form action=/resources/views/menu/menuInfo>" +
+    		  "<form action=/vgan/views/menu/menuInfo>" +
     		  "<div class='menuCard" + i + "'>" + 
     		  "<div class='menuInfo'>" + 
     		  "<div name='menu' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
