@@ -43,17 +43,20 @@ public class RevContr extends HttpServlet {
 		HttpSession session = request.getSession();
 	
 		//카드에서 서브밋에서 리퀘스트객체로 불러온 파라미터밸류스 스트링으로 넣기
-		if(command.contains("menuInfo")) {
+		if(command.contains("menuinfo")) {
 			
 			Map<String,Object> resMenuinfo= new HashMap<>();
-			 view = request.getRequestDispatcher("WEB-INF/views/menuInfo/menuInfo.jsp");
+			 view = request.getRequestDispatcher("/WEB-INF/views/menuInfo/menuInfo.jsp");
 			//request에는 main.jsp에서 뿌려준 메뉴와 레스토랑의 값이 들어가 있는 상태
 			 resMenuinfo= request.getParameterMap();
 			 request.setAttribute("request", resMenuinfo);
 			 view.forward(request, response);
 			 
-		}else if(command.contains("revUp")){/*
-			Review revUp = (Review)request.getParameterMap();
+		}else if(command.contains("revup")){
+			Map<String,Object> resMap = request.getParameterMap();
+			request.setAttribute("request", resMap);
+			System.out.println();
+			
 			String menuid = revUp.getMenuId();
 			int res = rs.reviewUpload(revUp);
 			if(res>0) {
@@ -64,7 +67,7 @@ public class RevContr extends HttpServlet {
 				request.setAttribute("alert", "게시글이 등록되지 않았습니다. 다시 작성해주세요.");
 			}
 		view.forward(request, response);
-		*/}else if(command.contains("selectRevList")){
+		}else if(command.contains("selectRevList")){
 			 view = request.getRequestDispatcher("WEB-INF/views/reviewBoard/revList.jsp");
 
 		}

@@ -44,7 +44,6 @@
 <h3 style="text-align: center"> REVIEW </h3>
 <%@ include file="../reviewBoard/revList.jsp" %>
 
-
     <br>
     <hr>
 
@@ -71,8 +70,7 @@
     </div><!-- // section pagination -->
 </div>
 
-<form action="menuinfo.do" method="post"
-      enctype="multipart/form-data">
+<form action="menuinfo.do" method="post">
       
       <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
@@ -84,7 +82,7 @@
         <br><br>
         <div class="revTitle">
          <input type="text" name="revTitle" size="50px" placeholder="제목을 입력하세요" />
-         <span id="star"> <!-- 부모 --> 
+         <span id="star" name="starRate"> <!-- 부모 --> 
             <a href="#" value="1">★</a> <!-- 자식들--> 
             <a href="#" value="2">★</a> 
             <a href="#" value="3">★</a> 
