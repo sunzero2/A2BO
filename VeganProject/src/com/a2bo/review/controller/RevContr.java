@@ -52,7 +52,7 @@ public class RevContr extends HttpServlet {
 			 request.setAttribute("request", resMenuinfo);
 			 view.forward(request, response);
 			 
-		}else if(command.contains("revUp")){
+		}else if(command.contains("revUp")){/*
 			Review revUp = (Review)request.getParameterMap();
 			String menuid = revUp.getMenuId();
 			int res = rs.reviewUpload(revUp);
@@ -64,8 +64,11 @@ public class RevContr extends HttpServlet {
 				request.setAttribute("alert", "게시글이 등록되지 않았습니다. 다시 작성해주세요.");
 			}
 		view.forward(request, response);
-	}
+		*/}else if(command.contains("selectRevList")){
+			 view = request.getRequestDispatcher("WEB-INF/views/reviewBoard/revList.jsp");
 
+		}
+	}
 	
     public void ReviewList(HttpServletRequest request) {
  	int currentPage = 1;

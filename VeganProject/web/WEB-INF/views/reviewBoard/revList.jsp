@@ -14,15 +14,27 @@
 	  <h2><span>Review</span></h2>
 </div> 
 	
-  	   <table class="reviewList">
-       <caption></caption>
-       <thead>
-           <tr>
-               <th style="width: 10%; height:20%;"><span>번호</span></th>
-               <th style="width: 80%;"><span>제목</span></th>
-               <th style="width: 10%;"><span>등록일</span></th>
-           </tr>
-       </thead>
+  	  <table id="ReviewTable">
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td width="400px" style="text-align-last: center;">Contents</td>
+                <td width="100px">Rate</td>
+                <td width="100px">Writer</td>
+                <td width="100px">Date</td>
+            </tr>
+        </thead>
+        <tbody id="body">
+            <tr>
+                <td class="num">No.</td>
+                <td width="400px" style="text-align-last: center;">Contents</td>
+                <td width="100px">Rate</td>
+                <td width="100px">Writer</td>
+                <td width="100px">Date</td>
+            </tr>
+        </tbody>
+
+    </table>
        <tbody>
            <tr>
                <td class="num">

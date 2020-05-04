@@ -3,12 +3,7 @@
 
    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-   <%@page import="com.a2bo.review.model.vo.Review"%>
-   <%@page import="com.a2bo.review.model.vo.Restaurant"%>
-   <%@page import="com.a2bo.main.model.vo.MainMenu"%>
-   <%@page import="com.a2bo.map.model.vo.Map"%>
   
-<% Map map = (Map) request.getAttribute("map"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,15 +20,14 @@
 <div class = "menuInfoWrapper">
 <p class = "menuName">${request.menuName}</p>
 <p><br></p>
-<p class = "starRate">평점..... ${request.revStarrate}/5점</p><br>
-<p class = "menuinfoDeco1">X</p><br>
-<br>
-<p class = "menuLocation">${request.menuLocation}</p><br>
-<p class = "restName">MADE BY..... ${request.restName}</p>
+<p class = "starRate">평점.....$ ${request.revStarrate}/5점</p><br>
+<p class = "menuinfoDeco1">X</p>
+<p class = "restName">MADE BY.....$ ${request.restName}</p>
+<p class = "menuLocation">주소.....$ ${request.menuLocation}</p><br>
 <p class = "restPhone">
 <c:choose>
 <c:when test="${request.restPhone ne null}">Call..... ${request.restHour}</c:when>
-<c:otherwise>전화를 받지 않습니다</c:otherwise>
+<c:otherwise>전화예약을 받지 않습니다</c:otherwise>
 </c:choose></p>
 <p class = "restHour">
 <c:choose>
@@ -41,42 +35,15 @@
 <c:otherwise>영업시간 비공개</c:otherwise>
 </c:choose>
 </p>
-<p class="지점명">
-<c:choose>
-<c:when test="${request.restBranch ne null}">지점명 ${request.restBranch}</c:when>
-<c:otherwise>-</c:otherwise>
-</c:choose>
-</p>
 <fmt:setLocale value="ko_kr"/>
 <div class = "menuTitle"><fmt:formatNumber value="${request.menuPrice}" type="currency"/></div>
-<div class = "veganlevel">${request.vLId}</div>
 </div>
 <br><br>
 <div class = "revListWrapper">
 <hr>
 <h3 style="text-align: center"> REVIEW </h3>
 <%@ include file="../reviewBoard/revList.jsp" %>
-<table id="ReviewTable">
-        <thead>
-            <tr>
-                <td>No.</td>
-                <td width="400px" style="text-align-last: center;">Contents</td>
-                <td width="100px">starrate</td>
-                <td width="100px">Writer</td>
-                <td width="100px">Date</td>
-            </tr>
-        </thead>
-        <tbody id="body">
-            <tr>
-                <td>No.</td>
-                <td width="400px" style="text-align-last: center;">Contents</td>
-                <td width="100px">starrate</td>
-                <td width="100px">Writer</td>
-                <td width="100px">Date</td>
-            </tr>
-        </tbody>
 
-    </table>
 
     <br>
     <hr>
