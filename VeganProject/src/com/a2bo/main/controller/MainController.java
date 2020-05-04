@@ -169,14 +169,14 @@ public class MainController extends HttpServlet {
     		  "<form action='/vgan/menuinfo'>" +
     		  "<div class='menuCard" + i + "'>" + 
     		  "<div class='menuInfo'>" + 
-    		  "<div name='menu' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
-    		  "<div name='menu' class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
-    		  "<div name='menu' class='revStarrate' >별점 : " + "" + "</div>" + 
+    		  "<div name='menuName' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
+    		  "<div name='menuPrice' class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
+    		  "<div name='revStarrate' class='revStarrate' >별점 : " + "" + "</div>" + 
     		  "<div><h3>******* 매장 소개********</h3></div>" + 
-    		  "<div name='menu' class='restName' values=" + menu.get(i).get("가격") + ">" + menu.get(i).get("레스트 이름")  + "</div>" + 
-    		  "<div name='menu' class='menuLocation' values=" + menu.get(i).get("주소") + ">주소 : " + menu.get(i).get("주소") + "</div>" + 
-    		  "<div name='menu' class='restPhone' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
-    		  "<div name='menu' class='restHour' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
+    		  "<div name='restName' class='restName' values=" + menu.get(i).get("가격") + ">" + menu.get(i).get("레스트 이름")  + "</div>" + 
+    		  "<div name='menuLocation' class='menuLocation' values=" + menu.get(i).get("주소") + ">주소 : " + menu.get(i).get("주소") + "</div>" + 
+    		  "<div name='restPhone' class='restPhone' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
+    		  "<div name='restHour' class='restHour' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
     		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
     		  "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a>" + 
     		  "</div>" 
