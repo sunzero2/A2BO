@@ -166,26 +166,23 @@ public class MainController extends HttpServlet {
 //      rd.forward(request, response); 
       for(int i = 0; i < menu.size(); i++) {
       pw.println(
-    		  "<form action=/resources/views/menu/menuInfo>" +
+    		  "<form action=/vgan/views/menu/menuInfo>" +
     		  "<div class='menuCard" + i + "'>" + 
     		  "<div class='menuInfo'>" + 
-    		  "<div class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
-    		  "<div class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
-    		  "<div class='menuPoint' >별점 : " + "" + "</div>" + 
+    		  "<div name='menu' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
+    		  "<div name='menu' class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
+    		  "<div name='menu' class='revStarrate' >별점 : " + "" + "</div>" + 
     		  "<div><h3>******* 매장 소개********</h3></div>" + 
-    		  "<div class='restName' values=" + menu.get(i).get("가격") + ">" + menu.get(i).get("레스트 이름")  + "</div>" + 
-    		  "<div class='restAd' values=" + menu.get(i).get("주소") + ">주소 : " + menu.get(i).get("주소") + "</div>" + 
-    		  "<div class='restNum' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
-    		  "<div class='restOpen' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
-    		  "<div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button></div>" + 
+    		  "<div name='menu' class='restName' values=" + menu.get(i).get("가격") + ">" + menu.get(i).get("레스트 이름")  + "</div>" + 
+    		  "<div name='menu' class='menuLocation' values=" + menu.get(i).get("주소") + ">주소 : " + menu.get(i).get("주소") + "</div>" + 
+    		  "<div name='menu' class='restPhone' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
+    		  "<div name='menu' class='restHour' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
+    		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
     		  "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a>" + 
     		  "</div>" 
     		  +"</div>"
     		  +"</form>"
     		  );
-      
-      
-      
       
       
 //      pw.println("<h3>" + menu+ "</h3>");
