@@ -6,15 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/vgan/resources/css/revList.css"/>
 </head>
 <body>
 
-<div class="notice">
-	  <h2><span>*공지사항</span></h2>
-      
-	</div> 
-	<div class="search-box">
-  	   <table class="noticelist">
+<div class="review">
+	  <h2><span>Review</span></h2>
+</div> 
+	
+  	   <table class="reviewList">
        <caption></caption>
        <thead>
            <tr>
