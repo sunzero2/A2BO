@@ -82,6 +82,21 @@ function count_ck(obj) {
 
 
 }
+function ckclear(){
+	
+	var checkboxes = document.getElementsByName('ing');
+ 	
+	for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].checked = false;
+		}
+	} 
+	
+	
+
+
+
+
+
 
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {

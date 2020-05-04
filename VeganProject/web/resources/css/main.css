@@ -16,11 +16,19 @@ div, buttom, img {
 	padding-top: 150px;
 }
 
-.mainImage{
-	border: 1px solid black;
+.mainImage img{
+	margin-left : 100px;
 	height:700px;
-	width:1700px;
+	width:1500px;
 	margin-top : -5%;
+	
+}
+
+
+.levelCheck{
+	
+	text-align: center;
+	color : green;
 	
 }
 
@@ -96,13 +104,20 @@ div, buttom, img {
 	z-index: 100;
 }
 
-/* .menuRadio{
-	margin-top:90%;
-	z-index: 100;
-}	 */  
+.menuRadio{
+	height : 25px;
+	width : 25px;
+	font-size : 4px;
+}	  
 
+.ingBox img{
+	width:300px;
+	height:200px;
+}
 .ingItem1{
+	
 	left :5%;
+	
 }
 
 .ingItem2{

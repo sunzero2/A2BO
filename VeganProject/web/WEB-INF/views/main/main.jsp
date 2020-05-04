@@ -26,57 +26,62 @@
 
 	<div class="content">
 		<div>
-			<div class="mainImage">image hi</div>
-			<br>
-			<h1>나의 단계확인하기</h1>
-			<h3>좋아하는 재료를 3가지만 선택하세요</h3>
-			<br>
+			<div class="mainImage">
+				<img src="<%=request.getContextPath() %>/resources/image/main.png">
+			</div>
 		</div>
+			
+			<div class="levelCheck">
+				<br>
+				<h1>나의 단계확인하기</h1>
+				<h3>좋아하는 재료를 3가지만 선택하세요</h3>
+				<br>
+			</div>
 		<div class="ingBox">
-		<!-- <form action="/vgan/main/searchingVg"> -->
-		
-		<!-- <form action="vgList"></form> -->
+			<!-- <form action="/vgan/main/searchingVg"> -->
+
+			<!-- <form action="vgList"></form> -->
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/vegetable.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="8"
-							name="ing" onclick="count_ck(this)">야채
+						<input type="checkbox" class="menuRadio" value="8" name="ing"
+							onclick="count_ck(this)">야채
 					</div>
 				</div>
 
 				<div id="Poultry" class="ingItem2">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/cheese.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="5"
-							name="ing" onclick="count_ck(this)">치즈
+						<input type="checkbox" class="menuRadio" value="5" name="ing"
+							onclick="count_ck(this)">치즈
 					</div>
 				</div>
 
 				<div id="Seafood" class="ingItem3">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/milk.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="5"
-							name="ing" onclick="count_ck(this)">우유
+						<input type="checkbox" class="menuRadio" value="5" name="ing"
+							onclick="count_ck(this)">우유
 					</div>
 				</div>
-				
+
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/bread.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="8"
-							name="ing" onclick="count_ck(this)">빵
+						<input type="checkbox" class="menuRadio" value="8" name="ing"
+							onclick="count_ck(this)">빵
 					</div>
 				</div>
-				
+
 
 				<!-- <div id="Fishes" class="ingItem4"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="fishes" name="ing" onclick="count_ck()">어류</div></div>
@@ -95,41 +100,41 @@
 				 -->
 				<div id="Eggs" class="ingItem1">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/cow.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="1"
-							name="ing" onclick="count_ck(this)">소
+						<input type="checkbox" class="menuRadio" value="1" name="ing"
+							onclick="count_ck(this)">소
 					</div>
 				</div>
 
 				<div id="Oil" class="ingItem2">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/pig.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="1"
-							name="ing" onclick="count_ck(this)">돼지
+						<input type="checkbox" class="menuRadio" value="1" name="ing"
+							onclick="count_ck(this)">돼지
 					</div>
 				</div>
 
 				<div id="Fungus" class="ingItem3">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/checken.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="2"
-							name="ing" onclick="count_ck(this)">닭
+						<input type="checkbox" class="menuRadio" value="2" name="ing"
+							onclick="count_ck(this)">닭
 					</div>
 				</div>
-				
+
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/fish.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">생선
+						<input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)">생선
 					</div>
 				</div>
 
@@ -138,41 +143,41 @@
 			<div class="choiceline3">
 				<div id="Seaweed" class="ingItem1">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/crab.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">게
+						<input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)">게
 					</div>
 				</div>
 
 				<div id="Vegetable" class="ingItem2">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/clam.jpeg">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">조개
+						<input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)">조개
 					</div>
 				</div>
 
 				<div id="Fruits" class="ingItem3">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/octopus.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">문어
+						<input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)">문어
 					</div>
 				</div>
-				
+
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/shirimp.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="3"
-							name="ing" onclick="count_ck(this)">새우
+						<input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)">새우
 					</div>
 				</div>
 
@@ -182,45 +187,45 @@
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
-			
+
 			<div class="choiceline4">
 				<div id="Seaweed" class="ingItem1">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/oil.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="5"
-							name="ing" onclick="count_ck(this)">오일
+						<input type="checkbox" class="menuRadio" value="5" name="ing"
+							onclick="count_ck(this)">오일
 					</div>
 				</div>
 
 				<div id="Vegetable" class="ingItem2">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/sea.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="7"
-							name="ing" onclick="count_ck(this)">해조류
+						<input type="checkbox" class="menuRadio" value="7" name="ing"
+							onclick="count_ck(this)">해조류
 					</div>
 				</div>
 
 				<div id="Fruits" class="ingItem3">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/mushroom.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="6"
-							name="ing" onclick="count_ck(this)">버섯
+						<input type="checkbox" class="menuRadio" value="6" name="ing"
+							onclick="count_ck(this)">버섯
 					</div>
 				</div>
-				
+
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="http://placehold.it/300x200">
+						<img src="<%=request.getContextPath() %>/resources/image/fruit.png">
 					</div>
 					<div class="radioBox">
-						<input type="checkbox" class="menuRadio" value="9"
-							name="ing" onclick="count_ck(this)">과일
+						<input type="checkbox" class="menuRadio" value="9" name="ing"
+							onclick="count_ck(this)">과일
 					</div>
 				</div>
 
@@ -231,24 +236,28 @@
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
 			
-		<div class="leval">
-			<button onclick="radiock();">선택완료</button>
 			
-		</div>
+			
 		
-		
-		<!-- </form> -->
+			<div class="leval">
+				<button onclick="ckclear()">선택초기화</button>
+				<button onclick="radiock();">선택완료</button>
+
+			</div>
+
+
+			<!-- </form> -->
 		</div>
 		<!-- <button onclick="levelChose();">나의 단계는</button> -->
-		
+
 		<div class="myLevel">
 			<%-- <h1>당신의 비건 단계는 <%=request.getAttribute("myLevel") %> 입니다~</h1> --%>
 		</div>
-		
-		
+
+
 		<!-- 확인하기 눌렀을 떄 나의 단계가 나오게 하는것 ajax로 구현 -찬경 -->
 		<div>
-		<!-- <form action="/vgan/main/searchingMenu"> -->
+			<!-- <form action="/vgan/main/searchingMenu"> -->
 			<div class="myMemu">
 				<button name="ing" onclick="menuList()">나의 메뉴 확인하기</button>
 			</div>
@@ -256,18 +265,17 @@
 				<!-- <div class="menuCard">
 					메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정
 				</div> -->
+
+				<br> <br> <br>
 				
-				<br>
-				<br>
-				<br>
-				 <div class="menuInfoBox"></div> 
+				<div class="menuInfoBox"></div>
 			</div>
 
-		<!-- </form> -->
+			<!-- </form> -->
 
+		</div>
 	</div>
-	</div>
-<!-- 	<script>
+	<!-- 	<script>
 		function click() {
 			console.log("tq");
 			$.ajax({
@@ -284,11 +292,11 @@
 		
 	</script> -->
 	<!--나의 비건 단계 확인 눌렀을때 단계에 맞는 메뉴 추천 카드, 메뉴 상세보기  스크립트문   -찬경  -->
-	
-				
 
-			
-	
+
+
+
+
 
 	<!--
 		아래는 로그인이랑 회원가입 단에서 필요한 겁니다. 절대로 지우지 마세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - 혜영
@@ -302,11 +310,13 @@
 	</div>
 
 	<!-- 배너 스크립트입니다. -혜영 -->
-<!-- 	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
+	<!-- 	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
 	</script> -->
-	
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous" type="text/javascript"></script>
-	
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous" type="text/javascript"></script>
+
 	<script src="/vgan/resources/js/main.js"></script>
 	<script src="/vgan/resources/js/top.js"></script>
 </body>
