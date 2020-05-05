@@ -73,8 +73,10 @@ function count_ck(obj) {
 			chkCnt++;
 		}
 	}
+	
+	
 	if (chkCnt >= 4) {
-		alert("3개 이하만 선택하실수 있습니다.");
+		alert("3개만 선택하실수 있습니다.");
 		obj.checked = false;
 		return false;
 	}
@@ -101,14 +103,26 @@ function ckclear(){
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {
 	console.log("tq");
-	
  	var checkboxes = document.getElementsByName('ing');
  	var str = [];
+ 	var chkCnt = 0;
+	
 	for (var i = 0; i < checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
 			str += checkboxes[i].value;
 		}
 	} 
+	//3개만 선택하게끔 하는 기능
+	for (var i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i].checked) {
+			chkCnt++;
+		}
+	}
+	
+	if(chkCnt == 0 || chkCnt == 1 || chkCnt == 2){
+		alert("3개만 선택하실수 있습니다.");
+		magic;
+	}
 
 	// $("input[name=ing]:checked").each(function(i){   //jQuery로 for문 돌면서 check 된값 배열에 담는다
     //         str.push($(this).val());

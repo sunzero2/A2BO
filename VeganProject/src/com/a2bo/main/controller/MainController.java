@@ -134,23 +134,23 @@ public class MainController extends HttpServlet {
       }
       
       // 쿠키 ? 
-      if(myLevel.toString().contains("프루테리언")) {
+      if(myLevel.toString().equals("프루테리언")) {
          myLevelId = "FTN";
-      }else if(myLevel.toString().contains("비건")) {
+      }else if(myLevel.toString().equals("비건")) {
          myLevelId = "VGN";
-      }else if(myLevel.toString().contains("오보")) {
+      }else if(myLevel.toString().equals("오보")) {
          myLevelId = "OVO";
-      }else if(myLevel.toString().contains("락토")) {
+      }else if(myLevel.toString().equals("락토")) {
          myLevelId = "LTO";
-      }else if(myLevel.toString().contains("락토오보")) {
+      }else if(myLevel.toString().equals("락토오보")) {
          myLevelId = "LOV";
-      }else if(myLevel.toString().contains("폴로")) {
+      }else if(myLevel.toString().equals("폴로")) {
          myLevelId = "POL";
-      }else if(myLevel.toString().contains("페스코")) {
+      }else if(myLevel.toString().equals("페스코")) {
          myLevelId = "PSC";
-      }else if(myLevel.toString().contains("폴로페스코")) {
+      }else if(myLevel.toString().equals("폴로페스코")) {
          myLevelId = "POP";
-      }else if(myLevel.toString().contains("플렉시테리언")) {
+      }else if(myLevel.toString().equals("플렉시테리언")) {
          myLevelId = "FXT";
       }
          
