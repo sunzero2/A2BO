@@ -109,6 +109,7 @@ public class MainDao {
                //레스트 아이디,메뉴 아이디, 비건 아이디, 메뉴이름, 가격, 레스트 이름, 주소, 전화번호, 매장영업시간, 레스트체인점
         	 
         	   menu = new HashMap<>();
+        	   menu.put("메뉴아이디", rs.getString(2));
                menu.put("메뉴이름", rs.getString(4));
                menu.put("가격", rs.getInt(5));
                menu.put("레스트 이름", rs.getString(6));

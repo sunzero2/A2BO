@@ -169,7 +169,8 @@ public class MainController extends HttpServlet {
     		  "<form action='/vgan/menuinfo'>" +
     		  "<div class='menuCard" + i + "'>" + 
     		  "<div class='menuInfo'>" + 
-    		  "<div name='menuName' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" + 
+    		  "<div name='menuName' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
+    		  "<div name='menuId' class='menuId' values=" + menu.get(i).get("메뉴아이디") + ">" + "</div>" + 
     		  "<div name='menuPrice' class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
     		  "<div name='revStarrate' class='revStarrate' >별점 : " + "" + "</div>" + 
     		  "<div><h3>******* 매장 소개********</h3></div>" + 
