@@ -166,23 +166,23 @@ public class MainController extends HttpServlet {
 //      rd.forward(request, response); 
       for(int i = 0; i < menu.size(); i++) {
       pw.println(
-    		  "<form action='/vgan/menuinfo'>" +
-    		  "<div class='menuCard" + i + "'>" + 
-    		  "<div class='menuInfo'>" + 
-    		  "<div name='menuName' class='menuName' values=" + menu.get(i).get("메뉴이름") + "><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
-    		  "<div name='menuId' class='menuId' values=" + menu.get(i).get("메뉴아이디") + ">" + "</div>" + 
-    		  "<div name='menuPrice' class='menuPri' values=" + menu.get(i).get("가격") + " >가격 : " + menu.get(i).get("가격") + "원</div>" + 
-    		  "<div name='revStarrate' class='revStarrate' >별점 : " + "" + "</div>" + 
+    		  "<div class='menuCard'>" + 
+    		  "<div class='menuName'><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
+    		  "<div class='menuId'>" + menu.get(i).get("메뉴아이디") +"</div>" + 
+    		  "<div class='menuPri'>가격 : " + menu.get(i).get("가격") + "원</div>" + 
+    		  "<div class='revStarrate' >별점 : " + "" + "</div>" + 
     		  "<div><h3>******* 매장 소개********</h3></div>" + 
-    		  "<div name='restName' class='restName' values=" + menu.get(i).get("가격") + ">" + menu.get(i).get("레스트 이름")  + "</div>" + 
-    		  "<div name='menuLocation' class='menuLocation' values=" + menu.get(i).get("주소") + ">주소 : " + menu.get(i).get("주소") + "</div>" + 
-    		  "<div name='restPhone' class='restPhone' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
-    		  "<div name='restHour' class='restHour' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
+    		  "<div class='restName'>" + menu.get(i).get("레스트 이름")  + "</div>" + 
+    		  "<div class='menuLocation'>주소 : " + menu.get(i).get("주소") + "</div>" + 
+    		  "<div class='restPhone'>전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
+    		  "<div class='restHour'>영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
     		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
-    		  "</div>" 
-    		  +"</div>"
-    		  +"</form>"
+    		 "</div>"
     		  );
+      
+      
+    
+      
       
       
 //      pw.println("<h3>" + menu+ "</h3>");

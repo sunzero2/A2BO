@@ -136,11 +136,57 @@ function menuList(){
 				
 				success: function(menu) {
 					console.dir("aa")
-					document.querySelector('.menuList').innerHTML += menu;
+					document.querySelector('.myLevel').innerHTML += menu;
 				}
 				
 				
 			})
 
 }
+
+
+function menuInfoBox(){
+	document.querySelectorAll(".menuCard").forEach(function(el){
+		el.addEventListener("click", function(v){
+			/*document.querySelector('.bbb').textContent = el.value;*/
+			
+			console.dir(el.children[0].textContent);
+			console.dir(el.children[1].textContent);
+			console.dir(el.children[2].textContent);
+			console.dir(el.children[3].textContent);
+			console.dir(el.children[4].textContent);
+			console.dir(el.children[5].textContent);
+			console.dir(el.children[6].textContent);
+			console.dir(el.children[7].textContent);
+			console.dir(el.children[8].textContent);
+			console.dir(el.children[9].textContent);
+		
+			
+			
+			var bbb = document.querySelector('.bbb');
+			/*.innerHTML = "<input name='menuName' type='hidden'>" + el.children[0].textContent
+													+ "<input name='menuId' type='hidden'>" + el.children[1].textContent
+													+"<input name='menuPri' type='hidden'>" + el.children[2].textContent
+													+"<input name='restName' type='hidden'>" + el.children[3].textContent
+													+"<input name='menuLocation' type='hidden'>" + el.children[6].textContent
+													+"<input name='restPhone' type='hidden'>" + el.children[7].textContent
+													+"<input name='restHour' type='hidden'>" + el.children[8].textContent;*/
+													
+			bbb.children[0].value = el.children[0].textContent;
+			bbb.children[1].value = el.children[1].textContent;
+			bbb.children[2].value = el.children[2].textContent;
+			bbb.children[3].value = el.children[3].textContent;
+			bbb.children[4].value = el.children[6].textContent;
+			bbb.children[5].value = el.children[7].textContent;
+			bbb.children[6].value = el.children[8].textContent;
+			
+			bbb.submit();
+			
+			
+	})
+		
+	})
+}
+	
+
 
