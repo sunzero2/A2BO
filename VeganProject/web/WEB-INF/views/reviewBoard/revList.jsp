@@ -11,7 +11,7 @@
 <body>
 
 <div class="review">
-	  <h2><span>Review</span></h2>
+
 </div> 
 	
   	   <table class="reviewList">
@@ -20,7 +20,7 @@
            <tr>
                <th>No.</th>
                 <th width="400px" style="text-align-last: center;"><span>Title</span></td>
-                <th width="100px"><span>starrate</span></th>
+                <th width="100px"><span></span></th>
                 <th width="100px"><span>Writer</span></th>
                 <th width="100px"><span>Date</span></th>
             </tr>
@@ -39,7 +39,7 @@
         </tbody>
     </table>
        
-       <div class="paging">
+<%--        <div class="paging">
        <a href= "/vgan/ReviewList" class="nav first">
        <i class ="fas fa-angle-double-left"></i>
        </a>
@@ -56,6 +56,6 @@
        <i class="fas fa-angle-double-right"></i>
        </a>      
        </div>
-	
+	 --%>
 </body>
 </html>

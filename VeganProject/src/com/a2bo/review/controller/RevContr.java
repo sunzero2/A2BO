@@ -51,7 +51,11 @@ public class RevContr extends HttpServlet {
 			//request에는 main.jsp에서 뿌려준 메뉴와 레스토랑의 값이 들어가 있는 상태
 			 resMenuinfo= request.getParameterMap();
 			 request.setAttribute("resMenuinfo", resMenuinfo);
-			 //List service->dao->request.setAttribute("menuList",menuList);
+			 
+			 Map<String,Object> revList= new HashMap<>();
+			 revList = ReviewList(request);
+			 request.setAttribute("revList", revList);
+			 
 			 view.forward(request, response);
 			 
 		}else if(command.contains("revup")){
@@ -102,7 +106,6 @@ public class RevContr extends HttpServlet {
 		view.forward(request, response);
 		return starrate;
 	}
-	
 	
     public Map<String,Object> ReviewList(HttpServletRequest request) {
  	int currentPage = 1;

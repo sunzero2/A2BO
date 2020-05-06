@@ -52,5 +52,9 @@
   	<servlet-name>menuInfo</servlet-name>
   	<url-pattern>/menuinfo/*</url-pattern>
   </servlet-mapping>
+     <servlet-mapping>
+  	<servlet-name>menuInfo</servlet-name>
+  	<url-pattern>/revup/*</url-pattern>
+  </servlet-mapping>
   
 </web-app>
