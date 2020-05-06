@@ -42,7 +42,19 @@ public class MemberController extends HttpServlet {
 			emailCheck(request, response);
 		} else if(command.contains("logout")) {
 			logOut(request, response);
+		} else if(command.contains("searchMem")) {
+			String keyword = request.getParameter("keyword");
+			int res = 0;
+			
+			if(keyword.equals("pw")) {
+				res = 1;
+			}
+			
+			request.setAttribute("keyword", res);
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
+			view.forward(request, response);
 		}
+			
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

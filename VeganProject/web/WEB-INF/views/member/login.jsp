@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,8 +17,8 @@
 			<button id="loginBt" type="submit">E N T E R</button>
 		</form>
 		<div class="searchMem">
-			<a>ID찾기 /</a>
-			<a>비밀번호찾기</a>
+			<a href="http://localhost:8787/vgan/member/searchMem?keyword=id">ID찾기 /</a>
+			<a href="http://localhost:8787/vgan/member/searchMem?keyword=pw">비밀번호찾기</a>
 		</div>
 		</div>
 		
