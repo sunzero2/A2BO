@@ -43,7 +43,7 @@ public class ReviewDao {
 				Review myRevs = new Review();
 				myRevs.setReviewNo(rs.getInt(1));
 				myRevs.setReviewTitle(rs.getString(2));
-				myRevs.setReviewWriter(rs.getString(3));
+				myRevs.setReviewWriter(rs.getInt(3));
 				myRevs.setReviewDate(rs.getDate(4));
 				myRevs.setReviewContent(rs.getString(5));
 				myRevs.setReviewStar(rs.getInt(6));
@@ -74,7 +74,7 @@ public class ReviewDao {
 				Review myRevs = new Review();
 
 				myRevs.setReviewTitle(rs.getString(2));
-				myRevs.setReviewWriter(rs.getString(3));
+				myRevs.setReviewWriter(rs.getInt(3));
 				myRevs.setReviewContent(rs.getString(5));
 				myRevs.setReviewStar(rs.getInt(6));
 				myRevs.setMenuId(rs.getString(7));
@@ -198,7 +198,7 @@ public class ReviewDao {
 			while (rs.next()) {
 				Review review = new Review();			
 				review.setReviewTitle(rs.getString(2));
-				review.setReviewWriter(rs.getString(3));
+				review.setReviewWriter(rs.getInt(3));
 				review.setReviewDate(rs.getDate(4));
 				review.setReviewContent(rs.getString(5));
 				review.setReviewStar(rs.getInt(6));

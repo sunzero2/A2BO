@@ -12,7 +12,7 @@ public class Review implements Serializable{
 
 	private int reviewNo;
 	private String reviewTitle;
-	private String reviewWriter;
+	private int reviewWriter;
 	private Date reviewDate;
 	private String reviewContent;
 	private int reviewStar;
@@ -24,7 +24,7 @@ public class Review implements Serializable{
 		
 	}
 
-	public Review(int reviewNo, String reviewTitle, String reviewWriter, Date reviewDate, String reviewContent,
+	public Review(int reviewNo, String reviewTitle, int reviewWriter, Date reviewDate, String reviewContent,
 			int reviewStar, String menuId, String original_filepath, String rename_filepath) {
 		super();
 		this.reviewNo = reviewNo;
@@ -54,11 +54,11 @@ public class Review implements Serializable{
 		this.reviewTitle = reviewTitle;
 	}
 
-	public String getReviewWriter() {
+	public int getReviewWriter() {
 		return reviewWriter;
 	}
 
-	public void setReviewWriter(String reviewWriter) {
+	public void setReviewWriter(int reviewWriter) {
 		this.reviewWriter = reviewWriter;
 	}
 

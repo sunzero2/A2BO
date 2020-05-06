@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.a2bo.member.model.vo.Member;
 import com.a2bo.review.model.service.ReviewService;
 import com.a2bo.review.model.vo.Review;
 
@@ -50,65 +51,78 @@ public class RevContr extends HttpServlet {
 			//request에는 main.jsp에서 뿌려준 메뉴와 레스토랑의 값이 들어가 있는 상태
 			 resMenuinfo= request.getParameterMap();
 			 request.setAttribute("resMenuinfo", resMenuinfo);
+			 //List service->dao->request.setAttribute("menuList",menuList);
 			 view.forward(request, response);
 			 
-		}else if(command.contains("revup")){/*
-			Map<String,Object> resMap = request.getParameterMap();
-			request.setAttribute("request", resMap);
-			System.out.println();
+		}else if(command.contains("revup")){
+			Review review = new Review();
+			review = revUp(request);
+			view = request.getRequestDispatcher("/WEB-INF/views/menuInfo/menuInfo.jsp");
+			request.setAttribute("reviewList", review);				
+			view.forward(request, response);
 			
-			String menuid = revUp.getMenuId();
-			int res = rs.reviewUpload(revUp);
-			if(res>0) {
-				List revList = rs.selectedRevList(menuid, currentPage, cntPerPage);
-				session.setAttribute("review", revList);
-				request.setAttribute("alert", "게시글이 정상적으로 등록되었습니다.");
-			}else {
-				request.setAttribute("alert", "게시글이 등록되지 않았습니다. 다시 작성해주세요.");
-			}
-		view.forward(request, response);
-		*/}else if(command.contains("selectRevList")){
-			 view = request.getRequestDispatcher("/WEB-INF/views/reviewBoard/revList.jsp");
-
+		}else if(command.contains("ReviewList")) {
+			
+			Map<String,Object> revList = ReviewList(request);
+			view = request.getRequestDispatcher("/WEB-INF/views/menuInfo/menuInfo.jsp");
+			session.setAttribute("revList", revList);
+			view.forward(request, response);
+			
 		}
+		
 	}
 	
-    public void ReviewList(HttpServletRequest request) {
+	public Review revUp(HttpServletRequest request) {
+		Review review = new Review();
+		Member m = (Member)request.getSession().getAttribute("loginInfo");
+		
+		review.setMenuId(request.getParameter("menuId"));
+		review.setReviewContent(request.getParameter("revContent"));
+		review.setReviewStar(Integer.parseInt(request.getParameter("revStar")));
+		review.setReviewTitle(request.getParameter("revTitle"));
+		review.setReviewWriter(m.getUserId());
+		
+		if(rs.reviewUpload(review)>0) {
+			request.setAttribute("alert", "게시글이 정상적으로 등록되었습니다.");
+		}else {
+			request.setAttribute("alert", "게시글이 등록되지 않았습니다. 다시 작성해주세요.");
+		}
+		return review;
+	}
+	
+	public int revStarrate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int starrate= 0;
+		String menuid = request.getParameter("menuId");
+		starrate = rs.getStarrate(menuid);
+		
+		RequestDispatcher view = null;
+		
+		view = request.getRequestDispatcher("WEB-INF/views/menuInfo/menuInfo.jsp");
+		request.setAttribute("starrate", starrate);
+		view.forward(request, response);
+		return starrate;
+	}
+	
+	
+    public Map<String,Object> ReviewList(HttpServletRequest request) {
  	int currentPage = 1;
  	int cntPerPage = 5;
- 	String orderby = "revId";
+ 	String orderby = "reviewNo";
  	
  	if(request.getParameter("cPage")!=null) {
  		currentPage = Integer.parseInt(request.getParameter("cPage"));
  	}
  	
- 	   Map<String, Object > res = rs.selectedRevList(orderby, currentPage, cntPerPage);
+ 	Map<String,Object> res = rs.selectedRevList(orderby, currentPage, cntPerPage);
 
- 	/*   mav.addObject("paging",res.get("paging"));
- 	   mav.addObject("ndata",res.get("nlist"));
- 	   mav.setView("board/boardList");
- 	   return mav;
-*/    }
-    
-    
-    
-    
+ 	return res;
+    }
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-	private void menuInfo(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/book/bookimage.jsp");
-
-/*	blist = bs.searchBook();
-	request.setAttribute("book", blist);*/
-	
-	// bookservice 단에서 가져온 값을 속성값으로 박아두고 넘기기
-
-	rd.forward(request, response);
-	}
 	
 }
