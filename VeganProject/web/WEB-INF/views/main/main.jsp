@@ -27,16 +27,16 @@
 	<div class="content">
 		<div>
 			<div class="mainImage">
-				<img src="<%=request.getContextPath() %>/resources/image/main.png">
+				<img src="<%=request.getContextPath()%>/resources/image/main.png">
 			</div>
 		</div>
-			
-			<div class="levelCheck">
-				<br>
-				<h1>나의 단계확인하기</h1>
-				<h3>좋아하는 재료를 3가지만 선택하세요</h3>
-				<br>
-			</div>
+
+		<div class="levelCheck">
+			<br>
+			<h1>나의 단계확인하기</h1>
+			<h3>좋아하는 재료를 3가지만 선택하세요</h3>
+			<br>
+		</div>
 		<div class="ingBox">
 			<!-- <form action="/vgan/main/searchingVg"> -->
 
@@ -44,7 +44,8 @@
 			<div class="choiceline1">
 				<div id="Meat" class="ingItem1">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/vegetable.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/vegetable.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="8" name="ing"
@@ -54,7 +55,8 @@
 
 				<div id="Poultry" class="ingItem2">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/cheese.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/cheese.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="5" name="ing"
@@ -64,7 +66,7 @@
 
 				<div id="Seafood" class="ingItem3">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/milk.png">
+						<img src="<%=request.getContextPath()%>/resources/image/milk.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="5" name="ing"
@@ -74,7 +76,8 @@
 
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/bread.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/bread.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="8" name="ing"
@@ -100,7 +103,7 @@
 				 -->
 				<div id="Eggs" class="ingItem1">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/cow.png">
+						<img src="<%=request.getContextPath()%>/resources/image/cow.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="1" name="ing"
@@ -110,7 +113,7 @@
 
 				<div id="Oil" class="ingItem2">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/pig.png">
+						<img src="<%=request.getContextPath()%>/resources/image/pig.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="1" name="ing"
@@ -120,7 +123,8 @@
 
 				<div id="Fungus" class="ingItem3">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/checken.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/checken.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="2" name="ing"
@@ -130,7 +134,7 @@
 
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/fish.png">
+						<img src="<%=request.getContextPath()%>/resources/image/fish.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3" name="ing"
@@ -143,7 +147,7 @@
 			<div class="choiceline3">
 				<div id="Seaweed" class="ingItem1">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/crab.png">
+						<img src="<%=request.getContextPath()%>/resources/image/crab.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3" name="ing"
@@ -153,7 +157,8 @@
 
 				<div id="Vegetable" class="ingItem2">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/clam.jpeg">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/clam.jpeg">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3" name="ing"
@@ -163,7 +168,8 @@
 
 				<div id="Fruits" class="ingItem3">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/octopus.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/octopus.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3" name="ing"
@@ -173,7 +179,8 @@
 
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/shirimp.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/shirimp.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="3" name="ing"
@@ -191,7 +198,7 @@
 			<div class="choiceline4">
 				<div id="Seaweed" class="ingItem1">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/oil.png">
+						<img src="<%=request.getContextPath()%>/resources/image/oil.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="5" name="ing"
@@ -201,7 +208,7 @@
 
 				<div id="Vegetable" class="ingItem2">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/sea.png">
+						<img src="<%=request.getContextPath()%>/resources/image/sea.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="7" name="ing"
@@ -211,7 +218,8 @@
 
 				<div id="Fruits" class="ingItem3">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/mushroom.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/mushroom.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="6" name="ing"
@@ -221,7 +229,8 @@
 
 				<div id="Meat" class="ingItem4">
 					<div class="ingImage">
-						<img src="<%=request.getContextPath() %>/resources/image/fruit.png">
+						<img
+							src="<%=request.getContextPath()%>/resources/image/fruit.png">
 					</div>
 					<div class="radioBox">
 						<input type="checkbox" class="menuRadio" value="9" name="ing"
@@ -235,10 +244,10 @@
 				<div id="Dairy" class="ingItem5"><div class="ingImage"><img src="http://placehold.it/200x150"></div>
 					<div class="radioBox"><input type="checkbox" class="menuRadio" value="dairy" name="ing" onclick="count_ck()">유제품</div></div> -->
 			</div>
-			
-			
-			
-		
+
+
+
+
 			<div class="leval">
 				<button onclick="ckclear()">선택초기화</button>
 				<button onclick="radiock();">선택완료</button>
@@ -261,20 +270,35 @@
 			<div class="myMemu">
 				<button name="ing" onclick="menuList()">나의 메뉴 확인하기</button>
 			</div>
-			<div class="menuList">
-				<!-- <div class="menuCard">
+			<!-- <div class="menuList"> -->
+			<!-- <div class="menuCard">
 					메뉴 카드 눌렀을때 페이지 내에서 뜨는것 아이프레임으로 설정
+					
 				</div> -->
 
-				<br> <br> <br>
-				
-				<!--  -->
-				<!-- <div class="menuInfoBox"></div> -->
-			</div>
+			<div class="menuList"></div>
 
-			<!-- </form> -->
+			<br> <br> <br>
+			<form class="bbb" action="/vgan/menuinfo">
+				<input name='menuName' type='hidden'>
+				<input name='menuId' type='hidden'>
+				<input name='menuPri' type='hidden'>
+				<input name='restName' type='hidden'>
+				<input name='menuLocation' type='hidden'>
+				<input name='restPhone'type='hidden'>
+				<input name='restHour' type='hidden'>
 
+
+
+			</form>
+
+			<!-- 아이프레임 디브 필요없어서 주석처리 -->
+			<!-- <div class="menuInfoBox"></div> -->
 		</div>
+
+		<!-- </form> -->
+
+	</div>
 	</div>
 	<!-- 	<script>
 		function click() {

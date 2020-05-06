@@ -101,7 +101,7 @@ div, buttom, img {
 
 .radioBox{
 	margin-top:100%;
-	z-index: 100;
+	/* z-index: 100; */
 }
 
 .menuRadio{
@@ -226,7 +226,7 @@ div, buttom, img {
 }
 
 
-.menuInfo{
+.menuCard{
 	position : relative;
 	width: 1000px;
     height : auto;

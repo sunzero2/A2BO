@@ -5,63 +5,9 @@ function all(selector, ln) {
 		return document.querySelector(selector);
 	}
 }
-// 나의 단계가 나온 후에 메뉴 카드 리스트가 나오게 하는 기능
-function create(vals) {
-	var tr = document.createElement('tr');
-	var td = document.createElement('td');
-
-	vals.forEach(function (v) {
-		var td = document.createElement('td');
-		td.textContent = v.value;
-		tr.appendChild(td);
-	})
-
-	var dtd = document.createElement('td');
-	dtd.innerHTML = "<div class='menuImage'>" 
-				   +"<img src='http://placehold.it/245x230'></div>" 
-				   +"<div class='menuInfo'><div class='menuName'>메뉴 이름 : </div><div class='menuPoint'>별점 : </div>" 
-				   +"<div class='menuAd'>주소 : </div><button class='ingBtn' onclick='menuInfoBox()'>버튼 상세보기</button>"
-				   +"<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a></div></div>"
-	tr.appendChild(dtd);
-
-	return tr;
-}
 
 
 
-// 메뉴 리스트 카드에서 상세보기 했을 때 아이프레임으로 나오게 하는 기능
-function create2(vals) {
-	var tr = document.createElement('tr');
-	var td = document.createElement('td');
-	
-/*	vals.forEach(function (v) {
-		var td = document.createElement('td');
-		td.textContent = v.value;
-		tr.appendChild(td);
-	})
-*/
-	var dtd = document.createElement('td');
-	dtd.innerHTML = "<div><div><button onclick='xbtn();'>x</button></div><iframe name='menuIf' class='menuIfram' src='https://www.iei.or.kr/main/main.kh'></iframe></div>"
-	tr.appendChild(dtd);
-
-	return tr;
-}
-
-function menuList() {
-	var vals = all('input[type=text]', 1);
-	all('.menuCard').appendChild(create(vals));
-}
-
-function menuInfoBox() {
-	var vals = all('input[type=text]', 1);
-	all('.menuInfoBox').appendChild(create2(vals));
-}
-
-
-function xbtn(){
-	var menuInfoBox = document.querySelector('.menuInfoBox');
-	menuInfoBox.close();
-}
 
 // 재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능
 function count_ck(obj) {
@@ -190,11 +136,57 @@ function menuList(){
 				
 				success: function(menu) {
 					console.dir("aa")
-					document.querySelector('.menuList').innerHTML += menu;
+					document.querySelector('.myLevel').innerHTML += menu;
 				}
 				
 				
 			})
 
 }
+
+
+function menuInfoBox(){
+	document.querySelectorAll(".menuCard").forEach(function(el){
+		el.addEventListener("click", function(v){
+			/*document.querySelector('.bbb').textContent = el.value;*/
+			
+			console.dir(el.children[0].textContent);
+			console.dir(el.children[1].textContent);
+			console.dir(el.children[2].textContent);
+			console.dir(el.children[3].textContent);
+			console.dir(el.children[4].textContent);
+			console.dir(el.children[5].textContent);
+			console.dir(el.children[6].textContent);
+			console.dir(el.children[7].textContent);
+			console.dir(el.children[8].textContent);
+			console.dir(el.children[9].textContent);
+		
+			
+			
+			var bbb = document.querySelector('.bbb');
+			/*.innerHTML = "<input name='menuName' type='hidden'>" + el.children[0].textContent
+													+ "<input name='menuId' type='hidden'>" + el.children[1].textContent
+													+"<input name='menuPri' type='hidden'>" + el.children[2].textContent
+													+"<input name='restName' type='hidden'>" + el.children[3].textContent
+													+"<input name='menuLocation' type='hidden'>" + el.children[6].textContent
+													+"<input name='restPhone' type='hidden'>" + el.children[7].textContent
+													+"<input name='restHour' type='hidden'>" + el.children[8].textContent;*/
+													
+			bbb.children[0].value = el.children[0].textContent;
+			bbb.children[1].value = el.children[1].textContent;
+			bbb.children[2].value = el.children[2].textContent;
+			bbb.children[3].value = el.children[3].textContent;
+			bbb.children[4].value = el.children[6].textContent;
+			bbb.children[5].value = el.children[7].textContent;
+			bbb.children[6].value = el.children[8].textContent;
+			
+			bbb.submit();
+			
+			
+	})
+		
+	})
+}
+	
+
 
