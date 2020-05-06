@@ -179,7 +179,6 @@ public class MainController extends HttpServlet {
     		  "<div name='restPhone' class='restPhone' values=" + menu.get(i).get("전화번호") + ">전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
     		  "<div name='restHour' class='restHour' values=" + menu.get(i).get("영업시간") + ">영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
     		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
-    		  "<a href='https://www.saramin.co.kr/zf_user/' target='menuIf'></a>" + 
     		  "</div>" 
     		  +"</div>"
     		  +"</form>"
