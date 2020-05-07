@@ -53,6 +53,10 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("keyword", res);
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
 			view.forward(request, response);
+		} else if (command.contains("searchId")) {
+			searchId(request, response);
+		} else if (command.contains("searchPw")) {
+			searchPw(request, response);
 		}
 			
 	}
@@ -135,5 +139,16 @@ public class MemberController extends HttpServlet {
 		String res = mService.emailCheck(email);
 		PrintWriter pw = response.getWriter();
 		pw.write(res);
+	}
+	
+	private void searchPw(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+	
+	private void searchId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String phone = request.getParameter("userPhone");
+		String nickName = request.getParameter("nickName");
+		
+		
 	}
 }

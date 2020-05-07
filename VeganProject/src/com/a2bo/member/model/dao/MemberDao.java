@@ -79,4 +79,42 @@ public class MemberDao {
 		}
 		return res;
 	}
+	
+	public String searchId(Connection conn, String phone, String nickName) throws SQLException {
+		String sql = "select userEmail from tmember where cell=?, nickName=?";
+		ResultSet rs = null;
+		String userid = "";
+		PreparedStatement pstm = null;
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, phone);
+			pstm.setString(2, nickName);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				userid = rs.getString(1);
+			}
+		} finally {
+			jdbc.close(rs, pstm);
+		}
+		
+		return userid;
+	}
+	
+	public int searchPw(Connection conn, String userEmail, String nickName) throws SQLException {
+		int res = 0;
+		String sql = "select * from tmember where userEmail=?, nickName=?";
+		PreparedStatement pstm = null;
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userEmail);
+			
+		} finally {
+			
+		}
+		
+		return res;
+	}
 }
