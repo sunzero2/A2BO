@@ -208,10 +208,6 @@
                                 </div>
                                 <img class="img-fluid" src="/vgan/resources/image/after/portfolio/pasta.jpg" alt=""
                             /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Pasta</div>
-                                <div class="portfolio-caption-subheading text-muted">YumYum Pasta</div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -228,66 +224,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/fries.jpg" alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">All That Fries</div>
-                                <div class="portfolio-caption-subheading text-muted">Seoul Dinners</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/bibmimbap.jpg" alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Bibibim</div>
-                                <div class="portfolio-caption-subheading text-muted">Bibida</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/cake.jpg" alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Naughty Cake</div>
-                                <div class="portfolio-caption-subheading text-muted">BillyDevils</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/makarons.jpg" alt=""
-                            /></a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Makarons</div>
-                                <div class="portfolio-caption-subheading text-muted">Makniacs'</div>
-                            </div>
-                        </div>
-                    </div>
-                                        
-                    
-                    
-                    
                 </div>
             </div>
             <form class="bbb" action="/vgan/menuinfo">
