@@ -97,7 +97,7 @@ public class MainDao {
       
       String sql = "select * from tmenu  inner join trest using (restid) where vlid like '" + myLevelId + "'";
       List<Map<String, Object>> result  = null;
-      sql += " and Rownum <6";
+      sql += " and Rownum < 7";
       try {
          result = new ArrayList<Map<String,Object>>();
          pstm = conn.prepareStatement(sql);

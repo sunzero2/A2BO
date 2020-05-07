@@ -177,7 +177,7 @@
                     
                 </div>
                 <div class="leval">
-					<button onclick="ckclear()">선택초기화</button>
+					<button onclick="ckclear();">선택초기화</button>
 					<button onclick="radiock();">선택완료</button>
 				</div>
 			     
@@ -186,31 +186,12 @@
         </section>
         <!-- MENU CARD/메뉴카드 나타나 Grid-->
         <section class="page-section bg-light" id="portfolio">
-        <div class="myLevel">
-            
-        </div>
-        <div class="myMemu">
-				<button name="ing" onclick="menuList()">나의 메뉴 확인하기</button>
-			</div>
-        <br><br><br>
-        
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase" >당신을 위한 추천 메뉴!</h2>
-                    <h3 id="levelInfo" class="section-subheading text-muted"></h3>
+                <div id="myLevel" class="text-center">
+                   
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"
-                                ><div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/pasta.jpg" alt=""
-                            /></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
+				<div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4">
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
                                 ><div class="portfolio-hover">
@@ -219,14 +200,84 @@
                                 <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
                             /></a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Salad</div>
-                                <div class="portfolio-caption-subheading text-muted">GreenYard</div>
+                                <div id="menuName0" class="portfolio-caption-heading"></div>
+                                <div id="restName0" class="portfolio-caption-subheading text-muted"></div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4" >
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div id="menuName1" class="portfolio-caption-heading"></div>
+                                <div id="restName1" class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div id="menuName2" class="portfolio-caption-heading"></div>
+                                <div id="restName2" class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div id="menuName3" class="portfolio-caption-heading"></div>
+                                <div id="restName3" class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div id="menuName4" class="portfolio-caption-heading"></div>
+                                <div id="restName4" class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4" id="col-lg-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-seedling fa-3x"></i></div>
+                                </div>
+                               <img class="img-fluid" src="/vgan/resources/image/after/portfolio/salad.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div id="menuName5" class="portfolio-caption-heading"></div>
+                                <div id="restName5" class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <form class="bbb" action="/vgan/menuinfo">
+         </div>
+            <!-- <form class="bbb" action="/vgan/menuinfo">
 				<input name='menuName' type='hidden'>
 				<input name='menuId' type='hidden'>
 				<input name='menuPri' type='hidden'>
@@ -237,7 +288,7 @@
 
 
 
-			</form>
+			</form> -->
         </section>
         <!-- Footer-->
         <footer class="footer py-4">

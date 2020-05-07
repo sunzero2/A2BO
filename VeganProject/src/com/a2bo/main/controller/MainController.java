@@ -100,7 +100,8 @@ public class MainController extends HttpServlet {
       
       Cookie cookie = new Cookie("myLevel", myLevel);
       response.addCookie(cookie);
-      pw.println("<h1>당신의 비건 단계는 " + myLevel + "입니다~</h1>");
+      pw.println( "<h2 class='section-heading text-uppercase'>당신을 위한 추천 메뉴!</h2>" + 
+    		  		"<h3 id='levelInfo' class='section-subheading text-muted'>오늘 당신의 선택 : " + myLevel + " 메뉴를 골라보세요!</h3>");
       pw.flush();
       pw.close();
       
