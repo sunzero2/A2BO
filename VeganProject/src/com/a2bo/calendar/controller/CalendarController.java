@@ -54,10 +54,10 @@ public class CalendarController extends HttpServlet {
 			}
 			rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendar.jsp");
 			rd.forward(request, response);
-		} else if(command.contains("calSub")) {
+		} else if(command.contains("calsub")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/calendar/calendarSub.jsp");
 			rd.forward(request, response);
-		} else if(command.contains("addEvent")) {
+		} else if(command.contains("addevent")) {
 			if(request.getParameter("btn").equals("save")) {
 				addEvent(request, response);
 			} else if(request.getParameter("btn").equals("remove")){
@@ -65,10 +65,10 @@ public class CalendarController extends HttpServlet {
 			} else {
 				changeEvent(request, response);
 			}
-		} else if(command.contains("calList")) {
+		} else if(command.contains("callist")) {
 			List<Calendar> calList = eventList(request, response);
 			request.setAttribute("calList", calList);
-		} else if(command.contains("getEvent")) {
+		} else if(command.contains("getevent")) {
 			getEvent(request, response);
 		}
 	}

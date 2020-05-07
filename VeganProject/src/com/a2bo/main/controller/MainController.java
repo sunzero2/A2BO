@@ -39,9 +39,9 @@ public class MainController extends HttpServlet {
       String conPath = request.getContextPath();
       String command = uri.substring(conPath.length());
       RequestDispatcher rd = null;
-      if(command.contains("searchingVg")) {
+      if(command.contains("searchingvg")) {
          searchingVg(request,response);
-      }else if(command.contains("searchingMenu")) {
+      }else if(command.contains("searchingmenu")) {
          searchingMenu(request,response);
       }
       

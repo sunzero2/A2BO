@@ -20,16 +20,27 @@
 	<%@ include file="../top/top.jsp" %>
 	
 	<!-- html -->
+	<!-- mypageConWrapper는 마이페이지 전체에 잡혀있는 css. 전체 콘텐츠 크기 지정해놓음 
+		mypage.css에 있음-->
 	<div class="mypageConWrapper"> 
 		<div class="mainCalHeader">
 			<div>
+				<!-- mypageTitle은 마이페이지 전체에 잡혀있는 css. 타이틀 크기 지정해놓음
+					mypage.css에 있음-->
 				<div class="mypageTitle">Calendar</div>
 			</div>
 			<span>이번 달 채식 횟수를 체크해보세요!</span>
 		</div>
+		
+		
+		<!--
+			이 아래부터 캘린더.
+			캘린더는 javascript로 만들어놓음 기존에 있던 class명 삭제하면 캘린더 생성이 안돼요!!
+		 -->
 		<div class="mainCalTable">
 			<table class="mainCalTable" id="calendar">
 				<tr>
+					<!-- tdTitle은 캘린더 날짜를 입력하기 위해 만들어진 class명입니다 -->
 					<td class="tdTitle">
 						<label onclick="beforeMonth();" id="before"></label>
 					</td>
@@ -87,7 +98,7 @@
 	<div class="innerDiv">
 		<div class="iframeWrapper">
 			<button class="closeBtn">X</button>
-			<iframe class="iframe" src="http://localhost:8787/vgan/calendar/calSub"></iframe>
+			<iframe class="iframe" src="http://localhost:8787/vgan/calendar/calsub"></iframe>
 		</div>
 	</div>
 	
@@ -107,7 +118,7 @@
 					for(var i = 0; i < dayList.length; i++) {
 						if(dayList[i] == el.id) {
 							$.ajax({
-								url: "http://localhost:8787/vgan/calendar/getEvent",
+								url: "http://localhost:8787/vgan/calendar/getevent",
 								data: {
 									"day" : dayList[i],
 									"month" : month
@@ -130,7 +141,7 @@
 			for(var i = 0; i < dayList.length; i++) {
 				if(dayList[i] == data.id) {
 					$.ajax({
-						url: "http://localhost:8787/vgan/calendar/getEvent",
+						url: "http://localhost:8787/vgan/calendar/getevent",
 						data: {
 							"day" : dayList[i],
 							"month" : month

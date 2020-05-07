@@ -48,16 +48,6 @@ public class MypageController extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	// 내가 찜한 카드 가져오는 메서드
-	private void likeMenuList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	
-	// 찜하기 삭제 메서드
-	private void removeLikeMenu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	
 	/**
 	 1. MethodName : changeVL
 	 2. ClassName : MypageController.java

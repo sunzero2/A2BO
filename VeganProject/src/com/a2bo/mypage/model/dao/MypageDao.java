@@ -16,14 +16,6 @@ public class MypageDao {
 		super();
 	}
 	
-	public void likeMenuList() {
-		
-	}
-	
-	public void removeLikeMenu() {
-		
-	}
-	
 	public int changeVL(Connection conn, String vl, int userId) throws SQLException {
 		String sql = "update tmember set vlid=? where userid=?";
 		PreparedStatement pstm = null;

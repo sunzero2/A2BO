@@ -50,6 +50,8 @@ public class MemberController extends HttpServlet {
 				res = 1;
 			}
 			
+			request.setAttribute("userEmail", null);
+			request.setAttribute("userPw", null);
 			request.setAttribute("keyword", res);
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
 			view.forward(request, response);
@@ -57,6 +59,8 @@ public class MemberController extends HttpServlet {
 			searchId(request, response);
 		} else if (command.contains("searchPw")) {
 			searchPw(request, response);
+		} else if (command.contains("changePw")) {
+			changePw(request, response);
 		}
 			
 	}
@@ -103,7 +107,7 @@ public class MemberController extends HttpServlet {
 	/**
 	 1. MethodName : join
 	 2. ClassName : MemberController.java
-	 3. Comment : 회원가입 메서드
+	 3. Comment : 회원가입 메소드
 	 4. 작성자 : 이혜영
 	 5. 작성일 : 2020. 4. 24.
 	 */
@@ -124,13 +128,15 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("isSuccess", "가입 중 오류가 발생하였습니다.");
 			request.setAttribute("sendMsg", "같은 오류 재발생 시 고객센터로 문의바랍니다.\n(ERR_CODE = USE001)");
 		}
+		
+		
 		rd.forward(request, response);
 	}
 	
 	/**
 	 1. MethodName : emailCheck
 	 2. ClassName : MemberController.java
-	 3. Comment : 회원가입 시 이메일 체크용 메서드
+	 3. Comment : 회원가입 시 이메일 체크용 메소드
 	 4. 작성자 : 이혜영
 	 5. 작성일 : 2020. 4. 24.
 	 */
@@ -141,14 +147,71 @@ public class MemberController extends HttpServlet {
 		pw.write(res);
 	}
 	
-	private void searchPw(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	
+	/**
+	 1. MethodName :searchId
+	 2. ClassName : MemberController.java
+	 3. Comment : 회원의 계정 찾기용 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 8.
+	 */
 	private void searchId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String phone = request.getParameter("userPhone");
 		String nickName = request.getParameter("nickName");
 		
 		
+		String userEmail = mService.searchID(phone, nickName);
+		
+		request.setAttribute("userEmail", userEmail);
+		request.setAttribute("userPw", null);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
+		rd.forward(request, response);
+	}
+	
+	
+	/**
+	 1. MethodName : searchPw
+	 2. ClassName : MemberController.java
+	 3. Comment : 회원의 비밀번호 변경을 위한 정보 입력용 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 8.
+	 */
+	private void searchPw(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String userEmail = request.getParameter("userEmail");
+		String nickName = request.getParameter("nickName");
+		
+		int res = mService.searchPw(userEmail, nickName);
+		
+		if(res > 0) {
+			request.setAttribute("findId", userEmail);
+		}
+		request.setAttribute("userEmail", null);
+		request.setAttribute("userPw", res);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
+		rd.forward(request, response);
+	}
+	
+	/**
+	 1. MethodName : changePw
+	 2. ClassName : MemberController.java
+	 3. Comment : 회원의 정보가 일치할 때 비밀번호 변경용 메소드
+	 4. 작성자 : 이혜영
+	 5. 작성일 : 2020. 5. 8.
+	 */
+	private void changePw(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userEmail = request.getParameter("userEmail");
+		String userPw = request.getParameter("userPw");
+		
+		int res = mService.changePw(userEmail, userPw);
+		
+		if(res > 0) {
+			request.setAttribute("complatedChangePw", true);
+		} else {
+			request.setAttribute("complatedChangePw", false);
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
+		rd.forward(request, response);
 	}
 }

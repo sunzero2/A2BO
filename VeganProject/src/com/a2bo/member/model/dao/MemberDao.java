@@ -81,7 +81,8 @@ public class MemberDao {
 	}
 	
 	public String searchId(Connection conn, String phone, String nickName) throws SQLException {
-		String sql = "select userEmail from tmember where cell=?, nickName=?";
+		String sql = "select useremail from tmember where cell=? and nickName=?";
+
 		ResultSet rs = null;
 		String userid = "";
 		PreparedStatement pstm = null;
@@ -104,17 +105,37 @@ public class MemberDao {
 	
 	public int searchPw(Connection conn, String userEmail, String nickName) throws SQLException {
 		int res = 0;
-		String sql = "select * from tmember where userEmail=?, nickName=?";
+		String sql = "select * from tmember where userEmail=? and nickName=?";
 		PreparedStatement pstm = null;
 		
 		try {
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, userEmail);
+			pstm.setString(2, nickName);
 			
+			res = pstm.executeUpdate();
 		} finally {
-			
+			jdbc.close(pstm);
 		}
 		
+		return res;
+	}
+	
+	public int changePw(Connection conn, String userEmail, String userPw) throws SQLException {
+		int res = 0;
+		String sql = "update tmember set pw=? where useremail=?";
+		PreparedStatement pstm = null;
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userPw);
+			pstm.setString(2, userEmail);
+			
+			res = pstm.executeUpdate();
+			
+		} finally {
+			jdbc.close(pstm);
+		}
 		return res;
 	}
 }

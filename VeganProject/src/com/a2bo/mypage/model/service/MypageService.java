@@ -16,14 +16,6 @@ public class MypageService {
 		super();
 	}
 
-	public void likeMenuList() {
-
-	}
-
-	public void removeLikeMenu() {
-
-	}
-
 	public int changeVL(String vl, int userId) {
 		int res = 0;
 		Connection conn = jdbc.getConnection();

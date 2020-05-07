@@ -16,7 +16,7 @@
 </c:if>
 
 <div style="height: 650px; width: 750px;">
-	<form action="addEvent">
+	<form action="addevent">
 		<div class="subCalTitle"></div>
 		<div>
 			<textarea class="subCalMenuContent" name="content" placeholder="오늘의 일기를 작성해보세요!(최대 300자까지 입력가능)" maxlength=300>

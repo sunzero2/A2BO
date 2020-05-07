@@ -58,4 +58,50 @@ public class MemberService {
 		}
 		return res;
 	}
+	
+	public String searchID(String phone, String nickName) {
+		String userEmail = "";
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			userEmail = mDao.searchId(conn, phone, nickName);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		
+		return userEmail;
+	}
+	
+	public int searchPw(String userEmail, String nickName) {
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			res = mDao.searchPw(conn, userEmail, nickName);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		
+		return res;
+	}
+	
+	public int changePw(String userEmail, String userPw) {
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			res = mDao.changePw(conn, userEmail, userPw);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		return res;
+	}
 }
