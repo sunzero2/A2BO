@@ -22,6 +22,7 @@ import javax.swing.text.View;
 import com.a2bo.main.model.service.MainService;
 import com.a2bo.main.model.vo.MainVlv;
 import com.google.common.collect.HashBiMap;
+import com.google.gson.Gson;
 
 public class MainController extends HttpServlet {
    private static final long serialVersionUID = 1L;
@@ -38,13 +39,11 @@ public class MainController extends HttpServlet {
       String conPath = request.getContextPath();
       String command = uri.substring(conPath.length());
       RequestDispatcher rd = null;
-      //System.out.println("컨트롤러에서 커맨드 " +  command.contains("searchingVg"));
       if(command.contains("searchingVg")) {
          searchingVg(request,response);
       }else if(command.contains("searchingMenu")) {
          searchingMenu(request,response);
       }
-      //메뉴보기 버튼 꼭 만들기
       
    }
 
@@ -56,17 +55,14 @@ public class MainController extends HttpServlet {
    private void searchingVg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  request.setCharacterEncoding("UTF-8");
 	  response.setContentType("text/html; charset=utf-8");
-//	  System.out.println("여기까지는 왔나?");
       List<Integer> list = new ArrayList<>();
       RequestDispatcher rd = null;
       PrintWriter pw = response.getWriter();
       HttpSession session = request.getSession();
       String stringList = request.getParameter("str");
       
-      //ajax로 넘어온 stringList 숫자들이 한번에 저장 되어서 배열로 한글자씩 담는 코드
       String[] ingList;
       ingList = stringList.split("");
-//      System.out.println("컨트롤러 배열  ingList " + ingList);
       
       
       String myLevel ="";
@@ -75,9 +71,7 @@ public class MainController extends HttpServlet {
     	  list.add(Integer.parseInt(ing));
       }
       List<MainVlv> vgList = mService.searchingVg(list);
-//      System.out.println("컨트롤러 단에서 리스트 " + list);
-//      System.out.println("컨트롤러 단에서 리스트 투스트링" + list.toString());
-//      System.out.println("컨트롤러 단에서 리스트 사이즈 " + list.size());
+
       
       
       if(vgList.toString().contains("FTN")) {
@@ -99,22 +93,18 @@ public class MainController extends HttpServlet {
       }else if(vgList.toString().contains("FXT")) {
          myLevel = "플렉시테리언";
       }
-//      System.out.println("컨트롤러 단에서 myLevel " + myLevel);
       
       
       request.setAttribute("myLevel", myLevel);
       
       
-//      System.out.println("컨트롤러 단에서 vgList " + vgList);
       Cookie cookie = new Cookie("myLevel", myLevel);
       response.addCookie(cookie);
       pw.println("<h1>당신의 비건 단계는 " + myLevel + "입니다~</h1>");
-      
       pw.flush();
       pw.close();
       
-//      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
-//      rd.forward(request, response); 
+
       	
    }
    
@@ -155,43 +145,10 @@ public class MainController extends HttpServlet {
       }
          
       List<Map<String, Object>> menu = mService.searchingMenu(myLevelId);
-      System.out.println("컨트롤러에서 서칭메뉴 myLevel " + myLevel) ;
-      System.out.println("컨트롤러에서 서칭메뉴 myLevelId " + myLevelId) ;
-      
-      
-      request.setAttribute("myLevelId", myLevelId);
-            
-      System.out.println("컨트롤러에서 맵 메뉴" + menu);
-//      rd = request.getRequestDispatcher("/WEB-INF/views/main/main.jsp");
-//      rd.forward(request, response); 
-      for(int i = 0; i < menu.size(); i++) {
-      pw.println(
-    		  "<div class='menuCard'>" + 
-    		  "<div class='menuName'><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
-    		  "<div class='menuId'>" + menu.get(i).get("메뉴아이디") +"</div>" + 
-    		  "<div class='menuPri'>가격 : " + menu.get(i).get("가격") + "원</div>" + 
-    		  "<div class='revStarrate' >별점 : " + "" + "</div>" + 
-    		  "<div><h3>******* 매장 소개********</h3></div>" + 
-    		  "<div class='restName'>" + menu.get(i).get("레스트 이름")  + "</div>" + 
-    		  "<div class='menuLocation'>주소 : " + menu.get(i).get("주소") + "</div>" + 
-    		  "<div class='restPhone'>전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
-    		  "<div class='restHour'>영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
-    		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
-    		 "</div>"
-    		  );
-      
-      
-    
-      
-      
-      
-//      pw.println("<h3>" + menu+ "</h3>");
+       Gson gson = new Gson();
+       pw.write(gson.toJson(menu));
       }
-      pw.flush();
-      pw.close();
-      
       
    }
 
    
-}
