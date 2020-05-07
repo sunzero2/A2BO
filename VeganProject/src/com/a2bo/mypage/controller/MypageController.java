@@ -36,9 +36,9 @@ public class MypageController extends HttpServlet {
 		} else if(command.contains("privacy")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/mypage/privacy.jsp");
 			rd.forward(request, response);
-		} else if(command.contains("changeMember")) {
+		} else if(command.contains("changemember")) {
 			changeMember(request, response);
-		} else if(command.contains("changeVL")) {
+		} else if(command.contains("changevl")) {
 			changeVL(request, response);
 		}
 		

@@ -23,9 +23,9 @@
 				<button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger loginBtn" id="loginBt" type="submit">E N T E R</button>
 			</form>
 			<div>
-				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchMem?keyword=pw" style="margin-right: 77px;
+				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchmem?keyword=pw" style="margin-right: 77px;
 				">비밀번호찾기</a>
-				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchMem?keyword=id">ID찾기 </a>
+				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchmem?keyword=id">ID찾기 </a>
 			</div>
 		</div>
 		<div class="joinWrapper">

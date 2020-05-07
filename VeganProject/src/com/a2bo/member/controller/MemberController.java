@@ -42,7 +42,7 @@ public class MemberController extends HttpServlet {
 			emailCheck(request, response);
 		} else if(command.contains("logout")) {
 			logOut(request, response);
-		} else if(command.contains("searchMem")) {
+		} else if(command.contains("searchmem")) {
 			String keyword = request.getParameter("keyword");
 			int res = 0;
 			

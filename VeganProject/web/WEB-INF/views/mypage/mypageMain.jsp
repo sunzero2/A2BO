@@ -20,7 +20,7 @@
 	</c:if>
 	
 	<div class="mypageConWrapper">
-		<div class="mypageTitle">내가 찜한 카드</div>
+		<div class="mypageTitle">나의 리뷰보기</div>
 		<div class="likeMenuDiv">안녕?</div>
 		<div class="likeMenuDiv">안녕?</div>
 	</div>

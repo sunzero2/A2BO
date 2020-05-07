@@ -11,21 +11,23 @@
 <title>메뉴 상세페이지</title>
 <link rel="stylesheet" href="/vgan/resources/css/top.css"/>
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 .stars .fa {
-margin-left:3px;
-color:#FF9800;
-cursor:pointer;
+	margin-left:3px;
+	color:#FF9800;
+	cursor:pointer;
 }
+
 .menuInfoWrapper{
-position:relative;
-margin-top:5%;
-left:3%;
-text-align:center;
+	position:relative;
+	margin-top:5%;
+	left:3%;
+	text-align:center;
 }
 .menuborder{
-position:absolute;
-left:20%;
+	position:absolute;
+	left:20%;
 }
 .detailinfo{
 position:relative;
@@ -59,8 +61,7 @@ width:30%}
             <span class="fa fa-star-o" value="3"></span>
             <span class="fa fa-star-o" value="4"></span>
             <span class="fa fa-star-o" value="5"></span>
-            <span>${resMenuinfo.revStarrate}/5점</span>
-         </span><br>
+         </span>
         	
 <img src= "/vgan/resources/image/menuLine1.png" class = "nameline">
 <br>

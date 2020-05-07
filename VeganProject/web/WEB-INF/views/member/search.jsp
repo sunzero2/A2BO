@@ -211,7 +211,7 @@
 	}
 	
 	function again(keyword) {
-		location.href = "http://localhost:8787/vgan/member/searchMem?keyword=" + keyword;
+		location.href = "http://localhost:8787/vgan/member/searchmem?keyword=" + keyword;
 	}
 	</script>
 </body>

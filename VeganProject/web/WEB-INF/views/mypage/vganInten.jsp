@@ -40,7 +40,7 @@
 		</c:if>
 		<button class="intenBtn" onclick="setVegan();">설정하러 가기</button>
 		<button class="intenBtn" onclick="vganExplain();">채식 지향에 대해 알아보기</button>
-		<form action="changeVL" style="display: none;" method="get">
+		<form action="changevl" style="display: none;" method="get">
 			<select name="vLevel">
 				<option value="FXT">플렉시테리언</option>
 				<option value="POP">폴로페스코</option>
