@@ -7,8 +7,6 @@ function all(selector, ln) {
 }
 
 
-
-
 // 재료를 중복 3개를 초과해서 선택했을 경우 경고창이 뜨는 기능
 function count_ck(obj) {
 
@@ -120,6 +118,7 @@ function radiock() {
 		}
 	}) 
 } */
+var menuArr;
 function menuList(){
 	console.dir("dd");
 		
@@ -133,20 +132,56 @@ function menuList(){
 				},data :{
 					menu : menu
 				},
-				
 				success: function(menu) {
-					console.dir("aa")
-					document.querySelector('.myLevel').innerHTML += menu;
+					menuArr = new Array();
+					var jObj = JSON.parse(menu);
+					for(i = 0; i < jObj.length; i++) {
+						menuArr.push(jObj[i]);
+					}
+					/*console.dir("aa")
+					document.querySelector('.myLevel').innerHTML += menu;*/
 				}
-				
-				
 			})
-
+			
+	.done(function() {
+		var wrapper = document.querySelector('#portfolio');
+		for(i = 0; i < menuArr.length; i++) {
+			
+			console.dir(menuArr[i].메뉴이름);
+			var menuCard = document.createElement('div');
+			var menuName = document.createElement('div');
+			var restName = document.createElement('div');
+			
+			menuCard.className = "menuCard";
+			menuCard.id = i;
+			menuName.className = "menuName";
+			restName.className = "restName";
+			
+			menuName.textContent = menuArr[i].메뉴이름;
+			restName.textContent = menuArr[i].식당명;
+			
+			wrapper.appendChild(menuCard);
+			menuCard.appendChild(menuName);
+			menuCard.appendChild(restName);
+		}
+	})
+// "<div class='menuCard'>" + 
+//    		  "<div class='menuName'><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
+//    		  "<div class='menuId'>" + menu.get(i).get("메뉴아이디") +"</div>" + 
+//    		  "<div class='menuPri'>가격 : " + menu.get(i).get("가격") + "원</div>" + 
+//    		  "<div class='revStarrate' >별점 : " + "" + "</div>" + 
+//    		  "<div><h3>******* 매장 소개********</h3></div>" + 
+//    		  "<div class='restName'>" + menu.get(i).get("레스트 이름")  + "</div>" + 
+//    		  "<div class='menuLocation'>주소 : " + menu.get(i).get("주소") + "</div>" + 
+//    		  "<div class='restPhone'>전화번호 : " + menu.get(i).get("전화번호") + "</div>" + 
+//    		  "<div class='restHour'>영업시간 : " + menu.get(i).get("영업시간") + "</div>" +
+//    		  "<button class='ingBtn' onclick='menuInfoBox()'>메뉴 상세보기</button>" + 
+//    		 "</div>"
 }
 
 
 function menuInfoBox(){
-	document.querySelectorAll(".menuCard").forEach(function(el){
+	document.querySelectorAll("#menuCard").forEach(function(el){
 		el.addEventListener("click", function(v){
 			/*document.querySelector('.bbb').textContent = el.value;*/
 			

@@ -112,7 +112,7 @@ public class MainDao {
         	   menu.put("메뉴아이디", rs.getString(2));
                menu.put("메뉴이름", rs.getString(4));
                menu.put("가격", rs.getInt(5));
-               menu.put("레스트 이름", rs.getString(6));
+               menu.put("식당명", rs.getString(6));
                menu.put("주소", rs.getString(7));
                menu.put("전화번호", rs.getString(8));
                menu.put("영업시간", rs.getString(9));
