@@ -408,5 +408,7 @@
         <script src="/vgan/resources/js/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="/vgan/resources/js/scripts.js"></script>
+        <!-- topBanner JS -->
+        <script src="/vgan/resources/js/top.js"></script>
         </body>
 </html>

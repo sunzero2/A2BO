@@ -4,22 +4,27 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top"><img
-			src="/vgan/resources/image/after/vganlogo-1w.png" /></a>
-		<button class="navbar-toggler navbar-toggler-right" type="button"
-			data-toggle="collapse" data-target="#navbarResponsive"
-			aria-controls="navbarResponsive" aria-expanded="false"
-			aria-label="Toggle navigation">
-			Menu<i class="fas fa-bars ml-1"></i>
+		<a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/vgan/resources/image/after/vganlogo-1w.png" /></a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			Menu
+			<i class="fas fa-bars ml-1"></i>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item"><a class="nav-link js-scroll-trigger"
 					href="#services">Choose</a></li>
-				<li class="nav-item"><a class="nav-link js-scroll-trigger"
-					href="">Login</a></li>
-				<li class="nav-item"><a class="nav-link js-scroll-trigger"
-					href="">Mypage</a></li>
+				<c:if test="${loginInfo == null }">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="">Login</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="">Join</a></li>
+				</c:if>
+				<c:if test="${loginInfo != null}">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="">Mypage</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="">Logout</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>
