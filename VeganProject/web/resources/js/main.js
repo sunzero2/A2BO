@@ -47,6 +47,10 @@ function ckclear(){
 // 체크박스 버튼 값 가져오는 기능
 function radiock() {
 	console.log("tq");
+	
+
+
+	
  	var checkboxes = document.getElementsByName('ing');
  	var str = [];
  	var chkCnt = 0;
@@ -85,13 +89,78 @@ function radiock() {
 					 str : str
 				},
 				 success: function(str) {
-					document.querySelector('.myLevel').innerHTML = /* '<h1>당신의 비건 단계는' +myLevel + '입니다~</h1>' */str;
+					document.querySelector('#myLevel').innerHTML = /* '<h1>당신의 비건 단계는' +myLevel + '입니다~</h1>' */str;
 				} 
 				/* ,error:function(request,status,error){
 					alert("code:"+request.status+ "\n" +"message:"+request.responseText+  "\n" + "error:" + error);
 				} */
 				
 			})
+			console.dir("dd");
+		
+	
+	var menu;
+	$.ajax({
+				url: "/vgan/main/searchingMenu",
+				type: 'get',
+				headers: {
+					'Content-Type':'application/x-www-form-urlencoded'
+				},data :{
+					menu : menu
+				},
+				success: function(menu) {
+					menuArr = new Array();
+					var jObj = JSON.parse(menu);
+					for(i = 0; i < jObj.length; i++) {
+						menuArr.push(jObj[i]);
+					}
+					/*console.dir("aa")
+					document.querySelector('.myLevel').innerHTML += menu;*/
+				}
+			})
+			
+	.done(function() {
+		/*var wrapper = document.querySelector('#portfolio');*/
+		/*for(i = 0; i < menuArr.length; i++) {*/
+			
+			
+			/*var menuCard = document.createElement('div');
+			var menuName = document.createElement('div');
+			var restName = document.createElement('div');
+			
+			menuCard.className = "menuCard";
+			menuCard.id = 0;
+			menuName.className = "menuName";
+			restName.className = "restName";
+			
+			menuName.textContent = menuArr[0].메뉴이름;
+			restName.textContent = menuArr[0].식당명;
+			
+			wrapper.appendChild(menuCard);
+			menuCard.appendChild(menuName);
+			menuCard.appendChild(restName);*/
+			
+			document.querySelector('#menuName0').textContent = menuArr[0].메뉴이름;
+			document.querySelector('#menuName1').textContent = menuArr[1].메뉴이름;
+			document.querySelector('#menuName2').textContent = menuArr[2].메뉴이름;
+			document.querySelector('#menuName3').textContent = menuArr[3].메뉴이름;
+			document.querySelector('#menuName4').textContent = menuArr[4].메뉴이름;
+			document.querySelector('#menuName5').textContent = menuArr[5].메뉴이름;
+			
+			document.querySelector('#restName0').textContent = menuArr[0].식당명;
+			document.querySelector('#restName1').textContent = menuArr[1].식당명;
+			document.querySelector('#restName2').textContent = menuArr[2].식당명;
+			document.querySelector('#restName3').textContent = menuArr[3].식당명;
+			document.querySelector('#restName4').textContent = menuArr[4].식당명;
+			document.querySelector('#restName5').textContent = menuArr[5].식당명;
+			
+			
+			var con = document.getElementById("col-lg-4");
+			if(con.style.display == 'none'){
+				con.style.display == 'block';
+			}
+		/*}*/
+	})
 
 //	str.subString(str.length - 2, str.length);
 //	alert(str + "를 선택하셨습니다.");
@@ -120,51 +189,7 @@ function radiock() {
 } */
 var menuArr;
 function menuList(){
-	console.dir("dd");
-		
 	
-	var menu;
-	$.ajax({
-				url: "/vgan/main/searchingMenu",
-				type: 'get',
-				headers: {
-					'Content-Type':'application/x-www-form-urlencoded'
-				},data :{
-					menu : menu
-				},
-				success: function(menu) {
-					menuArr = new Array();
-					var jObj = JSON.parse(menu);
-					for(i = 0; i < jObj.length; i++) {
-						menuArr.push(jObj[i]);
-					}
-					/*console.dir("aa")
-					document.querySelector('.myLevel').innerHTML += menu;*/
-				}
-			})
-			
-	.done(function() {
-		var wrapper = document.querySelector('#portfolio');
-		for(i = 0; i < menuArr.length; i++) {
-			
-			console.dir(menuArr[i].메뉴이름);
-			var menuCard = document.createElement('div');
-			var menuName = document.createElement('div');
-			var restName = document.createElement('div');
-			
-			menuCard.className = "menuCard";
-			menuCard.id = i;
-			menuName.className = "menuName";
-			restName.className = "restName";
-			
-			menuName.textContent = menuArr[i].메뉴이름;
-			restName.textContent = menuArr[i].식당명;
-			
-			wrapper.appendChild(menuCard);
-			menuCard.appendChild(menuName);
-			menuCard.appendChild(restName);
-		}
-	})
 // "<div class='menuCard'>" + 
 //    		  "<div class='menuName'><h1>" + menu.get(i).get("메뉴이름") + "</h1></div>" +
 //    		  "<div class='menuId'>" + menu.get(i).get("메뉴아이디") +"</div>" + 
