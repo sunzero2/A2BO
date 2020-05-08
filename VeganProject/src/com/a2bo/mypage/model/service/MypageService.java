@@ -2,7 +2,9 @@ package com.a2bo.mypage.model.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
+import com.a2bo.info.model.vo.Review;
 import com.a2bo.member.model.vo.Member;
 import com.a2bo.mypage.model.dao.MypageDao;
 
@@ -43,5 +45,20 @@ public class MypageService {
 			jdbc.close(conn);
 		}
 		return res;
+	}
+	
+	public List<Review> myReview(int userId) {
+		List<Review> list = null;
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			list = mDao.myReview(conn, userId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		
+		return list;
 	}
 }

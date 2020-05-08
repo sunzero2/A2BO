@@ -4,7 +4,7 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-   <servlet>
+  <servlet>
     <servlet-name>vgList</servlet-name>
     <servlet-class>com.a2bo.main.controller.MainController</servlet-class>
   </servlet>
@@ -26,7 +26,7 @@
   </servlet>
   <servlet>
     <servlet-name>menuInfo</servlet-name>
-    <servlet-class>com.a2bo.review.controller.RevContr</servlet-class>
+    <servlet-class>com.a2bo.info.controller.MenuInfoController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>welcome</servlet-name>
@@ -44,17 +44,12 @@
     <servlet-name>calendar</servlet-name>
     <url-pattern>/calendar/*</url-pattern>
   </servlet-mapping>
-   <servlet-mapping>
-  	<servlet-name>vgList</servlet-name>
-  	<url-pattern>/main/*</url-pattern>
+  <servlet-mapping>
+    <servlet-name>vgList</servlet-name>
+    <url-pattern>/main/*</url-pattern>
   </servlet-mapping>
-   <servlet-mapping>
-  	<servlet-name>menuInfo</servlet-name>
-  	<url-pattern>/menuinfo/*</url-pattern>
+  <servlet-mapping>
+    <servlet-name>menuInfo</servlet-name>
+    <url-pattern>/info/*</url-pattern>
   </servlet-mapping>
-     <servlet-mapping>
-  	<servlet-name>menuInfo</servlet-name>
-  	<url-pattern>/revup/*</url-pattern>
-  </servlet-mapping>
-  
 </web-app>

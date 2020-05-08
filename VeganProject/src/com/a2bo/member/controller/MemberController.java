@@ -186,8 +186,6 @@ public class MemberController extends HttpServlet {
 		if(res > 0) {
 			request.setAttribute("findId", userEmail);
 		}
-		request.setAttribute("userEmail", null);
-		request.setAttribute("userPw", res);
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
 		rd.forward(request, response);
 	}

@@ -2,7 +2,7 @@
 document.querySelectorAll('.nav-item').forEach(function(el) {
 	el.addEventListener('click', function(v) {
 		if(v.target.text == 'Login' || v.target.text == 'Join') {
-			window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=700, left=320px, top=150px');
+			window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
 		}
 	})
 })
