@@ -7,6 +7,8 @@ document.querySelectorAll('.nav-item').forEach(function(el) {
 	})
 })
 
+출처: https://cofs.tistory.com/372 [CofS]
+
 // topLogo를 클릭하면 무조건 메인페이지로 이동
 document.querySelector('.topLogo').addEventListener('click', function() {
 	location.href='localhost:8787/vgan/welcome';

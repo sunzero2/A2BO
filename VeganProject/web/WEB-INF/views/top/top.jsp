@@ -15,9 +15,9 @@
 					href="#services">Choose</a></li>
 				<c:if test="${loginInfo == null }">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="">Login</a></li>
+						href="#">Login</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="">Join</a></li>
+						href="#">Join</a></li>
 				</c:if>
 				<c:if test="${loginInfo != null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
