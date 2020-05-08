@@ -136,6 +136,9 @@ function radiock() {
 	})
 }
 
+
+var menuId;
+var index = 0;
 function menuInfoBox() {
 	var menuName = document.querySelector('#infoMenuName');
 	var menuPrice = document.querySelector('#infoMenuPrice');
@@ -143,9 +146,11 @@ function menuInfoBox() {
 	var restLoc = document.querySelector('#infoRestLoc');
 	var restCell = document.querySelector('#infoRestCell');
 	var restHour = document.querySelector('#infoRestHour');
+	var area = document.querySelector('.area');
 	
 	document.querySelectorAll(".menuWrapper").forEach(function(el) {
 		el.addEventListener("click", function(v) {
+			menuId = menuArr[el.id].메뉴아이디;
 			var after = menuArr[el.id].영업시간.replace("(", " ");
 			after = after.replace(")", "");
 			var hourArr = after.split(" ");
@@ -254,6 +259,153 @@ function menuInfoBox() {
 				restCell.textContent = "Cell: " + menuArr[el.id].전화번호;
 			}
 			restHour.textContent = "Opening: " + hour;
+			area.value = "";
+			getReview();
 		})
+	})
+}
+
+
+
+// 혜영 리뷰
+var arr = null;
+
+function getReview() {
+	if (index < 0) {
+		alert('첫 페이지입니다.');
+		index = 0;
+	} else {
+		$.ajax({
+			url : 'http://localhost:8787/vgan/info/getreview',
+			data : {
+				"menuId" : menuId,
+				"index" : index
+			},
+			type : "post",
+			success : function(v) {
+				var jObj = JSON.parse(v);
+				if(jObj.length > 0) {
+					arr = new Array;
+					for(i = 0; i < jObj.length; i++) {
+						arr.push(jObj[i]);
+					}
+				} else {
+					arr = null;
+				}
+			}
+		})
+
+		.done(function() {
+			var mediaList = document.querySelector('.media-list');
+			mediaList.innerHTML = "";
+			var revNo = 1;
+			if(arr !=  null) {
+				if(arr.length > 0) {
+					for (i = 0; i < arr.length; i++) {
+						var mediaLi = document.createElement('li');
+						var userImgURL = document.createElement('a');
+						var userImg = document.createElement('img');
+						var mediaBody = document.createElement('div');
+						var wellLg = document.createElement('div');
+						var mediaUserName = document.createElement('h4');
+						var dateWrapper = document.createElement('ul');
+						var dateDay = document.createElement('li');
+						var dateMonth = document.createElement('li');
+						var dateYear = document.createElement('li');
+						var mediaCont = document.createElement('p');
+						
+						mediaLi.className = 'media';
+						userImgURL.className = 'pull-left';
+						userImgURL.href = '#';
+						userImg.className = 'media-object img-circle';
+						userImg.src = "https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg";
+						userImg.alt = 'profile';
+						mediaBody.className = 'media-body';
+						wellLg.className = 'well well-lg';
+						mediaUserName.id = 'revUserName';
+						mediaUserName.className = 'media-heading text-uppercase reviews';
+						dateWrapper.className = 'media-date text-uppercase reviews list-inline';
+						dateDay.className = 'dd';
+						dateMonth.className = 'mm';
+						dateYear.className = 'aaaa';
+						mediaCont.id = 'revUserCont';
+						mediaCont.className = 'media-comment';
+						
+						var dateArr = arr[i].revDate.split(" ");
+						var mm = dateArr[0].substring(0, dateArr[0].length-1);
+						if(mm < 10) {
+							mm = '0' + mm;
+						}
+						var dd = dateArr[1].substring(0, dateArr[0].length-1);
+						if(dd < 10) {
+							dd = '0' + dd;
+						}
+						
+						mediaUserName.textContent = arr[i].nickName;
+						mediaCont.textContent = arr[i].revContent;
+						dateDay.textContent = dd;
+						dateMonth.textContent = mm;
+						dateYear.textContent = dateArr[2];
+						
+						mediaList.appendChild(mediaLi);
+						mediaLi.appendChild(userImgURL);
+						userImgURL.appendChild(userImg);
+						mediaLi.appendChild(mediaBody);
+						mediaBody.appendChild(wellLg);
+						wellLg.appendChild(mediaUserName);
+						wellLg.appendChild(dateWrapper);
+						dateWrapper.appendChild(dateDay);
+						dateWrapper.appendChild(dateMonth);
+						dateWrapper.appendChild(dateYear);
+						wellLg.appendChild(mediaCont);
+					}
+				}
+			} else {
+				var div = document.createElement('div');
+				div.textContent = "아직 등록된 리뷰가 없습니다.";
+				mediaList.appendChild(div);
+			}
+		})
+	}
+}
+
+var star = 0;
+var starArr = document.querySelectorAll('.star');
+
+starArr.forEach(function(el) {
+	el.addEventListener('click', function() {
+		for (i = 0; i < starArr.length; i++) {
+			starArr[i].src = 'http://localhost:8787/vgan/resources/image/after/portfolio/starN.png';
+		}
+
+		for (i = 0; i < el.id; i++) {
+			starArr[i].src = 'http://localhost:8787/vgan/resources/image/after/portfolio/starY.png';
+		}
+
+		star = (el.id).substr(1);
+	})
+})
+
+var content = document.querySelector('.area');
+function addReview() {
+	$.ajax({
+		url : 'http://localhost:8787/vgan/info/addreview',
+		data : {
+			"star" : star,
+			"menuId" : menuId,
+			"content" : content.value
+		},
+		type : 'post',
+		success : function(v) {
+			if (v > 0) {
+				alert('리뷰가 정상적으로 저장되었습니다.');
+			} else {
+				alert('리뷰 작성 실패! 지속적으로 발생 시 고객센터로 문의 바랍니다.');
+			}
+		}
+	})
+	
+	.done(function() {
+		getReview();
 	})
 }

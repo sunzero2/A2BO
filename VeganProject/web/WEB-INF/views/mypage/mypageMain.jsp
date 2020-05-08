@@ -7,25 +7,33 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/vgan/resources/css/top.css" />
 <link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
+<link rel="stylesheet" href="/vgan/resources/css/main.css"/>
 </head>
-<body>
+<body onload="getReview();">
 	<%@ include file="../top/top.jsp" %>
 	<%@ include file="mypageNavi.jsp" %>
 	
-	<c:if test="${loginInfo == null}">
+	<%-- <c:if test="${loginInfo == null}">
 		<script>
 			alert("로그인이 종료되어 메인페이지로 이동합니다.");
 			location.href = "http://localhost:8787/vgan/welcome";
 		</script>
-	</c:if>
+	</c:if> --%>
 	
 	<div class="mypageConWrapper">
-		<div class="mypageTitle">나의 리뷰보기</div>
-		<div class="likeMenuDiv">안녕?</div>
-		<div class="likeMenuDiv">안녕?</div>
+		<div class="mypageTitle">나의 리뷰</div>
+		<div class="myReviewBody">
+			<ul class="media-list">
+			</ul>  
+		</div>
 	</div>
 	
 	
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="/vgan/resources/js/top.js"></script>
+	<script>
+		var myId = ${loginInfo.userId};
+	</script>
+	<script src="/vgan/resources/js/myReview.js"></script>
 </body>
 </html>

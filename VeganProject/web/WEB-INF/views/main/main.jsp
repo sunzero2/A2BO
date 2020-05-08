@@ -280,7 +280,6 @@
                                     <!-- Project Details Go Here-->
                                     <h2 id="infoMenuName" class="text-uppercase"></h2>
                                     <p id="infoMenuPrice" class="item-intro text-muted"></p>
-                                    
                                     <img class="img-fluid d-block mx-auto" src="/vgan/resources/image/after/portfolio/01-full.jpg" alt="" />
                                     <ul class="list-inline">
                                         <li id="infoRestName"></li>
@@ -288,31 +287,11 @@
                                         <li id="infoRestCell"></li>
                                         <li id="infoRestHour"></li>
                                     </ul>
-                                    		<div class="reviewWrapper">
+                                    <div class="reviewWrapper">
 										<hr class="reviewHr">
 										<div class="reviewTitle">REVIEW</div>
-										<table class="reviewTable">
 											<ul class="media-list">
-												<li class="media">
-													<a class="pull-left" href="#">
-														<img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-													</a>
-													<div class="media-body">
-														<div class="well well-lg">
-															<h4 class="media-heading text-uppercase reviews">Marco </h4>
-															<ul class="media-date text-uppercase reviews list-inline">
-																<li class="dd">22</li>
-																<li class="mm">09</li>
-																<li class="aaaa">2014</li>
-															</ul>
-															<p class="media-comment">
-															Great snippet! Thanks for sharing.
-															</p>
-														</div>              
-													</div>
-												</li>  
 											</ul>  
-										</table>
 										<div class="moreReview">
 											<div class="back" onclick="index--; getReview();"><img src="/vgan/resources/image/after/portfolio/back.png" style="width: 18px;"></div>
 											<div class="next" onclick="index++; getReview();"><img src="/vgan/resources/image/after/portfolio/next.png" style="width: 18px;"></div>
@@ -362,6 +341,5 @@
         <!-- topBanner JS -->
         <script src="/vgan/resources/js/top.js"></script>
         <script src="/vgan/resources/js/main.js"></script>
-        <script src="/vgan/resources/js/info.js"></script>
         </body>
 </html>

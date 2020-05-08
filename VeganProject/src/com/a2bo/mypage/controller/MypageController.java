@@ -1,6 +1,8 @@
 package com.a2bo.mypage.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.a2bo.info.model.vo.Review;
 import com.a2bo.member.model.service.MemberService;
 import com.a2bo.member.model.vo.Member;
 import com.a2bo.mypage.model.service.MypageService;
 import com.google.common.base.CaseFormat;
+import com.google.gson.Gson;
 
 public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,6 +33,7 @@ public class MypageController extends HttpServlet {
 		
 		if(command.contains("main")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/mypage/mypageMain.jsp");
+			
 			rd.forward(request, response);
 		} else if(command.contains("inten")) {
 			rd = request.getRequestDispatcher("/WEB-INF/views/mypage/vganInten.jsp");
@@ -40,6 +45,8 @@ public class MypageController extends HttpServlet {
 			changeMember(request, response);
 		} else if(command.contains("changevl")) {
 			changeVL(request, response);
+		} else if(command.contains("myreview")) {
+			myReview(request, response);
 		}
 		
 	}
@@ -167,5 +174,21 @@ public class MypageController extends HttpServlet {
 		}
 		
 		rd.forward(request, response);
+	}
+	
+	public void myReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		int userId = ((Member)request.getSession().getAttribute("loginInfo")).getUserId();
+		
+		List<Review> list = mService.myReview(userId);
+		
+		Gson gson = new Gson();
+		PrintWriter pw = response.getWriter();
+		
+		if(list != null) {
+			pw.write(gson.toJson(list));
+		} else {
+			pw.print("none");
+		}
 	}
 }
