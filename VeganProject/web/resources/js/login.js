@@ -21,11 +21,6 @@ function emailCheck() {
 }
 	
 function validate() {
-	if(!idCheckFlag) {
-		alert("아이디 중복 검사를 해주세요.");
-		isSuccess = false;
-	} 
-	
 	if(!isSuccess) {
 		alert("비밀번호를 확인하세요.");
 	}

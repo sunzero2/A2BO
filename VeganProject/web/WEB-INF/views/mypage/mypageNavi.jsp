@@ -10,7 +10,7 @@
 	<div class="naviWrapper">
 		<div class="naviTitle">Navigation</div>
 		<hr id="naviHr">
-		<div class="naviCon navi1"><a href="/vgan/mypage/main">내가 찜한 카드</a></div>
+		<div class="naviCon navi1"><a href="/vgan/mypage/main">나의 리뷰</a></div>
 		<div class="naviCon"><a href="/vgan/calendar/main">캘린더</a></div>
 		<div class="naviCon"><a href="/vgan/mypage/inten">나의 채식지향</a></div>
 		<div class="naviCon"><a href="/vgan/mypage/privacy">개인정보수정</a></div>

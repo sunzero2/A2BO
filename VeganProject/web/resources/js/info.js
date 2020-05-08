@@ -9,7 +9,7 @@ function getReview() {
 		index = 0;
 	} else {
 		$.ajax({
-			url : 'http://localhost:8787/vgan/info/getReview',
+			url : 'http://localhost:8787/vgan/info/getreview',
 			data : {
 				"menuId" : menuId,
 				"index" : index
@@ -79,7 +79,7 @@ starArr.forEach(function(el) {
 var content = document.querySelector('.area');
 function addReview() {
 	$.ajax({
-		url : 'http://localhost:8787/vgan/info/addReview',
+		url : 'http://localhost:8787/vgan/info/addreview',
 		data : {
 			"star" : star,
 			"menuId" : menuId,

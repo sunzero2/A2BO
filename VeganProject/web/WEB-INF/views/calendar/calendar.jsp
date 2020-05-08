@@ -75,7 +75,7 @@
 		</script>
 	</c:if>
 	
-	<c:if test="${calList != null}">
+	<c:if test="${calList.size() > 0 }">
 		<%
 			List list = (List)request.getAttribute("calList");
 			List dayList = new ArrayList();
