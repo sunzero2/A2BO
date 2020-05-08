@@ -240,8 +240,8 @@
                     
                 </div>
                 <div class="leval">
-					<button onclick="ckclear();">선택초기화</button>
-					<button onclick="radiock();">선택완료</button>
+					<button type="button" class="btn btn-fill btn-outline-warning" onclick="ckclear();">선택초기화</button>
+					<button type="button" class="btn btn-fill btn-outline-danger" onclick="radiock();">선택 완료</button>
 				</div>
 			     
             </div>

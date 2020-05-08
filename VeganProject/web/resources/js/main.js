@@ -108,7 +108,7 @@ function radiock() {
 				portfolioHoverContent.className = "portfolio-hover-content";
 				portfolioIcon.className = "fas fa-seedling fa-3x";
 				imgFluid.className = "img-fluid";
-				imgFluid.src = "/vgan/resources/image/after/portfolio/salad.jpg";
+				imgFluid.src = "/vgan/resources/image/after/portfolio/" + menuArr[i].메뉴아이디 + ".jpg";
 				portfolioCaption.className = "portfolio-caption"
 				portfolioCaptionHeading.className = "portfolio-caption-heading";
 				portfolioCaptionHeading.textContent = menuArr[i].메뉴이름;
