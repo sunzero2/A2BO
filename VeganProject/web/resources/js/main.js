@@ -360,10 +360,12 @@ function getReview() {
 						wellLg.appendChild(mediaCont);
 					}
 				}
-			} else {
+			} else if(index = 0) {
 				var div = document.createElement('div');
 				div.textContent = "아직 등록된 리뷰가 없습니다.";
 				mediaList.appendChild(div);
+			} else {
+				alert("마지막 페이지입니다.");
 			}
 		})
 	}
