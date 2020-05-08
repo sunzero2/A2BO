@@ -10461,3 +10461,116 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+
+/* 리뷰 css */
+.reviewWrapper {
+	margin-top: 54px;
+}
+
+.reviewHr {
+	width: 262px;
+	color: #1F2D18;
+}
+
+.reviewTitle {
+	margin-top: 14px;
+	text-align: center;
+	color: #1F2D18;
+	font-size: 38px;
+	font-weight: bold;
+	font-family: "Times New Roman";
+}
+
+.reviewTable {
+	border-spacing: 0px;
+	margin-left: 20%;
+	margin-top: 30px;
+}
+
+td {
+	border-bottom: 1px solid;
+	line-height: 86px;
+}
+
+.reviewNo {
+	display: inline-block;
+	color: #1F2D18;
+	width: 59px;
+	height: 57px;
+}
+
+.userName {
+	display: inline-block;
+	margin-left: 5px;
+	color: #1F2D18;
+	text-align: center;
+	width: 91px;
+	height: 57px;
+}
+
+.reviewCont {
+	display: inline-block;
+	margin-left: 19px;
+	overflow: hidden;
+	color: #1F2D18;
+	width: 800px;
+	height: 57px;
+}
+.moreReview {
+	width: 982px;
+	margin-left: 20%;
+}
+
+.back {
+	display: inline-block;
+	margin-left: 47%;
+	margin-top: 17px;
+	width: 18px;
+}
+
+.next {
+	margin-left: 50%;
+	margin-top: -18px;
+	width: 18px;
+}
+
+.writeReview {
+	margin-left: 20%;
+	width: 982px;
+}
+
+.myName {
+	display: inline-block;
+	margin-top: 50px;
+}
+
+.area {
+	margin-top: 8px;
+	width: 974px;
+	height: 100px;
+}
+
+.saveReview {
+	border: 1px solid;
+	border-radius: 5px;
+	background: none;
+	margin-top: 9px;
+	font-size: 17px;
+	width: 64px;
+	height: 36px;
+}
+
+.starDiv {
+	display: inline-block;
+}
+
+.star {
+	width: 18px;
+}
+
+#noneReview {
+	padding-left: 377px;
+	border: none;
+	line-height: 0px;
+}

@@ -18,7 +18,8 @@
 
 	<c:if test="${loginInfo != null}">
 		<script>
-			window.open("http://localhost:8787/vgan/welcome", "_parent").parent.close();
+			window.opener.location.reload();
+			window.close();
 		</script>
 	</c:if>
 	

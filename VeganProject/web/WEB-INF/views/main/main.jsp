@@ -21,6 +21,74 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="/vgan/resources/css/styles.css" rel="stylesheet" />
+<style>
+.media .media-object { max-width: 120px; }
+.media-body { position: relative; }
+.media-date { 
+    position: absolute; 
+    right: 25px;
+    top: 25px;
+}
+.media-date li { padding: 0; }
+.media-date li:first-child:before { content: ''; }
+.media-date li:before { 
+    content: '.'; 
+    margin-left: -2px; 
+    margin-right: 2px;
+}
+.media-comment { margin-bottom: 20px; }
+.media-replied { margin: 0 0 20px 50px; }
+.media-replied .media-heading { padding-left: 6px; }
+
+.media-list {
+	margin-bottom: 10px;
+	padding-left: 0;
+	line-height: 1.42857143;
+	list-style: none;
+	color: #333;
+	font-size: 14px;
+	text-align: initial;
+}
+
+.pull-left {
+	margin-left: 10px;
+}
+
+.media-object {
+	border-radius: 50%;
+	max-width: 120px;
+}
+
+.well {
+	padding: 24px;
+	border-radius: 6px;
+	min-height: 20px;
+	margin-bottom: 20px;
+	background: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	font-family: sans-serif;
+}
+
+.media-heading {
+	color: #555;
+	line-height: 1.1;
+}
+
+.media-date {
+	font-weight: bold;
+	margin: 10px auto 20px;
+}
+
+.media-date li {
+	padding: 0;
+	display: inline-block;
+}
+
+.pull-left {
+	margin-left: 10px;
+}
+</style>
 </head>
     <body id="page-top">
 	<%@ include file="../top/top.jsp" %>
@@ -220,6 +288,59 @@
                                         <li id="infoRestCell"></li>
                                         <li id="infoRestHour"></li>
                                     </ul>
+                                    		<div class="reviewWrapper">
+										<hr class="reviewHr">
+										<div class="reviewTitle">REVIEW</div>
+										<table class="reviewTable">
+											<ul class="media-list">
+												<li class="media">
+													<a class="pull-left" href="#">
+														<img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
+													</a>
+													<div class="media-body">
+														<div class="well well-lg">
+															<h4 class="media-heading text-uppercase reviews">Marco </h4>
+															<ul class="media-date text-uppercase reviews list-inline">
+																<li class="dd">22</li>
+																<li class="mm">09</li>
+																<li class="aaaa">2014</li>
+															</ul>
+															<p class="media-comment">
+															Great snippet! Thanks for sharing.
+															</p>
+														</div>              
+													</div>
+												</li>  
+											</ul>  
+										</table>
+										<div class="moreReview">
+											<div class="back" onclick="index--; getReview();"><img src="/vgan/resources/image/after/portfolio/back.png" style="width: 18px;"></div>
+											<div class="next" onclick="index++; getReview();"><img src="/vgan/resources/image/after/portfolio/next.png" style="width: 18px;"></div>
+										</div>
+										<div class="writeReview">
+											<div class="myName">댓글을 작성해보세요!
+											</div>
+											<div style="float: right; margin-top: 47px;">
+												<div class="starDiv"><img class="star" id="01" src="/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="02" src="/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="03" src="/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="04" src="/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="05" src="/vgan/resources/image/after/portfolio/starN.png"></div>
+											</div>
+											<c:if test="${loginInfo == null}">
+												<textarea class="area" readonly>리뷰는 로그인 후 작성 가능합니다.</textarea><br>
+											</c:if>
+											<c:if test="${loginInfo != null}">
+												<textarea class="area" placeholder="리뷰를 작성해보세요!"></textarea><br>
+											</c:if>
+											<c:if test="${loginInfo != null}">
+												<button class="saveReview" onclick="addReview();">저장</button>
+											</c:if>
+											<c:if test="${loginInfo == null}">
+												<button class="saveReview" onclick="alert('로그인 후 작성 가능');">저장</button>
+											</c:if>
+										</div>
+									</div>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fas fa-times mr-1"></i>Close Project</button>
                                 </div>
                             </div>
@@ -241,5 +362,6 @@
         <!-- topBanner JS -->
         <script src="/vgan/resources/js/top.js"></script>
         <script src="/vgan/resources/js/main.js"></script>
+        <script src="/vgan/resources/js/info.js"></script>
         </body>
 </html>

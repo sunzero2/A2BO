@@ -1,49 +1,218 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="/vgan/resources/css/styles.css" rel="stylesheet" />
-<link rel="stylesheet" href="/vgan/resources/css/login.css"/>
+<link rel="stylesheet" href="/vgan/resources/css/login.css" />
 <title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	font-family: 'Varela Round', sans-serif;
+	background-image: url("/vgan/resources/image/after/mbgimge2.jpg");
+}
+
+.modal-login {
+	width: 500px;
+	height: 400px;
+}
+
+.modal-login .modal-content {
+	padding: 150px 80px 50px 80px;
+	border-radius: 25px;
+	border: none;
+	background-image: url("/vgan/resources/image/after/mbgimgesmallV.jpg");
+}
+
+.modal-login .modal-header {
+	border-bottom: none;
+	position: relative;
+	justify-content: center;
+}
+
+.modal-login h4 {
+	text-align: center;
+	font-size: 26px;
+	font-weight: bold;
+	color: #a077ff;
+}
+
+.modal-login .form-group {
+	margin-bottom: 20px;
+}
+
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 30px;
+	font-size: 15px;
+	transition: all 0.5s;
+}
+
+.modal-login .form-control {
+	font-size: 13px;
+}
+
+.modal-login .form-control:focus {
+	border-color: #a177ff;
+}
+
+.modal-login .hint-text {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.modal-login .close {
+	position: absolute;
+	top: -50px;
+	right: -20px;
+	color: #8250f5;
+	font-size: xxx-large;
+}
+
+.modal-login .btn {
+	background: #a177ff;
+	border: none;
+	line-height: normal;
+}
+
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #8753ff;
+}
+
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+.or-seperator {
+	margin: 25px 0 0px;
+	text-align: center;
+	border-top: 2.3px solid #fff;
+}
+
+.or-seperator b {
+	padding: 0 10px;
+	width: 40px;
+	height: 40px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	background: #fff;
+	display: inline-block;
+	border-radius: 50%;
+	position: relative;
+	top: -22px;
+	z-index: 1;
+}
+
+.form-control {
+	background-color: #fdf8c2;
+	border: 0.25px solid #ccc;
+}
+
+.modal-header-logo {
+	position: fixed;
+	top: 20%;
+	left: 22%;
+	width: 260px;
+}
+</style>
 </head>
 <body>
-	<div class="content">
-		<div class="loginWrapper">
-			<h1 class="section-heading loginTitle">LOGIN</h1>
-			<form action="login" method="post">
-				<input name="userEmail" class="memInput login" type="text" placeholder="아이디 입력"><br>
-				<input name="userPwd" class="memInput login" type="password" placeholder="비밀번호 입력"><br>
-				<button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger loginBtn" id="loginBt" type="submit">E N T E R</button>
-			</form>
-			<div>
-				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchmem?keyword=pw" style="margin-right: 77px;
-				">비밀번호찾기</a>
-				<a class="nav-link searchMem" href="http://localhost:8787/vgan/member/searchmem?keyword=id">ID찾기 </a>
+	<!-- Modal HTML -->
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<img class="modal-header-logo"
+						src="/vgan/resources/image/after/vganlogo-1w.png">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">x</button>
+					<h4 class="modal-title">Sign in</h4>
+				</div>
+				<div class="modal-body">
+					<form action="/vgan/main/어디로가야하는지쓰면되욤" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Username"
+								required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control"
+								placeholder="Password" required="required">
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary btn-block btn-lg"
+								value="Sign in">
+						</div>
+					</form>
+					<p class="hint-text small">
+						<a href="#">Forgot Your Password?</a><a href="#"> / Forgot
+							Your ID?</a>
+					</p>
+				</div>
+				<div class="or-seperator">
+					<b>or</b>
+				</div>
+
+				<div class="modal-body" id="modal-body-accnt">
+					<form action="/vgan/main/member.jsp" method="post">
+						<h4 class="modal-title">New Account</h4>
+						<br>
+						<div class="form-group">
+							<input type="text" class="form-control" name="username"
+								placeholder="Username" required="required">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" name="email"
+								placeholder="Email Address" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" name="password"
+								placeholder="Password" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control"
+								name="confirm_password" placeholder="Confirm Password"
+								required="required">
+						</div>
+						<div class="form-group">
+							<button type="submit"
+								class="btn btn-success btn-lg btn-block signup-btn">Sign
+								Up</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-		<div class="joinWrapper">
-			<h1 class="section-heading loginTitle">JOIN</h1>
-			<form action="join" method="post" onsubmit="return validate();">
-				<input class="memInput join" name="userName" type="text" placeholder="닉네임 입력"><br>
-				<input class="memInput join" style="width: 211px;" name="userEmail" id="userEmail" type="text" placeholder="아이디 입력">
-				<button class="btn btn-primary btn-sm text-uppercase js-scroll-trigger" type="button" onclick="emailCheck();">확인</button><br>
-				<input class="memInput join" name="userPw" id="userPwd" type="password" placeholder="8~15글자의 영문자로 작성하세요.(숫자, 특수문자 1개 이상 포함)"><br>
-				<span id="pwdSpan" style="display: none; font-size: 13px;  margin-left: 50px;"></span>
-				<input class="memInput join" id="pwdCheck" type="password" placeholder="비밀번호 재입력"><br>
-				<span id="checkSpan" style="display: none; font-size: 13px;  margin-left: 50px;"></span>
-				<button class="btn btn-primary btn-xl text-uppercase js-scroll-trigger loginBtn" id="joinBt">등록하기</button>
-			</form>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
-	</script>
-	<script src="/vgan/resources/js/login.js"></script>
 </body>
 </html>
