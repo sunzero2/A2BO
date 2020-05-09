@@ -5,213 +5,245 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="/vgan/resources/css/styles.css" rel="stylesheet" />
 <title>Insert title here</title>
-<style>
-	.content {
-		width: 700px;
-		margin-left: 49px;
-		margin-top: 20%;
-	}
-	
-	.conTitle {
-		text-align: center;
-		font-size: 40px;
-		font-weight: bold;
-	}
-	
-	.conBody {
-		margin-top: 34px;
-	}
-	
-	form {
-		margin-left: 27%;
-	}
-	
-	.inputTitle {
-		margin-top: 15px;
-	}
-	
-	.searchInput {
-		width: 310px;
-		height: 30px;
-	}
-	
-	.searchBtn {
-		border: 1px solid;
-		background: none;
-		margin-left: 25%;
-		margin-top: 10px;
-		font-size: 16px;
-		width: 60px;
-		height: 34px;
-	}
-	
-	.resultWrapper {
-		border: 1px solid;
-		margin-top: 38px;
-		height: 150px;
-	}
-</style>
-</head>
-<body>
-	<c:if test="${complatedChangePw != null}">
-		<c:if test="${complatedChangePw}">
-			<script>
-				alert("비밀번호 변경이 완료되었습니다. 다시 로그인해주세요.");
-				window.close();
-			</script>
-		</c:if>
-		<c:if test="${!complatedChangePw}">
-			<script>
-				alert("비밀번호 변경에 실패하였습니다. 재시도 해주세요.");
-			</script>
-		</c:if>
-	</c:if>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<div class="content">
-		<div class="conTitle">
-			<c:if test="${keyword > 0}">
-				<div>패스워드 찾기</div>
-			</c:if>
-			<c:if test="${keyword == 0}">
-				<div>계정 찾기</div>
-			</c:if>
-		</div>
-		<div class="conBody">
-			<!-- 아이디, 비밀번호 찾기 눌렀을 때 처음 나오는 곳 -->
-			<!-- 여기는 회원의 비밀번호 찾기 -->
-			<c:if test="${keyword > 0 }">
-				<div style="text-align: center;">이름과 아이디로 비밀번호를 변경할 수 있습니다.</div>
-				<form action="/vgan/member/searchPw" method="post">
-					<div class="inputTitle">이름</div>
-					<input class="searchInput" text="text" name="nickName">
-					<div class="inputTitle">아이디</div>
-					<input class="searchInput" type="text" name="userEmail"><br>
-					<button class="searchBtn">확인</button>
-				</form>
-			</c:if>
-			<!-- 여기는 회원의 아이디 찾기 -->
-			<c:if test="${keyword == 0 }">
-				<div style="text-align: center;">이름과 핸드폰번호로 계정을 찾을 수 있습니다.</div>
-				<form action="/vgan/member/searchId" method="post">
-					<div class="inputTitle">이름</div>
-					<input class="searchInput" text="text" name="nickName">
-					<div class="inputTitle">핸드폰번호</div>
-					<input class="searchInput" type="text" name="userPhone"><br>
-					<button class="searchBtn">확인</button>
-				</form>
-			</c:if>
-			
-			<!-- 아이디, 비밀번호 찾기 눌러서 값 입력하고 나서 나오는 곳 -->
-			<!-- 여기는 회원의 아이디 알려주는 곳 -->
-			<c:if test="${userEmail != null}">
-				<div>
-					<div style="font-size: 30px; font-weight: bold;">계정 찾기</div>
-					<div style="font-size: 14px; margin-top: 6px;">회원님의 정보와 일치하는 계정을 보여드립니다.</div>
-					<!-- 회원이 정보를 제대로 입력했을 때 나오는 곳 -->
-					<c:if test="${userEmail.length() > 0}">
-						<div class="resultWrapper">
-							<div>${userEmail}</div>
-						</div>
-						<button onclick="loginGoin();">로그인하기</button>
-					</c:if>
-					<!-- 회원이 정보를 제대로 입력하지 않았을 때 나오는 곳 -->
-					<c:if test="${userEmail.length() == 0}">
-						<div class="resultWrapper">
-							<div>계정 찾기에 실패하였습니다. 입력하신 정보를 확인해주세요.</div>
-						</div>
-						<button onclick="again('id');">다시 시도하기</button>
-					</c:if>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	font-family: 'Varela Round', sans-serif;
+	background-image: url("/vgan/resources/image/after/mbgimgesmallV.jpg");
+}
+
+/* .modal-login {
+	width: 800px;
+	height: 300px;
+} */
+
+.modal-login .modal-content {
+	width: 700px;
+	height: 500px;
+	padding: 80px 80px 80px 80px;
+	border-radius: 25px;
+	left:-15%;
+	border: none;
+	background-image: url("/vgan/resources/image/after/mbgimgesmallV.jpg");
+}
+
+.modal-login .modal-header {
+	border-bottom: none;
+	position: relative;
+	justify-content: center;
+}
+
+.modal-login h4 {
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	color: #a077ff;
+	position:relative;
+}
+.modal-login h2 {
+	text-align: center;
+	font-size: 13px;
+	color: #a077ff;
+	position:relative;
+	font-weight: bold;
+	top:-30px;
+}
+
+.modal-login .form-group {
+	margin-bottom: 20px;
+}
+
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 30px;
+	font-size: 15px;
+	transition: all 0.5s;
+}
+
+.modal-login .form-control {
+	font-size: 13px;
+}
+
+.modal-login .form-control:focus {
+	border-color: #a177ff;
+}
+
+.modal-login .hint-text {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.modal-login .close {
+	position: absolute;
+	top: -50px;
+	right: -20px;
+	color: #8250f5;
+	font-size: xxx-large;
+}
+
+.modal-login .btn {
+	background: #a177ff;
+	border: none;
+	line-height: normal;
+}
+
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #8753ff;
+}
+
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+.or-seperator {
+	margin: 25px 0 0px;
+	text-align: center;
+	border-top: 2.3px solid #fff;
+}
+
+.or-seperator b {
+	padding: 0 10px;
+	width: 40px;
+	height: 40px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	background: #fff;
+	display: inline-block;
+	border-radius: 50%;
+	position: relative;
+	top: -22px;
+	z-index: 1;
+}
+
+.form-control {
+	background-color: #fdf8c2;
+	border: 0.25px solid #ccc;
+}
+
+.modal-header-logo {
+	position: relative;
+	top: -100px;
+	left: 25px;
+	width: 260px;
+}
+.modal-body{
+float:left;
+margin: 20px 20px 20px 20px;
+}
+.findWrapper{
+width: 800px;
+	height: 300px;
+}
+</style>
+
+<script>
+	opener.location.href  = '/vgan/member/searchmem';
+	window.close();
+</script>
+<body>
+	<img class="modal-header-logo" src="/vgan/resources/image/after/vganlogo-1w.png">
+	<div class="modal-dialog modal-login">	
+		<div class="modal-content">
+			<div class="findWrapper">
+				<div class="modal-body">
+				<div class="modal-header">
+					<h4 class="modal-title">Find My ID</h4>
+				</div><br>
+				<h2 class="modal-title">아이디 찾기</h2>
+					<div class="form-group">
+						<input type="text" class="form-control" id="idNickname" placeholder="Username" required="required">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="idPhone" placeholder="PhoneNumber" required="required">
+					</div>
+					<div class="form-group">
+						<button onclick="searchId();" class="btn btn-primary btn-block btn-lg">Search</button>
+					</div>
 				</div>
-			</c:if>
-			<!-- 여기는 회원의 비밀번호 알려주는 곳 -->
-			<c:if test="${userPw != null}">
-				<div>
-					<div style="font-size: 30px; font-weight: bold;">비밀번호 찾기</div>
-					<!-- 회원이 정보를 제대로 입력했을 때 나오는 곳 -->
-					<c:if test="${userPw > 0}">
-						<div style="font-size: 14px; margin-top: 6px;">변경하실 비밀번호를 입력해주세요.</div>
-						<div>비밀번호는 8~15자로 입력. 영어 소문자, 숫자, 특수문자를 1개 이상 입력해야 합니다.</div>
-						<form action="/vgan/member/changePw" onsubmit="return validate();">
-							<input class="" name="userEmail" type="hidden" value="${findId}">
-							<input class="" name="userPw" id="userPwd" type="password" placeholder="8~15글자의 영문자로 작성하세요.(숫자, 특수문자 1개 이상 포함)"><br>
-							<span id="pwdSpan" style="display: none; font-size: 13px;  margin-left: 50px;"></span>
-							<input class="" id="pwdCheck" type="password" placeholder="비밀번호 재입력"><br>
-							<span id="checkSpan" style="display: none; font-size: 13px;  margin-left: 50px;"></span>
-							<button>변경</button>
-						</form>
-						<div>허용가능한 특수문자 : $, @, !, %, *, #, ?, &</div>
-					</c:if>
-					<!-- 회원이 정보를 제대로 입력하지 않았을 때 나오는 곳 -->
-					<c:if test="${userPw == 0}">
-						<div>비밀번호 찾기에 실패하였습니다. 입력하신 정보를 확인해주세요.</div>
-						<button onclick="again('pw');">다시 시도하기</button>
-					</c:if>
+				
+				<div class="modal-body">
+					<div class="modal-header">
+						<h4 class="modal-title">Find My PW</h4>
+					</div><br>
+					<h2 class="modal-title">비밀번호 찾기</h2>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Username" id="pwNickName" required="required">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="UserEmail" id="pwEmail" required="required">
+					</div>
+					<div class="form-group">
+						<button onclick="searchPw();" class="btn btn-primary btn-block btn-lg">Search</button>
+					</div>
+					<p class="hint-text small">
+						<a id="backLogin" href="#"> LOGIN 페이지로 이동</a>
+					</p>
 				</div>
-			</c:if>
+			</div>
 		</div>
 	</div>
 	
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script>
-	var isSuccess = false;
-	var span = document.querySelector('#pwdSpan');
-	var check = document.querySelector('#checkSpan');
-	
-	function validate() {
-		if(!isSuccess) {
-			alert("비밀번호를 확인하세요.");
-		}
-		
-		return isSuccess;
+	document.querySelector('#backLogin').onclick = function() {
+		window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
+		location.href = 'http://localhost:8787/vgan/welcome';
 	}
 	
-	document.querySelector('#userPwd').onkeydown = function(v) {
-		var pw = document.querySelector('#userPwd');
-		var regExpPw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,15}$/;
-		var testStr = pw.value + v.key;
-		
-		function chk(re, e, msg) {
-			if(re.test(e)) {
-				span.style.display = 'none';
-				isSuccess = true;
-			} else {
-				span.style.display = 'block';
-				span.style.color = 'red';
-				span.textContent = msg;
-				isSuccess = false;
+	function searchId() {
+		var nickName = document.querySelector('#idNickname').value;
+		var phone = document.querySelector('#idPhone').value;
+		$.ajax({
+			url: "http://localhost:8787/vgan/member/searchid",
+			data: {
+				"nickName": nickName,
+				"userPhone": phone
+			},
+			type: 'post',
+			success: function(v) {
+				if(v.length > 0) {
+					alert("회원님의 계정은 " + v + "입니다.");
+				} else {
+					alert("입력하신 정보에 해당하는 계정이 없습니다.");
+				}
 			}
-		}
-
-		if(chk(regExpPw, testStr, '비밀번호를 확인하세요.')) {
-			isSuccess = false;
-		}
-	}
-
-
-	document.querySelector('#pwdCheck').onkeydown = function(v) {
-		var pw = document.querySelector('#userPwd');
-		var ch = document.querySelector('#pwdCheck');
-		var testStr = ch.value + v.key;
+		})
 		
-		if(testStr == pw.value) {
-			check.style.display = 'block';
-			check.style.color = 'blue';
-			check.textContent = "비밀번호가 일치합니다.";
-			isSuccess = true;
-		} else {
-			check.style.display = 'block';
-			check.style.color = 'red';
-			check.textContent = "비밀번호가 일치하지 않습니다.";
-			isSuccess = false;
-		}
 	}
 	
-	function loginGoin() {
-		location.href = "http://localhost:8787/vgan/member/goin";
-	}
-	
-	function again(keyword) {
-		location.href = "http://localhost:8787/vgan/member/searchmem?keyword=" + keyword;
+	function searchPw() {
+		var userEmail = document.querySelector('#pwEmail').value;
+		var nickName = document.querySelector('#pwNickName').value;
+		$.ajax({
+			url: "http://localhost:8787/vgan/member/searchpw",
+			data: {
+				"userEmail": userEmail,
+				"nickName": nickName
+			},
+			type: 'post',
+			success: function(v) {
+				if(v > 0) {
+					window.open('http://localhost:8787/vgan/member/pwchange?user=' + userEmail, 'pwChange', 'width: 800px, height: 400px');
+				} else {
+					alert("입력하신 정보와 일치하는 것이 없습니다. 다시 확인해주세요.");
+				}
+			}
+		})	
 	}
 	</script>
 </body>

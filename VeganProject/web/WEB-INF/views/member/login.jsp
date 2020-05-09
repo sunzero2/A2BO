@@ -159,7 +159,7 @@ body {
                   </div>
                </form>
                <p class="hint-text small">
-                  <a href="/vgan/member/searchmem?keyword=pw">Forgot Your Password?</a><a href="/vgan/member/searchmem?keyword=id"> / Forgot
+                  <a href="/vgan/member/searchmem">Forgot Your Password?</a><a href="/vgan/member/searchmem"> / Forgot
                      Your ID?</a>
                </p>
             </div>

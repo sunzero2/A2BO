@@ -43,24 +43,18 @@ public class MemberController extends HttpServlet {
 		} else if(command.contains("logout")) {
 			logOut(request, response);
 		} else if(command.contains("searchmem")) {
-			String keyword = request.getParameter("keyword");
-			int res = 0;
-			
-			if(keyword.equals("pw")) {
-				res = 1;
-			}
-			
-			request.setAttribute("userEmail", null);
-			request.setAttribute("userPw", null);
-			request.setAttribute("keyword", res);
 			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
 			view.forward(request, response);
-		} else if (command.contains("searchId")) {
+		} else if (command.contains("searchid")) {
 			searchId(request, response);
-		} else if (command.contains("searchPw")) {
+		} else if (command.contains("searchpw")) {
 			searchPw(request, response);
-		} else if (command.contains("changePw")) {
+		} else if (command.contains("changepw")) {
 			changePw(request, response);
+		} else if (command.contains("pwchange")) {
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/changePwd.jsp");
+			request.setAttribute("user", request.getParameter("user"));
+			view.forward(request, response);
 		}
 			
 	}
@@ -159,13 +153,10 @@ public class MemberController extends HttpServlet {
 		String phone = request.getParameter("userPhone");
 		String nickName = request.getParameter("nickName");
 		
-		
 		String userEmail = mService.searchID(phone, nickName);
 		
-		request.setAttribute("userEmail", userEmail);
-		request.setAttribute("userPw", null);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
-		rd.forward(request, response);
+		PrintWriter pw = response.getWriter();
+		pw.print(userEmail);
 	}
 	
 	
@@ -183,11 +174,8 @@ public class MemberController extends HttpServlet {
 		
 		int res = mService.searchPw(userEmail, nickName);
 		
-		if(res > 0) {
-			request.setAttribute("findId", userEmail);
-		}
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
-		rd.forward(request, response);
+		PrintWriter pw = response.getWriter();
+		pw.print(res);;
 	}
 	
 	/**
@@ -203,13 +191,7 @@ public class MemberController extends HttpServlet {
 		
 		int res = mService.changePw(userEmail, userPw);
 		
-		if(res > 0) {
-			request.setAttribute("complatedChangePw", true);
-		} else {
-			request.setAttribute("complatedChangePw", false);
-		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/member/search.jsp");
-		rd.forward(request, response);
+		PrintWriter pw = response.getWriter();
+		pw.print(res);
 	}
 }
