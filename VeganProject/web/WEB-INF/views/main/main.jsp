@@ -110,132 +110,180 @@
                 <!-- 카드넣는 디브 -->
                 <div class="row text-center">
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-pageline fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="8" name="ing"
+							onclick="count_ck(this)" id="checkk0">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-pageline fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="8" name="ing"
-							onclick="count_ck(this)">
+                        <label for="checkk0">
                         <h4 class="my-3">GRAIN/곡식</h4>
-                        <p class="text-muted">쌀,보리,밀,옥수수,귀리,기장,오트밀,검은콩,통밀,메밀,호밀,참깨,대두,녹두,렌틸,기장,수수,조,율무...</p>
+                        <p class="text-muted">쌀,보리,밀,옥수수,귀리,기장,오트밀,검은콩,통밀,메밀,호밀,참깨,대두,녹두,렌틸,기장,수수,조,율무...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-drumstick-bite fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="1" name="ing"
+							onclick="count_ck(this)" id="checkk1">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-drumstick-bite fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="1" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk1">
                         <h4 class="my-3">MEAT/육류</h4>
-                        <p class="text-muted">소, 돼지,양,염소,토끼...</p>
+                        <p class="text-muted">소, 돼지,양,염소,토끼...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-carrot fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="8" name="ing"
+							onclick="count_ck(this)" id="checkk2">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-carrot fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="8" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk2">
                         <h4 class="my-3">VEGETABLE/채소</h4>
-                        <p class="text-muted">토마토,양배추,케일,샐러리,아스파라거스,가지,고추,오이,시금치,호박,고구마,감자,당근,바질,비트...</p>
+                        <p class="text-muted">토마토,양배추,케일,샐러리,아스파라거스,가지,고추,오이,시금치,호박,고구마,감자,당근,바질,비트...</p></label>
                     </div>
                      <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-fish fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)" id="checkk3">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-fish fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="3" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk3">
                         <h4 class="my-3">FISH/어류</h4>
-                        <p class="text-muted">갈치,고등어,광어,연어,참치,도미,민어,멸치,장어,송어...</p>
+                        <p class="text-muted">갈치,고등어,광어,연어,참치,도미,민어,멸치,장어,송어...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-certificate fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="6" name="ing"
+							onclick="count_ck(this)" id="checkk4">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-certificate fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="6" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk4">
                         <h4 class="my-3">Fungus/균류</h4>
-                        <p class="text-muted">느타리,팽이,새송이,양송이,표고,목이,석이,송로,트러플,상황,말굽...</p>
+                        <p class="text-muted">느타리,팽이,새송이,양송이,표고,목이,석이,송로,트러플,상황,말굽...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-kiwi-bird fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="2" name="ing"
+							onclick="count_ck(this)" id="checkk5">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-kiwi-bird fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="2" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk5">
                         <h4 class="my-3">Poultry/가금류</h4>
-                        <p class="text-muted">닭,오리,칠면조,etc...</p>
+                        <p class="text-muted">닭,오리,칠면조,etc...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-bacon fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="7" name="ing"
+							onclick="count_ck(this)" id="checkk6">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-bacon fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="7" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk6">
                         <h4 class="my-3">Seaweed/해조류</h4>
-                        <p class="text-muted">다시마,톳,모자반,미역,청각,파래,매생이,김,우뭇가사리...</p>
+                        <p class="text-muted">다시마,톳,모자반,미역,청각,파래,매생이,김,우뭇가사리...</p></label>
                     </div>
                      <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-lemon fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="9" name="ing"
+							onclick="count_ck(this)" id="checkk7">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-lemon fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="9" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk7">
                         <h4 class="my-3">Fruits/열매류</h4>
-                        <p class="text-muted">바나나,사과,복숭아,포도,딸기,자두,망고,무화과,귤,대추,레몬,라임,멜론,블루베리,아보카도,앵두,올리브,유자,자몽,파인애플...</p>
+                        <p class="text-muted">바나나,사과,복숭아,포도,딸기,자두,망고,무화과,귤,대추,레몬,라임,멜론,블루베리,아보카도,앵두,올리브,유자,자몽,파인애플...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-anchor fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)" id="checkk8">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-anchor fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="3" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk8">
                         <h4 class="my-3">Crustacean/갑각류</h4>
-                        <p class="text-muted">꽃게,새우,바다가재,가재,게,왕게,대게...</p>
+                        <p class="text-muted">꽃게,새우,바다가재,가재,게,왕게,대게...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-egg fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="4" name="ing"
+							onclick="count_ck(this)" id="checkk9">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-egg fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="4" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk9">
                         <h4 class="my-3">EGGS/난류</h4>
-                        <p class="text-muted">계란,성게알,청어알,연어알,숭어알,민어알,날치알,캐비어,명란...</p>
+                        <p class="text-muted">계란,성게알,청어알,연어알,숭어알,민어알,날치알,캐비어,명란...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-tint fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="5" name="ing"
+							onclick="count_ck(this)" id="checkk10">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-tint fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="5" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk10">
                         <h4 class="my-3">Oil/유지류</h4>
-                        <p class="text-muted">마요네즈,땅콩버터,마가린,버터,식물성유,동물성유,올리브유...</p>
+                        <p class="text-muted">마요네즈,땅콩버터,마가린,버터,식물성유,동물성유,올리브유...</p></label>
                     </div>
                      <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cloud-meatball fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)" id="checkk11">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cloud-meatball fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="3" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk11">
                         <h4 class="my-3">Muscles/조개류</h4>
-                        <p class="text-muted">가리비,굴,모시조개,소라,전복,홍합,대합,바지락,소라,우렁,전복...</p>
+                        <p class="text-muted">가리비,굴,모시조개,소라,전복,홍합,대합,바지락,소라,우렁,전복...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cheese fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="5" name="ing"
+							onclick="count_ck(this)" id="checkk12">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cheese fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="5" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk12">
                         <h4 class="my-3">Dairy/유제품</h4>
-                        <p class="text-muted">휘핑,크림,치즈,우유,요구르트,플레인,연유,아이스크림...</p>
+                        <p class="text-muted">휘핑,크림,치즈,우유,요구르트,플레인,연유,아이스크림...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-stumbleupon fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"> <input type="checkbox" class="menuRadio" value="3" name="ing"
+							onclick="count_ck(this)" id="checkk13">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-stumbleupon fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="3" name="ing"
-							onclick="count_ck(this)">
+                        <label for="checkk13">
                         <h4 class="my-3">Mollusks/연체류</h4>
-                        <p class="text-muted">낙지,문어,오징어,주꾸미,꼴뚜기,해삼,해파리...</p>
+                        <p class="text-muted">낙지,문어,오징어,주꾸미,꼴뚜기,해삼,해파리...</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cookie-bite fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="8" name="ing"
+							onclick="count_ck(this)" id="checkk14">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-cookie-bite fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="8" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk14">
                         <h4 class="my-3">Bakery/베이커리</h4>
-                        <p class="text-muted">비건을 위한 베이커리</p>
+                        <p class="text-muted">비건을 위한 베이커리</p></label>
                     </div>
                     <div class="col-md-3">
-                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-mug-hot fa-stack-1x fa-inverse"></i></span>
+                        <span class="fa-stack fa-4x"><input type="checkbox" class="menuRadio" value="9" name="ing"
+							onclick="count_ck(this)" id="checkk15">
+							<em style="position: absolute;margin-top: 0px;height: 128px;width: 124px;margin-legt: -30%;
+                     		margin-left: -123px;z-index: 300;"></em>
+                     		<i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-mug-hot fa-stack-1x fa-inverse"></i></span>
                         <br>
-                        <input type="checkbox" class="menuRadio" value="9" name="ing"
-							onclick="count_ck(this)">
+                         <label for="checkk15">
                         <h4 class="my-3">Beverage/음료 </h4>
-                        <p class="text-muted">커피,차,건강주스,착즙주스,소다...</p>
+                        <p class="text-muted">커피,차,건강주스,착즙주스,소다...</p></label>
                     </div>
                     
                 </div>
