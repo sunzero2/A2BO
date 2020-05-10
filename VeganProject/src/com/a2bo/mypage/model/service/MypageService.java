@@ -61,4 +61,37 @@ public class MypageService {
 		
 		return list;
 	}
+	
+	public int delReview(String revId) {
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			res = mDao.delReview(conn, revId);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		return res;
+	}
+	
+	public int chgReview(String revId, String cont) {
+		int res = 0;
+		Connection conn = jdbc.getConnection();
+		
+		try {
+			res = mDao.chgReview(conn, revId, cont);
+			jdbc.commit(conn);
+		} catch (SQLException e) {
+			jdbc.rollback(conn);
+			e.printStackTrace();
+		} finally {
+			jdbc.close(conn);
+		}
+		
+		return res;
+	}
 }

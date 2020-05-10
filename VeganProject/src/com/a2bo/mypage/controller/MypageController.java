@@ -47,6 +47,10 @@ public class MypageController extends HttpServlet {
 			changeVL(request, response);
 		} else if(command.contains("myreview")) {
 			myReview(request, response);
+		} else if(command.contains("delreview")) {
+			delReview(request, response);
+		} else if(command.contains("chgreview")) {
+			chgReview(request, response);
 		}
 		
 	}
@@ -190,5 +194,26 @@ public class MypageController extends HttpServlet {
 		} else {
 			pw.print("none");
 		}
+	}
+	
+	public void delReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		String revId = request.getParameter("revId");
+		
+		int res = mService.delReview(revId);
+		
+		PrintWriter pw = response.getWriter();
+		pw.print(res);
+	}
+	
+	public void chgReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html charset=UTF-8");
+		String revId = request.getParameter("revId");
+		String cont = request.getParameter("cont");
+		
+		int res = mService.chgReview(revId, cont);
+		
+		PrintWriter pw = response.getWriter();
+		pw.print(res);
 	}
 }

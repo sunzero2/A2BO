@@ -83,4 +83,32 @@ public class MypageDao {
 		}
 		return list;
 	}
+	
+	public int delReview(Connection conn, String revId) throws SQLException {
+		int res = 0;
+		String sql = "delete from treview where revid = '" + revId + "'";
+		Statement stmt = null;
+		
+		try {
+			stmt = conn.createStatement();
+			res = stmt.executeUpdate(sql);
+		} finally {
+			jdbc.close(stmt);
+		}
+		return res;
+	}
+	
+	public int chgReview(Connection conn, String revId, String cont) throws SQLException {
+		int res = 0;
+		String sql = "update treview set revcontent = '" + cont + "' where revid = '"+ revId + "'";
+		Statement stmt = null;
+		
+		try {
+			stmt = conn.createStatement();
+			res = stmt.executeUpdate(sql);
+		} finally {
+			jdbc.close(stmt);
+		}
+		return res;
+	}
 }
