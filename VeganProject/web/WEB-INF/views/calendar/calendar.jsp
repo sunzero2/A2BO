@@ -37,7 +37,7 @@
 			이 아래부터 캘린더.
 			캘린더는 javascript로 만들어놓음 기존에 있던 class명 삭제하면 캘린더 생성이 안돼요!!
 		 -->
-		<div class="mainCalTable">
+		<div>
 			<table class="mainCalTable" id="calendar">
 				<tr>
 					<!-- tdTitle은 캘린더 날짜를 입력하기 위해 만들어진 class명입니다 -->

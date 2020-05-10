@@ -130,7 +130,7 @@ function btnClick() {
 				list.appendChild(backBtn);
 				
 				createBtn(idx);
-			} else {
+			} else if(el.textContent == '삭제하기') {
 				if(confirm("리뷰를 삭제하시겠어요?")) {
 					$.ajax({
 						url: "http://localhost:8787/vgan/mypage/delreview",

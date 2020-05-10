@@ -1,8 +1,21 @@
 @charset "UTF-8";
 
+
+.mypageHeader {
+	position:fixed;
+	top:13%;
+	color:#a651cb;
+}
+
+
+.intenBody {
+	margin-top: 22px;
+}
+
 table {
 	border: 1px solid;
 	border-spacing: 0px;
+	margin-top: 22px;
 }
 
 .privacyTh {

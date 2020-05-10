@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.intenHeader {
+	position:fixed;
+	top:13%;
+	color:#a651cb;
+}
+
 table {
 	margin-top: 25px;
 	text-align: center;

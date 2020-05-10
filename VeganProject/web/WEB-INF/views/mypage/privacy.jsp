@@ -26,8 +26,10 @@
 		</script>
 	</c:if>
 	
-	<div class="mypageConWrapper"> 
-		<div class="mypageTitle">개인정보수정</div>
+	<div class="mypageConWrapper">
+		<div class="mypageHeader">
+			<div class="mypageTitle">개인정보수정</div>
+		</div>
 		<table>
 			<tbody>
 				<tr>

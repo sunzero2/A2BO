@@ -57,13 +57,9 @@ body {
 }
 
 .mypageTitle {
-	margin-bottom: 18px;
-	font-size: 22px;
-	display: inline-block;
+	text-align:left;
+	font-size: xx-large;
 }
-
-
-
 
 /* 나의 리뷰 보기 */
 <style>

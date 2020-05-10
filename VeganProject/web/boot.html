@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Clean Modal Login Modal Form</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+	rel="stylesheet">
+	
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+/* 캘린더부분 */
+.mainCalHeader{
+position:fixed;
+top:13%;
+left:45%;
+color:#a651cb;
+}
+.mypageTitle{
+text-align:left;
+font-size: xx-large;
+}
+.mainCalTotal {
+position: relative;
+top:10%;
+	left:60%;
+	width: 300px;
+	height: 50px;
+}
+
+.mainCalTotalTitle {
+	margin-bottom:-10%;
+	font-size: 13px;
+	float: right;
+	
+}
+
+.mainCalTotalSum {
+	font-size: 20px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.mainCalTable {
+	position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 750px;
+    border: 1px solid #ffdeaf;
+    height: auto;
+    border-spacing: 0px;
+    background: #ffebce91;
+}
+
+.calendarTd {
+	width: 225px;
+	height: 120px;
+	
+	vertical-align: baseline;
+}
+
+.tdTitle {
+	text-align: center;
+	width: 225px;
+	height: 40px;
+	border:none;
+}
+
+.calInnerDiv {
+	width: 70px;
+	height: 70px;
+	margin-top: 48px;
+	float: right;
+}
+</style>
+</head>
+<body>
+	
+	<div class="mypageConWrapper"> 
+		<div class="mainCalHeader">
+			<div>
+				<div class="mypageTitle">C a l e n d a r</h4></div>
+			</div>
+			<span>이번 달 채식 횟수를 체크해보세요!</span>
+			<div class="mainCalTotal">
+			<span class="mainCalTotalSum"></span>
+			<span class="mainCalTotalTitle">이번 달 나의 채식 횟수 :</span>
+		</div>
+		</div>
+		<div class="mainCalTable">
+			<table class="mainCalTable" id="calendar">
+				<tr>
+					<td class="tdTitle">
+						<label onclick="beforeMonth();" id="before"></label>
+					</td>
+					<td class="tdTitle" colspan="5" id="yearmonth"></td>
+					<td class="tdTitle">
+						<label onclick="nextMonth();" id="next"></label>
+					</td>
+				</tr>
+				<tr>
+					<td class="tdTitle" style="color: #FF9090;">일</td>
+					<td class="tdTitle" style="color: #c74cfd;">월</td>
+					<td class="tdTitle" style="color: #c74cfd;">화</td>
+					<td class="tdTitle" style="color: #c74cfd;">수</td>
+					<td class="tdTitle" style="color: #c74cfd;">목</td>
+					<td class="tdTitle" style="color: #c74cfd;">금</td>
+					<td class="tdTitle" style="color: #7ED5E4;">토</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+
+	<script src="/vgan/resources/js/calendar.js"></script>
+</body>
+</html>
