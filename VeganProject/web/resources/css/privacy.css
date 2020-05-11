@@ -13,22 +13,24 @@
 }
 
 table {
-	border: 1px solid;
+	position:fixed;
+	border: 1px solid lightseagreen;
 	border-spacing: 0px;
 	margin-top: 22px;
+	
 }
 
 .privacyTh {
-	border-right: 1px solid;
-	border-bottom: 1px solid;
-	width: 150px;
+	border-right: 1px solid lightseagreen;
+	border-bottom: 1px solid lightseagreen;
+	width: 120px;
 	text-align: left;
 	font-size: 14px;
 }
 
 .privacyTd {
-	border-bottom: 1px solid;
-	width: 600px;
+	border-bottom: 1px solid lightseagreen;
+	width: 450px;
 	padding: 15px;
 }
 
@@ -39,26 +41,34 @@ table {
 .privacyTdTitle {
 	font-size: 14px;
 	margin-left: 10px;
+	color: #519092;
 }
 
 .privacyBtn {
-	border: 1px solid gray;
-	background: white;
-	width: 60px;
-	height: 30px;
-	font-size: 14px;
-	margin-left: 10px;
-	margin-top: 10px;
+	border: 0.5px solid #8cc5c1;
+    background: #8cc5c1;
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: aliceblue;
 }
 
 .innerThDiv {
-	margin-left: 10px;
+	margin-left: 20px;
+	color: #519092;
 }
 
 .privacyInput {
 	margin: 10px;
-	width: 200px;
-	height: 25px;
+    width: 200px;
+    height: 25px;
+    background: #ffc687b8;
+    border-radius: 30px;
+    border: 1px solid #8cc5c1;
+    color: blueviolet;
 }
 
 tbody {
