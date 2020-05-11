@@ -80,7 +80,6 @@ public class MemberController extends HttpServlet {
 		if(mem != null) {
 			session.setAttribute("loginInfo", mem);
 		}
-		
 		rd.forward(request, response);
 	}
 	

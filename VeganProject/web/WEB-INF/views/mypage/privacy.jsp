@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/vgan/resources/css/top.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/privacy.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/top.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/myPageMain.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/privacy.css"/>
 </head>
 <body>
 	<%@ include file="mypageNavi.jsp" %>
@@ -16,7 +16,7 @@
 	<c:if test="${loginInfo == null}">
 		<script>
 			alert("로그인이 종료되어 메인페이지로 이동합니다.");
-			location.href = "http://localhost:8787/vgan/welcome";
+			location.href = "http://192.168.10.20:8787/vgan/welcome";
 		</script>
 	</c:if>
 	
@@ -40,7 +40,7 @@
 						<div class="privacyTdTitle">${loginInfo.nickname}</div>
 						<button class="privacyBtn" id="nickname">수정</button>
 						<div class="changeNickname">
-							<form action="changemember" method="post">
+							<form action="http://192.168.10.20:8787/vgan/mypage/changemember" method="post">
 								<input class="privacyInput" name="nickname" type="text" placeholder="변경할 닉네임"><br>
 								<button class="privacyBtn">수정</button>
 							</form>
@@ -68,7 +68,7 @@
 						<input class="privacyInput" id="pwdCheck" type="password"><br>
 						<button class="privacyBtn" id="password">수정</button>
 						<div class="changePw">
-							<form action="changemember" method="post" onsubmit="return validate();">
+							<form action="http://192.168.10.20:8787/vgan/mypage/changemember" method="post" onsubmit="return validate();">
 								<input class="privacyInput" name="password" id="userPwd" type="password" placeholder="새 비밀번호"><br>
 								<span id="pwdSpan" style="display: none; font-size: 13px;"></span>
 								<input class="privacyInput" type="password" id="userPwdCheck" placeholder="새 비밀번호 확인"><br>
@@ -93,7 +93,7 @@
 						</c:if>
 						<button class="privacyBtn" id="cell">수정</button>
 						<div class="changeCell">					
-							<form action="changemember" method="post">
+							<form action="http://192.168.10.20:8787/vgan/mypage/changemember" method="post">
 								<input class="privacyInput" name="cell" type="text" placeholder="변경할 핸드폰 번호"><br>
 								<button class="privacyBtn">수정</button>
 							</form>
@@ -104,7 +104,7 @@
 		</table>
 	</div>
 	<input id="userPw" type="hidden" value="${loginInfo.pw}">
-	<script src="/vgan/resources/js/top.js"></script>
-	<script src="/vgan/resources/js/privacy.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/top.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/privacy.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger topLogo" href="http://localhost:8787/vgan/welcome"><img src="/vgan/resources/image/after/vganlogo-1w.png" /></a>
+		<a class="navbar-brand js-scroll-trigger topLogo" href="http://192.168.10.20:8787/vgan/welcome"><img src="/vgan/resources/image/after/vganlogo-1w.png" /></a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			Menu
 			<i class="fas fa-bars ml-1"></i>
@@ -21,9 +21,9 @@
 				</c:if>
 				<c:if test="${loginInfo != null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="http://localhost:8787/vgan/mypage/main">Mypage</a></li>
+						href="http://192.168.10.20:8787/vgan/mypage/main">Mypage</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="http://localhost:8787/vgan/member/logout">Logout</a></li>
+						href="http://192.168.10.20:8787/vgan/member/logout">Logout</a></li>
 				</c:if>
 			</ul>
 		</div>

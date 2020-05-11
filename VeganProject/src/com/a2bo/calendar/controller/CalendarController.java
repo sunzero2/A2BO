@@ -117,13 +117,12 @@ public class CalendarController extends HttpServlet {
 		
 		if(res > 0) {
 			request.setAttribute("addEvent", "일정 추가에 성공하였습니다.");
-			request.setAttribute("success", "일정 추가에 성공하였습니다.");
 		} else {
 			request.setAttribute("addEvent", "일정 추가에 실패하였습니다. 다시 시도해주십시오.");
 		}
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8787/vgan/calendar/main");
+		RequestDispatcher rd = request.getRequestDispatcher("http://192.168.10.20:8787/vgan/calendar/main");
 		rd.forward(request, response);
 	}
 	

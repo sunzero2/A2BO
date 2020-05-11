@@ -9,7 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>메뉴 상세페이지</title>
-<link rel="stylesheet" href="/vgan/resources/css/top.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/top.css"/>
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
@@ -51,7 +51,7 @@ width:30%}
 <br>
 <hr>
 <hr>
-<img src= "/vgan/resources/image/MenuinfoBorder.png" class = "menuborder">
+<img src= "http://192.168.10.20:8787/vgan/resources/image/MenuinfoBorder.png" class = "menuborder">
 
 <div class = "menuInfoWrapper">
 <span class = "menuName"><h1>${resMenuinfo.menuName}메뉴이름</h1></span>
@@ -63,7 +63,7 @@ width:30%}
             <span class="fa fa-star-o" value="5"></span>
          </span>
         	
-<img src= "/vgan/resources/image/menuLine1.png" class = "nameline">
+<img src= "http://192.168.10.20:8787/vgan/resources/image/menuLine1.png" class = "nameline">
 <br>
 
 <div class="detailinfo">

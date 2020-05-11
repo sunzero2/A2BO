@@ -37,6 +37,7 @@ function callIframe() {
 }
 
 function addTitle(date, inputDate) {
+	
 	var body = document.querySelector('.iframe').contentWindow.document.body;
 	console.dir(body.children[0].children[0]);
 	body.children[0].children[0].children[0].innerHTML = date;

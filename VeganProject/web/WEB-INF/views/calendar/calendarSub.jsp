@@ -6,17 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/calendar.css"/>
 </head>
 <body>
 <c:if test="${success != null}">
 	<script>
-		window.open("http://localhost:8787/vgan/calendar/main", "_parent").parent.close();
+		window.open("http://192.168.10.20:8787/vgan/calendar/main", "_parent").parent.close();
 	</script>
 </c:if>
 
 <div style="height: 650px; width: 750px;">
-	<form action="addevent">
+	<form action="http://192.168.10.20:8787/vgan/calendar/addevent">
 		<div class="subCalTitle"></div>
 		<div>
 			<textarea class="subCalMenuContent" name="content" placeholder="오늘의 일기를 작성해보세요!(최대 300자까지 입력가능)" maxlength=300>
@@ -24,42 +24,42 @@
 		</div>
 		<div class="subCalIconDiv">
 			<div class="subCalSelectDiv">
-				<img id="FXT" src="/vgan/resources/image/FXT.png">
+				<img id="FXT" src="http://192.168.10.20:8787/vgan/resources/image/before/FXT.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="FXT">
 			</div>
 			
 			<div class="subCalSelectDiv col2">
-				<img id="POP" src="/vgan/resources/image/POP.png">
+				<img id="POP" src="http://192.168.10.20:8787/vgan/resources/image/before/POP.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="POP">
 			</div>
 			
 			<div class="subCalSelectDiv col3">
-				<img id="PSC" src="/vgan/resources/image/PSC.png">
+				<img id="PSC" src="http://192.168.10.20:8787/vgan/resources/image/before/PSC.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="PSC">
 			</div>
 			
 			<div class="subCalSelectDiv row2">
-				<img id="POL" src="/vgan/resources/image/POL.png">
+				<img id="POL" src="http://192.168.10.20:8787/vgan/resources/image/before/POL.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="POL">
 			</div>	
 			<div class="subCalSelectDiv col2 row2">
-				<img id="LOV" src="/vgan/resources/image/LOV.png">
+				<img id="LOV" src="http://192.168.10.20:8787/vgan/resources/image/before/LOV.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="LOV">
 			</div>
 			<div class="subCalSelectDiv col3 row2">
-				<img id="LTO" src="/vgan/resources/image/LTO.png">
+				<img id="LTO" src="http://192.168.10.20:8787/vgan/resources/image/before/LTO.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="LTO">
 			</div>
 			<div class="subCalSelectDiv row3">
-				<img id="OVO" src="/vgan/resources/image/OVO.png">
+				<img id="OVO" src="http://192.168.10.20:8787/vgan/resources/image/before/OVO.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="OVO">
 			</div>
 			<div class="subCalSelectDiv col2 row3">
-				<img id="VGN" src="/vgan/resources/image/VGN.png">
+				<img id="VGN" src="http://192.168.10.20:8787/vgan/resources/image/before/VGN.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="VGN">
 			</div>
 			<div class="subCalSelectDiv col3 row3">
-				<img id="FTN" src="/vgan/resources/image/FTN.png">
+				<img id="FTN" src="http://192.168.10.20:8787/vgan/resources/image/before/FTN.jpg">
 				<input name="icon" class="subCalIconCheck" type="radio" value="FTN">
 			</div>	
 		</div>
@@ -78,7 +78,7 @@
 	</form>
 	<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>
 </div>
-<script src="/vgan/resources/js/iframe.js"></script>
+<script src="http://192.168.10.20:8787/vgan/resources/js/iframe.js"></script>
 <script>
 	var img = document.querySelectorAll('img');
 	document.querySelectorAll('.subCalIconCheck').forEach(function(el) {

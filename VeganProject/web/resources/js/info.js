@@ -9,7 +9,7 @@ function getReview() {
 		index = 0;
 	} else {
 		$.ajax({
-			url : 'http://localhost:8787/vgan/info/getreview',
+			url : 'http://192.168.10.20:8787/vgan/info/getreview',
 			data : {
 				"menuId" : menuId,
 				"index" : index
@@ -65,11 +65,11 @@ var starArr = document.querySelectorAll('.star');
 starArr.forEach(function(el) {
 	el.addEventListener('click', function() {
 		for (i = 0; i < starArr.length; i++) {
-			starArr[i].src = 'http://localhost:8787/vgan/resources/image/after/portfolio/starN.png';
+			starArr[i].src = 'http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png';
 		}
 
 		for (i = 0; i < el.id; i++) {
-			starArr[i].src = 'http://localhost:8787/vgan/resources/image/after/portfolio/starY.png';
+			starArr[i].src = 'http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starY.png';
 		}
 
 		star = (el.id).substr(1);
@@ -79,7 +79,7 @@ starArr.forEach(function(el) {
 var content = document.querySelector('.area');
 function addReview() {
 	$.ajax({
-		url : 'http://localhost:8787/vgan/info/addreview',
+		url : 'http://192.168.10.20:8787/vgan/info/addreview',
 		data : {
 			"star" : star,
 			"menuId" : menuId,

@@ -23,7 +23,7 @@
 <style type="text/css">
 body {
 	font-family: 'Varela Round', sans-serif;
-	background-image: url("/vgan/resources/image/after/mbgimge2.jpg");
+	background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimge2.jpg");
 }
 
 .modal-login {
@@ -35,7 +35,7 @@ body {
 	padding: 150px 80px 50px 80px;
 	border-radius: 25px;
 	border: none;
-	background-image: url("/vgan/resources/image/after/mbgimgesmallV.jpg");
+	background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
 }
 
 .modal-login .modal-header {
@@ -173,8 +173,8 @@ p{
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script>
 	document.querySelector('#backLogin').onclick = function() {
-		window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
-		location.href = 'http://localhost:8787/vgan/welcome';
+		window.open('http://192.168.10.20:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
+		location.href = 'http://192.168.10.20:8787/vgan/welcome';
 	}
 	
 	var user = "${user}";
@@ -184,7 +184,7 @@ p{
 		var pwcheck = document.querySelector('#pwdcheck').value;
 		if(pw == pwcheck) {
 			$.ajax({
-				url: "http://localhost:8787/vgan/member/changepw",
+				url: "http://192.168.10.20:8787/vgan/member/changepw",
 				data: {
 					"userEmail": user,
 					"userPw": pw,
@@ -193,7 +193,7 @@ p{
 				success: function(v) {
 					if(v > 0) {
 						alert("비밀번호 변경에 성공했습니다. 메인페이지로 이동합니다.");
-						opener.location.href = 'http://localhost:8787/vgan/welcome';
+						opener.location.href = 'http://192.168.10.20:8787/vgan/welcome';
 						window.close();
 					} else {
 						alert("비밀번호 변경에 실패했습니다. 다시 시도해주세요.");

@@ -22,7 +22,7 @@
 <style type="text/css">
 body {
    font-family: 'Varela Round', sans-serif;
-   background-image: url("/vgan/resources/image/after/mbgimge2.jpg");
+   background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimge2.jpg");
 }
 
 .modal-login {
@@ -34,7 +34,7 @@ body {
    padding: 150px 80px 50px 80px;
    border-radius: 25px;
    border: none;
-   background-image: url("/vgan/resources/image/after/mbgimgesmallV.jpg");
+   background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
 }
 
 .modal-login .modal-header {
@@ -138,13 +138,13 @@ body {
          <div class="modal-content">
             <div class="modal-header">
                <img class="modal-header-logo"
-                  src="/vgan/resources/image/after/vganlogo-1w.png">
+                  src="http://192.168.10.20:8787/vgan/resources/image/after/vganlogo-1w.png">
                <button type="button" class="close" data-dismiss="modal"
                   aria-hidden="true">x</button>
                <h4 class="modal-title">Sign in</h4>
             </div>
             <div class="modal-body">
-               <form action="/vgan/member/login" method="post">
+               <form action="http://192.168.10.20:8787/vgan/member/login" method="post">
                   <div class="form-group">
                      <input name="userEmail" type="text" class="form-control" placeholder="Username"
                         required="required">
@@ -159,7 +159,7 @@ body {
                   </div>
                </form>
                <p class="hint-text small">
-                  <a href="/vgan/member/searchmem">Forgot Your Password?</a><a href="/vgan/member/searchmem"> / Forgot
+                  <a href="http://192.168.10.20:8787/vgan/member/searchmem">Forgot Your Password?</a><a href="http://192.168.10.20:8787/vgan/member/searchmem"> / Forgot
                      Your ID?</a>
                </p>
             </div>
@@ -172,7 +172,7 @@ body {
                   <h4 class="modal-title">New Account</h4>
                   <br><br>
                   </div>
-               <form action="/vgan/member/join" method="post">
+               <form action="http://192.168.10.20:8787/vgan/member/join" method="post">
                   <br>
                   <div class="form-group">
                      <input type="text" class="form-control" name="username"

@@ -1,7 +1,7 @@
 var reviewArr = null;
 function getReview() {
 	$.ajax({
-		url: "http://localhost:8787/vgan/mypage/myreview",
+		url: "http://192.168.10.20:8787/vgan/mypage/myreview",
 		data: {
 			"userId": myId
 		},
@@ -133,7 +133,7 @@ function btnClick() {
 			} else if(el.textContent == '삭제하기') {
 				if(confirm("리뷰를 삭제하시겠어요?")) {
 					$.ajax({
-						url: "http://localhost:8787/vgan/mypage/delreview",
+						url: "http://192.168.10.20:8787/vgan/mypage/delreview",
 						data: {
 							"revId": reviewArr[idx].revId
 						},
@@ -160,7 +160,7 @@ function createBtn(idx) {
 		el.addEventListener('click', function(v) {
 			if(el.textContent == '저장') {
 				$.ajax({
-					url: "http://localhost:8787/vgan/mypage/chgreview",
+					url: "http://192.168.10.20:8787/vgan/mypage/chgreview",
 					data: {
 						"revId": reviewArr[idx].revId,
 						"cont": document.querySelector('#cont' + idx).value

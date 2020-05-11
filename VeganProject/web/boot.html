@@ -9,42 +9,171 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700"
 	rel="stylesheet">
-	
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
+body {
+	font-family: 'Varela Round', sans-serif;
+	background-image: url("resources/image/after/mbgimge15.jpeg");
+	background-size: 100%;
+}
+
+.modal-login {
+	width: 160px;
+	height: 400px;
+	top: 10%;
+	left: 3%;
+	position: fixed;
+}
+
+.modal-login .modal-content {
+	padding: 30px 30px 30px 30px;
+	border-radius: 25px;
+	border: none;
+	background: blanchedalmond;
+}
+
+.modal-login .modal-header {
+	border-bottom: none;
+	position: relative;
+	justify-content: center;
+}
+
+.modal-login h4 {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #a077ff;
+}
+
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 30px;
+	font-size: 15px;
+	transition: all 0.5s;
+}
+
+.modal-login .hint-text {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.modal-login .close {
+	position: absolute;
+	top: -20px;
+	right: -15px;
+	color: #8250f5;
+	font-size: xxx-large;
+}
+
+.modal-login .btn {
+	background: #a177ff;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #8753ff;
+}
+
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+.modal-header-logo {
+	position: relative;
+	top: 23%;
+	left: 33%;
+	width: 260px;
+}
+
+p {
+	font-size: 13px;
+	color: #a077ff;
+	text-align: center;
+	margin-bottom: -10px;
+}
+
+a:link, a:visited {
+	top: 45%;
+	color: white;
+	text-decoration: none;
+	cursor: auto;
+	text-align: center;
+	position: relative;
+}
+
+.form-group {
+	margin-top: 23px;
+}
+
+#cir1 {
+	background: #f5b1cf;
+	border: none;
+	margin-bottom: 10px;
+}
+
+#cir2 {
+	background: #8cc5c1;
+	border: none;
+	margin-bottom: 10px;
+}
+
+#cir3 {
+	background: #ffc687;
+	border: none;
+	margin-bottom: 10px;
+}
+
+#cir4 {
+	background: #d8b0eb;
+	border: none;
+	margin-bottom: 10px;
+}
+
+.logoimg {
+	position: fixed;
+	top: 5%;
+	left: 75%;
+	width: 250px;
+}
+
 /* 캘린더부분 */
-.mainCalHeader{
-position:fixed;
-top:13%;
-left:45%;
-color:#a651cb;
+.mainCalHeader {
+	position: fixed;
+	top: 13%;
+	left: 45%;
+	color: #a651cb;
 }
-.mypageTitle{
-text-align:left;
-font-size: xx-large;
+
+.mypageTitle {
+	text-align: left;
+	font-size: xx-large;
 }
+
 .mainCalTotal {
-position: relative;
-top:10%;
-	left:60%;
+	position: relative;
+	top: 10%;
+	left: 60%;
 	width: 300px;
 	height: 50px;
 }
 
 .mainCalTotalTitle {
-	margin-bottom:-10%;
+	margin-bottom: -10%;
 	font-size: 13px;
 	float: right;
-	
 }
 
 .mainCalTotalSum {
@@ -56,19 +185,18 @@ top:10%;
 
 .mainCalTable {
 	position: fixed;
-    top: 25%;
-    left: 25%;
-    width: 750px;
-    border: 1px solid #ffdeaf;
-    height: auto;
-    border-spacing: 0px;
-    background: #ffebce91;
+	top: 25%;
+	left: 25%;
+	width: 750px;
+	border: 1px solid #ffdeaf;
+	height: auto;
+	border-spacing: 0px;
+	background: #ffebce91;
 }
 
 .calendarTd {
 	width: 225px;
 	height: 120px;
-	
 	vertical-align: baseline;
 }
 
@@ -76,7 +204,7 @@ top:10%;
 	text-align: center;
 	width: 225px;
 	height: 40px;
-	border:none;
+	border: none;
 }
 
 .calInnerDiv {
@@ -85,46 +213,362 @@ top:10%;
 	margin-top: 48px;
 	float: right;
 }
+
+/* 다이어리작성부분 */
+#diarymodalWrapper {
+	width: 800px;
+	height: 500px;
+	position: relative;
+}
+
+#diarymodal {
+	background-image: url("resources/image/after/mbgimge15.jpeg");
+	height: fit-content;
+}
+
+.subCalTitle {
+	text-align: center;
+	font-size: 40px;
+	margin-top: 30px;
+}
+
+.subCalMenuContent {
+	position: absolute;
+	width: 300px;
+	height: 440px;
+	margin-top: 50px;
+	margin-left: 30px;
+}
+
+#subCalAddImg {
+	position: absolute;
+	margin-top: 470px;
+	margin-left: 30px;
+}
+
+.subCalIconDiv {
+	position: absolute;
+	margin-left: 350px;
+	width: 400px;
+	margin-top: 30px;
+	height: 270px;
+}
+
+.subCalSelectDiv {
+	position: absolute;
+	width: 120px;
+	height: 80px;
+	border: 1px solid #c5c5c5;
+	border-radius: 8px;
+}
+
+.subCalIconCheck {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.row2 {
+	margin-top: 95px;
+}
+
+.row3 {
+	margin-top: 190px;
+}
+
+.col2 {
+	margin-left: 140px;
+}
+
+.col3 {
+	margin-left: 280px;
+}
+
+.subCalIcon {
+	position: absolute;
+}
+
+.subCalInputDiv {
+	position: absolute;
+	margin-left: 350px;
+	width: 400px;
+	height: 35px;
+}
+
+.subCalPrice {
+	margin-top: 320px;
+}
+
+.subCalMenu {
+	margin-top: 380px;
+}
+
+.subCalInputTitle {
+	position: absolute;
+	height: 100%;
+	font-size: 24px;
+}
+
+.subCalInput {
+	position: absolute;
+	width: 250px;
+	height: 80%;
+	margin-left: 70px;
+}
+
+.subCalBtn {
+	height: 50px;
+	width: 70px;
+	margin-top: 450px;
+	float: right;
+}
+
+.remove {
+	display: none;
+	margin-right: 10px;
+}
+
+.change {
+	display: none;
+	margin-right: 10px;
+}
+
+.subCalMsg {
+	position: fixed;
+	font-size: 15px;
+	top: 30%;
+	margin-left: 4%;
+	color: white;
+}
+
+#FXT {
+	width: 85px;
+	height: inherit;
+	margin-left: 15px;
+	position: absolute;
+}
+
+#POP {
+	width: 109px;
+	margin-left: 5px;
+	margin-top: 13px;
+	position: absolute;
+}
+
+#PSC {
+	width: 64px;
+	margin-left: 28px;
+	margin-top: 10px;
+	position: absolute;
+}
+
+#POL {
+	width: 80px;
+	height: inherit;
+	margin-left: 19px;
+	position: absolute;
+}
+
+#LOV {
+	width: 73px;
+	height: inherit;
+	margin-left: 19px;
+	position: absolute;
+}
+
+#LTO {
+	width: 72px;
+	height: inherit;
+	margin-left: 23px;
+	position: absolute;
+}
+
+#OVO {
+	width: 82px;
+	height: inherit;
+	margin-left: 13px;
+	position: absolute;
+}
+
+#VGN {
+	width: 99px;
+	height: inherit;
+	margin-left: 11px;
+	margin-top: -10px;
+	position: absolute;
+}
+
+#FTN {
+	width: 79px;
+	height: inherit;
+	margin-left: 20px;
+	position: absolute;
+}
+
+textarea {
+	background-color: #ad84ccb8;
+}
+
+.diaryWrapper {
+	position: relative;
+	margin-left: -5%;
+	margin-top: -5%;
+}
+
+#inputprice {
+	position: fixed;
+	width: 300px;
+	left: 52%;
+	top: 95%;
+	color: #b98cdc;
+	background-color: antiquewhite;
+	border: none;
+}
+
+#inputmenu {
+	position: fixed;
+	width: 300px;
+	left: 52%;
+	top: 105%;
+	color: #b98cdc;
+	background-color: antiquewhite;
+	border: none;
+}
+
+#savebtn {
+	position: fixed;
+	width: 300px;
+	left: 52%;
+	top: 115%;
+	height: 30px;
+	border-radius: 30px;
+	font-size: 15px;
+	border: none;
+	background: #a177ff7a;
+}
+
+#changebtn {
+	position: fixed;
+	width: 148px;
+	left: 51%;
+	top: 115%;
+	height: 30px;
+	border-radius: 30px;
+	font-size: 15px;
+	border: none;
+	background: #a177ff7a;
+}
+
+#removebtn {
+	position: fixed;
+	width: 148px;
+	left: 72%;
+	top: 114%;
+	height: 30px;
+	border-radius: 30px;
+	font-size: 15px;
+	border: none;
+	background: #a177ff7a;
+}
 </style>
 </head>
 <body>
-	
-	<div class="mypageConWrapper"> 
-		<div class="mainCalHeader">
-			<div>
-				<div class="mypageTitle">C a l e n d a r</h4></div>
-			</div>
-			<span>이번 달 채식 횟수를 체크해보세요!</span>
-			<div class="mainCalTotal">
-			<span class="mainCalTotalSum"></span>
-			<span class="mainCalTotalTitle">이번 달 나의 채식 횟수 :</span>
-		</div>
-		</div>
-		<div class="mainCalTable">
-			<table class="mainCalTable" id="calendar">
-				<tr>
-					<td class="tdTitle">
-						<label onclick="beforeMonth();" id="before"></label>
-					</td>
-					<td class="tdTitle" colspan="5" id="yearmonth"></td>
-					<td class="tdTitle">
-						<label onclick="nextMonth();" id="next"></label>
-					</td>
-				</tr>
-				<tr>
-					<td class="tdTitle" style="color: #FF9090;">일</td>
-					<td class="tdTitle" style="color: #c74cfd;">월</td>
-					<td class="tdTitle" style="color: #c74cfd;">화</td>
-					<td class="tdTitle" style="color: #c74cfd;">수</td>
-					<td class="tdTitle" style="color: #c74cfd;">목</td>
-					<td class="tdTitle" style="color: #c74cfd;">금</td>
-					<td class="tdTitle" style="color: #7ED5E4;">토</td>
-				</tr>
-			</table>
-		</div>
-		
-	</div>
 
-	<script src="/vgan/resources/js/calendar.js"></script>
+	
+		<div class="modal-dialog modal-login" id="diarymodalWrapper">
+			<div class="modal-content" id="diarymodal">
+
+				<div class="modal-header">
+					<img class="modal-header-logo"
+						src="resources/image/after/vganlogo-1w.png">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">x</button>
+				</div>
+				<div class="modal-body">
+
+
+					<!-- DIARY작성부분  -->
+					<div style="height: 500px; width: 750px;" class="diaryWrapper">
+						<span class="subCalMsg">오늘의 채식을 기록해보세요!</span>
+						<form action="addEvent">
+							<div class="subCalTitle"></div>
+							<div>
+								<textarea class="subCalMenuContent" name="content"
+									placeholder="오늘의 일기를 작성해보세요!(최대 300자)" maxlength=300>
+			</textarea>
+								<br>
+							</div>
+							<div class="subCalIconDiv">
+								<div class="subCalSelectDiv">
+									<img id="FXT" src="/vgan/resources/image/FXT.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="FXT">
+								</div>
+
+								<div class="subCalSelectDiv col2">
+									<img id="POP" src="/vgan/resources/image/POP.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="POP">
+								</div>
+
+								<div class="subCalSelectDiv col3">
+									<img id="PSC" src="/vgan/resources/image/PSC.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="PSC">
+								</div>
+
+								<div class="subCalSelectDiv row2">
+									<img id="POL" src="/vgan/resources/image/POL.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="POL">
+								</div>
+								<div class="subCalSelectDiv col2 row2">
+									<img id="LOV" src="/vgan/resources/image/LOV.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="LOV">
+								</div>
+								<div class="subCalSelectDiv col3 row2">
+									<img id="LTO" src="/vgan/resources/image/LTO.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="LTO">
+								</div>
+								<div class="subCalSelectDiv row3">
+									<img id="OVO" src="/vgan/resources/image/OVO.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="OVO">
+								</div>
+								<div class="subCalSelectDiv col2 row3">
+									<img id="VGN" src="/vgan/resources/image/VGN.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="VGN">
+								</div>
+								<div class="subCalSelectDiv col3 row3">
+									<img id="FTN" src="/vgan/resources/image/FTN.png"> <input
+										name="icon" class="subCalIconCheck" type="radio" value="FTN">
+								</div>
+							</div>
+
+							<input type="text" class="form-control" id="inputprice"
+								name="price" placeholder="가격" required="required"> <input
+								type="text" class="form-control" id="inputmenu" name="menu"
+								placeholder="음식" required="required">
+
+
+							<button type="submit"
+								class="btn btn-success btn-lg btn-block signup-btn" value="save"
+								id="savebtn">저장</button>
+							
+							<div class="submitbtnWrapper">
+								<button type="submit"
+									class="btn btn-success btn-lg btn-block signup-btn"
+									value="change" id="changebtn">수정</button>
+								<button type="submit"
+									class="btn btn-success btn-lg btn-block signup-btn"
+									value="remove" id="removebtn">삭제</button>
+							</div>
+							<input name="date" type="hidden" value="">
+
+
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+
+
 </body>
 </html>

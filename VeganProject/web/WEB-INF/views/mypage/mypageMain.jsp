@@ -5,9 +5,9 @@
 <head>
 <meta>
 <title>Insert title here</title>
-<link rel="stylesheet" href="/vgan/resources/css/top.css" />
-<link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/main.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/top.css" />
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/myPageMain.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/main.css"/>
 </head>
 <body onload="getReview();">
 	<%@ include file="../top/top.jsp" %>
@@ -30,10 +30,10 @@
 	
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="/vgan/resources/js/top.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/top.js"></script>
 	<script>
 		var myId = ${loginInfo.userId};
 	</script>
-	<script src="/vgan/resources/js/myReview.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/myReview.js"></script>
 </body>
 </html>

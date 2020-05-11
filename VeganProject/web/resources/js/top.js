@@ -2,7 +2,7 @@
 document.querySelectorAll('.nav-item').forEach(function(el) {
 	el.addEventListener('click', function(v) {
 		if(v.target.text == 'Login' || v.target.text == 'Join') {
-			window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
+			window.open('http://192.168.10.20:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
 		}
 	})
 })
@@ -11,5 +11,5 @@ document.querySelectorAll('.nav-item').forEach(function(el) {
 
 // topLogo를 클릭하면 무조건 메인페이지로 이동
 document.querySelector('.topLogo').addEventListener('click', function() {
-	location.href='localhost:8787/vgan/welcome';
+	location.href='http://192.168.10.20:8787/vgan/welcome';
 })

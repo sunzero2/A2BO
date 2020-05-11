@@ -10,15 +10,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/vgan/resources/css/top.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/myPageMain.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/iframe.css"/>
-<link rel="stylesheet" href="/vgan/resources/css/calendar.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/top.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/myPageMain.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/iframe.css"/>
+<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/calendar.css"/>
 </head>
 <body onload="build();">
 	<%@ include file="../mypage/mypageNavi.jsp" %>
 	<%@ include file="../top/top.jsp" %>
-	
 	<!-- html -->
 	<!-- mypageConWrapper는 마이페이지 전체에 잡혀있는 css. 전체 콘텐츠 크기 지정해놓음 
 		mypage.css에 있음-->
@@ -70,7 +69,7 @@
 	<c:if test="${loginInfo == null}">
 		<script>
 			alert("로그인이 종료되어 메인페이지로 이동합니다.");
-			location.href = "http://localhost:8787/vgan/welcome";
+			location.href = "http://192.168.10.20:8787/vgan/welcome";
 			//response.redirection
 		</script>
 	</c:if>
@@ -91,21 +90,26 @@
 			pageContext.setAttribute("month", month);
 		%>
 	</c:if>
-	
+	<c:if test="${calList.size() <= 0 }">
+		<%
+		pageContext.setAttribute("dayList", 0);
+		pageContext.setAttribute("month", 0);
+		%>
+	</c:if>
 	 
 	 <!-- iframe -->
 	<div class="screenDiv"></div>
 	<div class="innerDiv">
 		<div class="iframeWrapper">
 			<button class="closeBtn">X</button>
-			<iframe class="iframe" src="http://localhost:8787/vgan/calendar/calsub"></iframe>
+			<iframe class="iframe" src="http://192.168.10.20:8787/vgan/calendar/calsub"></iframe>
 		</div>
 	</div>
 	
 	<!-- script -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="/vgan/resources/js/calendar.js"></script>
-	<script src="/vgan/resources/js/iframe.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/calendar.js"></script>
+	<script src="http://192.168.10.20:8787/vgan/resources/js/iframe.js"></script>
 	<script>
 		var month = ${month};
 		var dayList = ${dayList};
@@ -113,12 +117,12 @@
 		var sum = 0;
 		
 		function addIcon() {
-			if(dayList != null) {
+			if(dayList.length > 0 ) {
 				document.querySelectorAll('.calendarTd').forEach(function(el) {
 					for(var i = 0; i < dayList.length; i++) {
 						if(dayList[i] == el.id) {
 							$.ajax({
-								url: "http://localhost:8787/vgan/calendar/getevent",
+								url: "http://192.168.10.20:8787/vgan/calendar/getevent",
 								data: {
 									"day" : dayList[i],
 									"month" : month
@@ -126,7 +130,7 @@
 								success: function(v) {
 									var jObj = JSON.parse(v);
 									sum++;
-									el.children[0].style.background = "url('/vgan/resources/image/" + jObj.icon + ".png')";
+									el.children[0].style.background = "url('http://192.168.10.20:8787/vgan/resources/image/before/" + jObj.icon + ".jpg')";
 									el.children[0].style.backgroundSize = "contain";
 									document.querySelector('.mainCalTotalSum').textContent = sum;
 								}
@@ -141,7 +145,7 @@
 			for(var i = 0; i < dayList.length; i++) {
 				if(dayList[i] == data.id) {
 					$.ajax({
-						url: "http://localhost:8787/vgan/calendar/getevent",
+						url: "http://192.168.10.20:8787/vgan/calendar/getevent",
 						data: {
 							"day" : dayList[i],
 							"month" : month

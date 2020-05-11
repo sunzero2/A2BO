@@ -23,7 +23,7 @@
 <style type="text/css">
 body {
 	font-family: 'Varela Round', sans-serif;
-		background-image: url("/vgan/resources/image/after/mbgimge15.jpg");
+		background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimge15.jpg");
 		background-size:100%; 
 		
 	
