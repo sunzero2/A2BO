@@ -25,7 +25,7 @@ body {
 	font-family: 'Varela Round', sans-serif;
 		background-image: url("/vgan/resources/image/after/mbgimge15.jpg");
 		background-size:100%; 
-		
+		background-repeat:no-repeat;
 	
 }
 
