@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/vgan/resources/css/top.css" />
 <link rel="stylesheet" href="/vgan/resources/css/myPageMain.css" />
 <link rel="stylesheet" href="/vgan/resources/css/vganInten.css"/>
+
 </head>
 <body>
 	<%@ include file="mypageNavi.jsp"%>
@@ -30,7 +31,7 @@
 			<div class="mypageTitle">채식지향 설정</div><br>
 		</div>
 		<div class="intenBody">
-			<div id="name">${loginInfo.nickname}</div><div style="display: inline-block;">님의 채식 지향 정보</div>
+			<div id="name">${loginInfo.nickname}</div><div style="display: inline-block;" style="color:blueviolet">님의 채식 지향 정보</div>
 			<hr style="margin-top: 25px;">
 			
 			<c:if test="${loginInfo.vLId != null}">
@@ -39,10 +40,10 @@
 			</c:if>
 			
 			<c:if test="${loginInfo.vLId == null}">
-				<div id="vL">아직 설정하지 않았습니다.</div>
+				<div id="vL" style="color:blueviolet">아직 설정하지 않았습니다.</div>
 			</c:if>
-			<button class="intenBtn" onclick="setVegan();">설정하러 가기</button>
-			<button class="intenBtn" onclick="vganExplain();">채식 지향에 대해 알아보기</button>
+			<button class="intenBtn" onclick="setVegan();" style="color:blueviolet">설정하러 가기</button>
+			<button class="intenBtn" onclick="vganExplain();" style="color:blueviolet">채식 지향에 대해 알아보기</button>
 			<form action="changevl" style="display: none;" method="get">
 				<select name="vLevel">
 					<option value="FXT">플렉시테리언</option>

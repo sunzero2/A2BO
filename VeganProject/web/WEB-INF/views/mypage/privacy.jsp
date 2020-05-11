@@ -30,7 +30,7 @@
 		<div class="mypageHeader">
 			<div class="mypageTitle">개인정보수정</div>
 		</div>
-		<table>
+		<table class="privacyTb">
 			<tbody>
 				<tr>
 					<th class="privacyTh" scope="row">
