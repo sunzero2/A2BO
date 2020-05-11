@@ -10528,8 +10528,9 @@ td {
 	height: 57px;
 }
 .moreReview {
+	float: right;
+	margin-right: 90px;
 	width: 982px;
-	margin-left: 20%;
 }
 
 .back {
@@ -10540,25 +10541,27 @@ td {
 }
 
 .next {
-	margin-left: 50%;
+	display: inline-block;
 	margin-top: -18px;
 	width: 18px;
 }
 
 .writeReview {
-	margin-left: 20%;
+	margin-left: -27%;
 	width: 982px;
 }
 
 .myName {
 	display: inline-block;
-	margin-top: 50px;
+	margin-top: 45px;
+	margin-left: 7%;
 }
 
 .area {
 	margin-top: 8px;
-	width: 974px;
+	width: 500px;
 	height: 100px;
+	margin-left: 111px;
 }
 
 .saveReview {
@@ -10566,9 +10569,20 @@ td {
 	border-radius: 5px;
 	background: none;
 	margin-top: 9px;
+	margin-bottom: 23px;
 	font-size: 17px;
 	width: 64px;
 	height: 36px;
+	color: #fff;
+    background-color: #fedc36d1;
+    border-color: #fedc36d1;
+    margin-left: 10%;
+}
+.starWrapper {
+	float: right;
+	margin-right: 190px;
+	margin-top: 50px;
+	height: 10px;
 }
 
 .starDiv {
@@ -10585,5 +10599,6 @@ td {
 	line-height: 0px;
 }
 
-
-
+.centerText {
+	text-align: center;
+}

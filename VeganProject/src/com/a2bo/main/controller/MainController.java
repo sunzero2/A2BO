@@ -84,7 +84,7 @@ public class MainController extends HttpServlet {
 		} else if (vgList.toString().contains("FXT")) {
 			myLevel = "플렉시테리언";
 		}
-
+		
 		request.setAttribute("myLevel", myLevel);
 		Cookie cookie = new Cookie("myLevel", myLevel);
 		response.addCookie(cookie);

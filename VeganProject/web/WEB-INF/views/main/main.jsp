@@ -329,7 +329,6 @@
                                     <!-- Project Details Go Here-->
                                     <h2 id="infoMenuName" class="text-uppercase"></h2>
                                     <p id="infoMenuPrice" class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="/vgan/resources/image/after/portfolio/01-full.jpg" alt="" />
                                     <ul class="list-inline">
                                         <li id="infoRestName"></li>
                                         <li id="infoRestLoc"></li>
@@ -348,7 +347,7 @@
 										<div class="writeReview">
 											<div class="myName">댓글을 작성해보세요!
 											</div>
-											<div style="float: right; margin-top: 47px;">
+											<div class="starWrapper">
 												<div class="starDiv"><img class="star" id="01" src="/vgan/resources/image/after/portfolio/starN.png"></div>
 												<div class="starDiv"><img class="star" id="02" src="/vgan/resources/image/after/portfolio/starN.png"></div>
 												<div class="starDiv"><img class="star" id="03" src="/vgan/resources/image/after/portfolio/starN.png"></div>
