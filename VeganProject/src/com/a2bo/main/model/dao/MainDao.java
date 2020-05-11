@@ -57,12 +57,11 @@ public class MainDao {
 				sql += "veg= 'Y' and ";
 				break;
 			case 9:
-				sql += "fruit= 'Y' and";
+				sql += "fruit= 'Y' and ";
 				break;
 			}
 		}
 		sql = sql.substring(0, sql.length() - 4);
-
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -75,6 +74,7 @@ public class MainDao {
 		} finally {
 			jdt.close(rs, stmt);
 		}
+		
 		return mvl;
 	}
 

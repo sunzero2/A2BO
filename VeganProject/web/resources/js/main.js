@@ -85,8 +85,9 @@ function radiock() {
 		})
 		
 		.done(function() {
+			var row = document.querySelector('#row');
+			row.innerHTML = "";
 			for(i = 0; i < menuArr.length; i++) {
-				var row = document.querySelector('#row');
 				var menuWrapper = document.createElement('div');
 				var portfolioItem = document.createElement('div');
 				var portfolioLink = document.createElement('a');
@@ -360,8 +361,9 @@ function getReview() {
 						wellLg.appendChild(mediaCont);
 					}
 				}
-			} else if(index = 0) {
+			} else if(index == 0) {
 				var div = document.createElement('div');
+				div.className = 'centerText'
 				div.textContent = "아직 등록된 리뷰가 없습니다.";
 				mediaList.appendChild(div);
 			} else {

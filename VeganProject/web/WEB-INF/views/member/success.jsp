@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img style="margin-left: 30%; margin-top: 7%;" src="http://placehold.it/300x300">
+	<img style="margin-left: 30%; margin-top: 7%; width: 300px;" src="/vgan/resources/image/after/portfolio/cake.jpg">
 	<div style="text-align: center; font-size: 30px; margin-top: 13%; font-weight: 900;">
 		${isSuccess}
 	</div>
@@ -23,8 +23,8 @@
 		</script>
 	</c:if>
 	
-	<c:if test="${loginInfo == null}">
+	<%-- <c:if test="${loginInfo == null}">
 		<div>로그인에 실패하였습니다. 동일 문제 현상이 지속적으로 발생하는 경우, 고객센터로 문의해주세요.</div>
-	</c:if>
+	</c:if> --%>
 </body>
 </html>
