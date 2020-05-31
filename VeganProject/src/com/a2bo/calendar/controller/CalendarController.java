@@ -122,7 +122,7 @@ public class CalendarController extends HttpServlet {
 		}
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("http://192.168.10.20:8787/vgan/calendar/main");
+		RequestDispatcher rd = request.getRequestDispatcher("http://localhost:8787/vgan/calendar/main");
 		rd.forward(request, response);
 	}
 	

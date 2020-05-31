@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="http://192.168.10.20:8787/vgan/resources/css/styles.css" rel="stylesheet" />
+<link href="http://localhost:8787/vgan/resources/css/styles.css" rel="stylesheet" />
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 <style type="text/css">
 body {
 	font-family: 'Varela Round', sans-serif;
-	background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
+	background-image: url("http://localhost:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
 }
 
 /* .modal-login {
@@ -37,7 +37,7 @@ body {
 	border-radius: 25px;
 	left:-15%;
 	border: none;
-	background-image: url("http://192.168.10.20:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
+	background-image: url("http://localhost:8787/vgan/resources/image/after/mbgimgesmallV.jpg");
 }
 
 .modal-login .modal-header {
@@ -152,11 +152,11 @@ width: 800px;
 </style>
 
 <script>
-	opener.location.href  = 'http://192.168.10.20:8787/vgan/member/searchmem';
+	opener.location.href  = 'http://localhost:8787/vgan/member/searchmem';
 	window.close();
 </script>
 <body>
-	<img class="modal-header-logo" src="http://192.168.10.20:8787/vgan/resources/image/after/vganlogo-1w.png">
+	<img class="modal-header-logo" src="http://localhost:8787/vgan/resources/image/after/vganlogo-1w.png">
 	<div class="modal-dialog modal-login">	
 		<div class="modal-content">
 			<div class="findWrapper">
@@ -201,15 +201,15 @@ width: 800px;
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script>
 	document.querySelector('#backLogin').onclick = function() {
-		window.open('http://192.168.10.20:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
-		location.href = 'http://192.168.10.20:8787/vgan/welcome';
+		window.open('http://localhost:8787/vgan/member/goin','login', 'width=800, height=1400, left=320px, top=150px');
+		location.href = 'http://localhost:8787/vgan/welcome';
 	}
 	
 	function searchId() {
 		var nickName = document.querySelector('#idNickname').value;
 		var phone = document.querySelector('#idPhone').value;
 		$.ajax({
-			url: "http://192.168.10.20:8787/vgan/member/searchid",
+			url: "http://localhost:8787/vgan/member/searchid",
 			data: {
 				"nickName": nickName,
 				"userPhone": phone
@@ -230,7 +230,7 @@ width: 800px;
 		var userEmail = document.querySelector('#pwEmail').value;
 		var nickName = document.querySelector('#pwNickName').value;
 		$.ajax({
-			url: "http://192.168.10.20:8787/vgan/member/searchpw",
+			url: "http://localhost:8787/vgan/member/searchpw",
 			data: {
 				"userEmail": userEmail,
 				"nickName": nickName
@@ -238,7 +238,7 @@ width: 800px;
 			type: 'post',
 			success: function(v) {
 				if(v > 0) {
-					window.open('http://192.168.10.20:8787/vgan/member/pwchange?user=' + userEmail, 'pwChange', 'width: 800px, height: 400px');
+					window.open('http://localhost:8787/vgan/member/pwchange?user=' + userEmail, 'pwChange', 'width: 800px, height: 400px');
 				} else {
 					alert("입력하신 정보와 일치하는 것이 없습니다. 다시 확인해주세요.");
 				}

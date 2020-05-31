@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="http://192.168.10.20:8787/vgan/resources/css/styles.css" rel="stylesheet" />
+<link href="http://localhost:8787/vgan/resources/css/styles.css" rel="stylesheet" />
 <style>
 .media .media-object { max-width: 120px; }
 .media-body { position: relative; }
@@ -90,7 +90,7 @@
 }
 </style>
 </head>
-    <body id="page-top">
+<body id="page-top">
 	<%@ include file="../top/top.jsp" %>
         <!-- Masthead-->
         <header class="masthead">
@@ -321,7 +321,7 @@
         <div class="portfolio-modal modal fade" id="menuInfo" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="http://192.168.10.20:8787/vgan/resources/image/after/close-icon.svg" /></div>
+                    <div class="close-modal" data-dismiss="modal"><img src="http://localhost:8787/vgan/resources/image/after/close-icon.svg" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -341,18 +341,18 @@
 											<ul class="media-list">
 											</ul>  
 										<div class="moreReview">
-											<div class="back" onclick="index--; getReview();"><img src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/back.png" style="width: 18px;"></div>
-											<div class="next" onclick="index++; getReview();"><img src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/next.png" style="width: 18px;"></div>
+											<div class="back" onclick="index--; getReview();"><img src="http://localhost:8787/vgan/resources/image/after/portfolio/back.png" style="width: 18px;"></div>
+											<div class="next" onclick="index++; getReview();"><img src="http://localhost:8787/vgan/resources/image/after/portfolio/next.png" style="width: 18px;"></div>
 										</div>
 										<div class="writeReview">
 											<div class="myName">댓글을 작성해보세요!
 											</div>
 											<div class="starWrapper">
-												<div class="starDiv"><img class="star" id="01" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png"></div>
-												<div class="starDiv"><img class="star" id="02" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png"></div>
-												<div class="starDiv"><img class="star" id="03" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png"></div>
-												<div class="starDiv"><img class="star" id="04" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png"></div>
-												<div class="starDiv"><img class="star" id="05" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="01" src="http://localhost:8787/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="02" src="http://localhost:8787/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="03" src="http://localhost:8787/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="04" src="http://localhost:8787/vgan/resources/image/after/portfolio/starN.png"></div>
+												<div class="starDiv"><img class="star" id="05" src="http://localhost:8787/vgan/resources/image/after/portfolio/starN.png"></div>
 											</div>
 											<c:if test="${loginInfo == null}">
 												<textarea class="area" readonly>리뷰는 로그인 후 작성 가능합니다.</textarea><br>
@@ -382,12 +382,12 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
-        <script src="http://192.168.10.20:8787/vgan/resources/js/jqBootstrapValidation.js"></script>
-        <script src="http://192.168.10.20:8787/vgan/resources/js/contact_me.js"></script>
+        <script src="http://localhost:8787/vgan/resources/js/jqBootstrapValidation.js"></script>
+        <script src="http://localhost:8787/vgan/resources/js/contact_me.js"></script>
         <!-- Core theme JS-->
-        <script src="http://192.168.10.20:8787/vgan/resources/js/scripts.js"></script>
+        <script src="http://localhost:8787/vgan/resources/js/scripts.js"></script>
         <!-- topBanner JS -->
-        <script src="http://192.168.10.20:8787/vgan/resources/js/top.js"></script>
-        <script src="http://192.168.10.20:8787/vgan/resources/js/main.js"></script>
+        <script src="http://localhost:8787/vgan/resources/js/top.js"></script>
+        <script src="http://localhost:8787/vgan/resources/js/main.js"></script>
         </body>
 </html>

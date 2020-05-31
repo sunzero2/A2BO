@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/top.css" />
-<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/myPageMain.css" />
-<link rel="stylesheet" href="http://192.168.10.20:8787/vgan/resources/css/vganInten.css"/>
+<link rel="stylesheet" href="http://localhost:8787/vgan/resources/css/top.css" />
+<link rel="stylesheet" href="http://localhost:8787/vgan/resources/css/myPageMain.css" />
+<link rel="stylesheet" href="http://localhost:8787/vgan/resources/css/vganInten.css"/>
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<c:if test="${loginInfo == null}">
 		<script>
 			alert("로그인이 종료되어 메인페이지로 이동합니다.");
-			location.href = "http://192.168.10.20:8787/vgan/welcome";
+			location.href = "http://localhost:8787/vgan/welcome";
 		</script>
 	</c:if>
 	
@@ -44,7 +44,7 @@
 			</c:if>
 			<button class="intenBtn" onclick="setVegan();" style="color:blueviolet">설정하러 가기</button>
 			<button class="intenBtn" onclick="vganExplain();" style="color:blueviolet">채식 지향에 대해 알아보기</button>
-			<form action="http://192.168.10.20:8787/vgan/mypage/changevl" style="display: none;" method="get">
+			<form action="http://localhost:8787/vgan/mypage/changevl" style="display: none;" method="get">
 				<select name="vLevel">
 					<option value="FXT">플렉시테리언</option>
 					<option value="POP">폴로페스코</option>
@@ -184,7 +184,7 @@
 			</table>
 		</div>
 	</div>
-	<script src="http://192.168.10.20:8787/vgan/resources/js/top.js"></script>
+	<script src="http://localhost:8787/vgan/resources/js/top.js"></script>
 	<script>
 		function vganExplain() {
 			var table = document.querySelector('#vganTable');

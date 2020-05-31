@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img style="margin-left: 30%; margin-top: 7%; width: 300px;" src="http://192.168.10.20:8787/vgan/resources/image/after/portfolio/cake.jpg">
+	<img style="margin-left: 30%; margin-top: 7%; width: 300px;" src="http://localhost:8787/vgan/resources/image/after/portfolio/cake.jpg">
 	<div style="text-align: center; font-size: 30px; margin-top: 13%; font-weight: 900;">
 		${isSuccess}
 	</div>
